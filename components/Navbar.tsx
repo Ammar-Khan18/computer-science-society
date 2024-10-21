@@ -14,6 +14,8 @@ import {
   ListItemButton,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,14 +49,9 @@ const Navbar: React.FC = () => {
       <AppBar position="static" sx={{backgroundColor: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
           {/* Left side: CSS LOGO for both desktop and mobile */}
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
-            CSS LOGO
-          </Typography>
-
+          <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
+            <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
+          </Link>
           {/* Right side for larger screens */}
           <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
             <Button color="inherit" sx={{ mr: 2 }}>CodeX</Button>
