@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{backgroundColor: 'transparent', boxShadow: 'none'}}>
+      <AppBar position="relative" sx={{backgroundColor: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
           {/* Left side: CSS LOGO for both desktop and mobile */}
           <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
