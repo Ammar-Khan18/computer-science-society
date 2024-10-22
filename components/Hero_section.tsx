@@ -55,6 +55,7 @@ const HeroSection: React.FC = () => {
                     backgroundColor: 'purple', // Optional hover background
                   },
                 }}
+                href="#probattle-section"
               >
                 Pro Battle
               </Button>
