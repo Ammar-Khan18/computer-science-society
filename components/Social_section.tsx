@@ -87,7 +87,7 @@ const SocialsSection: React.FC = () => {
             sx={{ color: '#5865F2' }} // Discord color
           >
             <Image
-              src="/Discord-Emblem.png"
+              src="/Discord-Emblem.svg"
               alt="Discord logo"
               width={48}
               height={48}
