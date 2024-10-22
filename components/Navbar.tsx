@@ -25,13 +25,13 @@ const Navbar: React.FC = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        CSS LOGO
+        <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
       </Typography>
       <List>
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component="a" href="#codex-section">
             <ListItemText primary="CodeX" />
           </ListItemButton>
         </ListItem>
@@ -75,7 +75,10 @@ const Navbar: React.FC = () => {
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ display: { xs: 'block', sm: 'none' } }}
+        sx={{ '& .MuiDrawer-paper': {
+          backgroundColor: '#333', // Drawer background color
+          color: '#fff',           // Drawer text color
+        }, display: { xs: 'block', sm: 'none' } }}
       >
         {drawer}
       </Drawer>
