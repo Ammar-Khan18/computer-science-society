@@ -40,7 +40,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               sx={{ color: 'white' }}
             >
-              <Image src="/Discord-Emblem.png" alt="Discord" width={24} height={24} />
+              <Image src="/Discord-Emblem.svg" alt="Discord" width={24} height={24} />
             </IconButton>
           </Box>
         </Grid2>
