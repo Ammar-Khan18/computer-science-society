@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
           position: 'relative',
           textAlign: 'center',
           height: '250px', // Height of the bottom gradient and image
-          background: 'linear-gradient(to bottom, transparent, yellow)', // Gradient to yellow
+          background: 'linear-gradient(to bottom, transparent, #8a2ef8)', // Gradient to yellow
         }}
       >
         {/* Arrows pointing down on either side */}
@@ -94,7 +94,7 @@ const HeroSection: React.FC = () => {
           }}
         >
           {/* Left Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
+          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'white' }} />
 
           {/* Center CodeX Image */}
           <Box
@@ -108,7 +108,7 @@ const HeroSection: React.FC = () => {
           />
 
           {/* Right Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
+          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'white' }} />
         </Box>
       </Box>
     </Box>
