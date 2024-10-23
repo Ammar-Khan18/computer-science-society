@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       </Typography>
       <List>
         <ListItem disablePadding>
-          <ListItemButton component="a" href="#codex-section">
+          <ListItemButton component={Link} href="/codex">
             <ListItemText primary="CodeX" />
           </ListItemButton>
         </ListItem>
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
           </Link>
           {/* Right side for larger screens */}
           <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
-            <Button color="inherit" sx={{ mr: 2 }}>CodeX</Button>
+            <Button LinkComponent={Link} href="/codex" color="inherit" sx={{ mr: 2 }}>CodeX</Button>
             <Button color="inherit">Probattle</Button>
           </Box>
 
