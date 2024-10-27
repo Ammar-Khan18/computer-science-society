@@ -35,11 +35,13 @@ const Navbar: React.FC = () => {
             <ListItemText primary="CodeX" />
           </ListItemButton>
         </ListItem>
+        {/*
         <ListItem disablePadding>
           <ListItemButton component="a" href="#">
             <ListItemText primary="Probattle" />
           </ListItemButton>
         </ListItem>
+        */}
       </List>
     </Box>
   );
@@ -55,7 +57,7 @@ const Navbar: React.FC = () => {
           {/* Right side for larger screens */}
           <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
             <Button LinkComponent={Link} href="/codex" color="inherit" sx={{ mr: 2 }}>CodeX</Button>
-            <Button color="inherit">Probattle</Button>
+            {/*<Button color="inherit">Probattle</Button>*/}
           </Box>
 
           {/* Mobile menu button on the right side */}
