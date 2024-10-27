@@ -15,6 +15,7 @@ const HeroSection: React.FC = () => {
         justifyContent: 'space-between',
         backgroundColor: 'white',
         backgroundSize: 'cover',
+        mt: -6,
       }}
     >
       {/* Main content of the hero section */}
@@ -30,6 +31,7 @@ const HeroSection: React.FC = () => {
             </Typography>
 
             {/* Buttons */}
+            {/*
             <Box>
               <Button
                 variant="contained"
@@ -61,6 +63,7 @@ const HeroSection: React.FC = () => {
                 Pro Battle
               </Button>
             </Box>
+            */}
           </Grid2>
 
           {/* Right Section: Society Logo (hidden on mobile) */}
@@ -75,7 +78,7 @@ const HeroSection: React.FC = () => {
         </Grid2>
         
         {/* Hero Carousel (Recent Events) */}
-        <Box sx={{ mt: 4 }}>
+        <Box sx={{ mt: 2 }}>
           <Carousel_Hero />{/* Add the carousel component here */}
         </Box>
       </Container>
@@ -86,7 +89,7 @@ const HeroSection: React.FC = () => {
           position: 'relative',
           textAlign: 'center',
           height: '250px',
-          background: 'linear-gradient(to bottom, transparent, #D9EA12)', // Gradient to yellow
+          background: 'linear-gradient(to bottom, transparent, #D9EA12)', // Gradient to yellow 
         }}
       >
         <Box
