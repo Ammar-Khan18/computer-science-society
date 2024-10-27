@@ -9,7 +9,7 @@ const CodeXSection: React.FC = () => {
       id="codex-section"
       sx={{
         height: '100vh', // Make the CodeX section full viewport height
-        backgroundColor: '#8a2ef8', 
+        backgroundColor: '#D9EA12', 
         display: 'flex',
         alignItems: 'center', // Center content vertically
         justifyContent: 'center', // Center content horizontally
