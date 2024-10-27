@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Button, Typography, Container } from '@mui/material';
 import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import Carousel_Hero from '@/components/Carousel_Hero' // Adjust the path as needed
 
 const HeroSection: React.FC = () => {
   return (
@@ -11,13 +12,13 @@ const HeroSection: React.FC = () => {
         height: '100vh', // Full viewport height
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between', // To align content to top and bottom
-        background: 'url(/path-to-background-image.jpg) no-repeat center center fixed', // Optional background image
-        backgroundSize: 'cover', // Cover the entire section
+        justifyContent: 'space-between',
+        backgroundColor: 'white',
+        backgroundSize: 'cover',
       }}
     >
       {/* Main content of the hero section */}
-      <Container maxWidth="lg" sx={{ pt: 8 }}>
+      <Container maxWidth="lg" sx={{ pt: 8, color: 'black' }}>
         <Grid2 container spacing={4} alignItems="center" justifyContent="space-between">
           {/* Left Section: Title, Description, and Buttons */}
           <Grid2 size={{ xs: 12, sm: 6 }} sx={{ display: 'flex', flexDirection: 'column', px: 2 }}>
@@ -40,19 +41,19 @@ const HeroSection: React.FC = () => {
                     backgroundColor: 'orange', // Optional hover color
                   },
                 }}
-                href="#codex-section" // Anchor link to CodeX section
+                href="#codex-section"
               >
                 CodeX
               </Button>
               <Button
                 variant="contained"
                 sx={{
-                  borderColor: 'purple', // Purple for Pro Battle button
+                  borderColor: 'purple',
                   backgroundColor: 'purple',
                   color: 'white',
                   '&:hover': {
-                    borderColor: '#9d00ff', // Optional hover color
-                    backgroundColor: 'purple', // Optional hover background
+                    borderColor: '#9d00ff',
+                    backgroundColor: 'purple',
                   },
                 }}
                 href="#probattle-section"
@@ -72,6 +73,11 @@ const HeroSection: React.FC = () => {
             />
           </Grid2>
         </Grid2>
+        
+        {/* Hero Carousel (Recent Events) */}
+        <Box sx={{ mt: 4 }}>
+          <Carousel_Hero />{/* Add the carousel component here */}
+        </Box>
       </Container>
 
       {/* Bottom transition section with arrows and image */}
@@ -79,22 +85,21 @@ const HeroSection: React.FC = () => {
         sx={{
           position: 'relative',
           textAlign: 'center',
-          height: '250px', // Height of the bottom gradient and image
-          background: 'linear-gradient(to bottom, transparent, #8a2ef8)', // Gradient to yellow
+          height: '250px',
+          background: 'linear-gradient(to bottom, transparent, #D9EA12)', // Gradient to yellow
         }}
       >
-        {/* Arrows pointing down on either side */}
         <Box
           sx={{
-            display: 'flex', // Flexbox to position items in a row
-            alignItems: 'center', // Vertically center the arrows and image
-            justifyContent: 'space-between', // Space out the arrows and image
-            height: '100%', // Ensure the full height is used
-            padding: '0 20px', // Optional: Add some horizontal padding
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+            padding: '0 20px',
           }}
         >
           {/* Left Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'white' }} />
+          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
 
           {/* Center CodeX Image */}
           <Box
@@ -108,7 +113,7 @@ const HeroSection: React.FC = () => {
           />
 
           {/* Right Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'white' }} />
+          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
         </Box>
       </Box>
     </Box>
