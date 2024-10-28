@@ -16,10 +16,10 @@ const Socials = () => {
           Stay connected with us on social media and join our community!
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-          <IconButton href="https://linkedin.com" target="_blank" sx={{ color: '#0077B5' }}>
+          <IconButton href="https://www.linkedin.com/company/iba-computer-science-society/" target="_blank" sx={{ color: '#0077B5' }}>
             <LinkedInIcon fontSize="large" />
           </IconButton>
-          <IconButton href="https://instagram.com" target="_blank" sx={{ color: '#C13584' }}>
+          <IconButton href="https://www.instagram.com/css.iba/" target="_blank" sx={{ color: '#C13584' }}>
             <InstagramIcon fontSize="large" />
           </IconButton>
           <IconButton href="https://discord.com" target="_blank" sx={{ color: '#7289DA' }}>
