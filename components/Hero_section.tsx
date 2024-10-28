@@ -4,6 +4,7 @@ import { Box, Button, Typography, Container } from '@mui/material';
 import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Carousel_Hero from '@/components/Carousel_Hero' // Adjust the path as needed
+import { DownArrowSVG } from './DownArrowSVG';
 
 const HeroSection: React.FC = () => {
   return (
@@ -102,7 +103,9 @@ const HeroSection: React.FC = () => {
           }}
         >
           {/* Left Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', width: '48px', height: '48px' }}>
+            <DownArrowSVG />
+          </Box>
 
           {/* Center CodeX Image */}
           <Box
@@ -116,7 +119,9 @@ const HeroSection: React.FC = () => {
           />
 
           {/* Right Arrow */}
-          <ArrowDownwardIcon sx={{ fontSize: '48px', color: 'black' }} />
+          <Box sx={{ display: 'flex', alignItems: 'center', width: '48px', height: '48px' }}>
+            <DownArrowSVG />
+          </Box>
         </Box>
       </Box>
     </Box>
