@@ -8,15 +8,31 @@ const CodeXSection: React.FC = () => {
     <Box
       id="codex-section"
       sx={{
+        position: 'relative',
+        backgroundImage: 'url(/crumpled_paper2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         height: '100vh', // Make the CodeX section full viewport height
-        backgroundColor: '#D9EA12', 
+        overflow: 'hidden',
+        // backgroundColor: '#D9EA12', 
         display: 'flex',
         alignItems: 'center', // Center content vertically
         justifyContent: 'center', // Center content horizontally
         textAlign: 'center', // Center text
-      }}
-    >
-      <Container maxWidth="lg">
+      }}>
+      {/* Yellow Overlay */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 0, 0.4)', // Semi-transparent yellow
+          zIndex: 0, // Ensure it is above the background
+        }}
+      />
+      <Container maxWidth="lg" sx={{zIndex: 2}}>
         <Grid2 container spacing={4} alignItems="center" justifyContent="center">
           {/* Logo on top */}
           <Grid2 size={{ xs: 12 }} sx={{ textAlign: 'center' }}>
