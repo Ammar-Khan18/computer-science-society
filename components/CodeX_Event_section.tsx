@@ -50,6 +50,7 @@ const CodeXSection: React.FC = () => {
             <Button
               variant="contained"
               color="primary"
+              href='/codex'
               sx={{
                 backgroundColor: 'purple',
                 color: 'white',
@@ -58,7 +59,7 @@ const CodeXSection: React.FC = () => {
                 },
               }}
             >
-              Register Now
+              Explore CodeX Now!
             </Button>
           </Grid2>
         </Grid2>
