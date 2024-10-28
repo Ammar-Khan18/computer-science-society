@@ -9,7 +9,7 @@ import CodeX_Partners_section from '@/components/CodeX_Partners_section';
 
 const CodeXPage = () => {
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: '#fdd835',color:'black' }}>
+    <Box sx={{ minHeight: '100vh', backgroundColor: '#f0f0f0',color:'black' }}>
       {/* Hero Section */}
       <CodeX_Hero_section />
 

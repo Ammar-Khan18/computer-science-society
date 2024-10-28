@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const OurPartnersSection: React.FC = () => {
   return (
-    <Box sx={{ py: 8, px: 3, backgroundColor: '#f5f5f5' }}>
+    <Box sx={{ py: 8, px: 3, backgroundColor: '#f0f0f0' }}>
       <Typography variant="h2" component="h2" align="center" gutterBottom>
         Our Partners
       </Typography>
@@ -27,6 +27,7 @@ const OurPartnersSection: React.FC = () => {
               maxWidth: '300px',
               textAlign: 'center',
               backgroundColor: '#f7f6f2',
+              height: '270px',
             }}
           >
             {/* Placeholder for Notion Image */}
@@ -54,6 +55,7 @@ const OurPartnersSection: React.FC = () => {
               maxWidth: '500px',
               textAlign: 'center',
               backgroundColor: '#ffffff',
+              height: '270px',
             }}
           >
             {/* Placeholder for Google Developers Group Image */}
@@ -63,8 +65,7 @@ const OurPartnersSection: React.FC = () => {
               alt="Google Developers Group Logo"
               sx={{
                 width: '290px', // Adjust width as needed
-                height: 'auto',
-                marginBottom: 0,
+                height: '230px',
               }}
             />
           </Paper>

@@ -1,13 +1,45 @@
-import { Box, Typography } from '@mui/material';
+"use client";
+import React from 'react';
+import { Box, Container, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
+import Image from 'next/image';
 
-const CodeX_Hero_section = () => {
+const CodeXHero: React.FC = () => {
   return (
-    <Box sx={{ padding: '4rem 2rem', backgroundColor: '#f0f0f0' }}>
-        <Typography variant="h2" sx={{ textAlign: 'center', padding: '2rem 0' }}>
-            CodeX Event
-        </Typography>
+    <Box
+      sx={{
+        height: '200px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0', // Example background color
+        position: 'relative',
+      }}
+    >
+      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+        <Grid2 container justifyContent="center">
+          {/* Title Image */}
+          <Grid2 size={{ xs: 12, sm: 12 }}>
+            <Image
+              src="/codex_title.png" // Replace with the path to your image
+              alt="CodeX Title"
+              width={500} // Adjust width as needed
+              height={100} // Adjust height as needed
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+          </Grid2>
+
+          {/* Subtitle or Additional Text */}
+          <Grid2 size={{ xs: 12, sm: 12 }} sx={{ mt: 2 }}>
+            <Typography variant="h6" color="textSecondary">
+              Join us in exploring the world of coding with weekly contests and challenges!
+            </Typography>
+          </Grid2>
+        </Grid2>
+      </Container>
     </Box>
   );
 };
 
-export default CodeX_Hero_section
+export default CodeXHero;
