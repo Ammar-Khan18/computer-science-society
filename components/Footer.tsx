@@ -19,7 +19,7 @@ const Footer = () => {
           <Typography variant="h6">Connect With Us</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
             <IconButton
-              href="https://www.linkedin.com/in/your-linkedin" // Replace with actual link
+              href="https://www.linkedin.com/company/iba-computer-science-society/" // Replace with actual link
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: 'white' }}
@@ -27,7 +27,7 @@ const Footer = () => {
               <LinkedInIcon />
             </IconButton>
             <IconButton
-              href="https://www.instagram.com/your-instagram" // Replace with actual link
+              href="https://www.instagram.com/css.iba/" // Replace with actual link
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: 'white' }}
