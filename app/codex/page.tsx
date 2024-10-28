@@ -1,9 +1,9 @@
 "use client";
 import { Box, Typography } from '@mui/material';
-import WeeklyContests from '@/components/WeeklyContest';
-import MonthlyHackathons from '@/components/MonthlyHackathons';
-import ArenaResearchProgram from '@/components/ArenaResearchProgram';
-import Blogs from '@/components/codexBlogs';
+import WeeklyContests from '@/components/CodeX_WeeklyContest';
+import MonthlyHackathons from '@/components/CodeX_MonthlyHackathons';
+import ArenaResearchProgram from '@/components/CodeX_ArenaResearchProgram';
+import Blogs from '@/components/CodeX_Blogs';
 import CodeX_Hero_section from '@/components/CodeX_Hero_section';
 import CodeX_Partners_section from '@/components/CodeX_Partners_section';
 
