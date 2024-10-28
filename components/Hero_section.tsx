@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        backgroundColor: 'white',
+        backgroundColor: '#f0f0f0',
         backgroundSize: 'cover',
         mt: -6,
       }}
