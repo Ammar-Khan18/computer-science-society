@@ -2,7 +2,6 @@
 import React from 'react';
 import { Box, Button, Typography, Container, Paper } from '@mui/material';
 import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
-import Band1 from '@/components/band1';
 
 const CodeXSection: React.FC = () => {
   return (

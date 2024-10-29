@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography, Paper, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Image from 'next/image';
 
 const Socials = () => {

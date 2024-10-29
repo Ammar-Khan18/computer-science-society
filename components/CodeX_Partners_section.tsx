@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Paper, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
-import Image from 'next/image';
 
 const OurPartnersSection: React.FC = () => {
   return (

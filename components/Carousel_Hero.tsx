@@ -1,6 +1,6 @@
 // HeroCarousel.tsx
 "use client";
-import { Box, Typography, Button, Card, CardContent } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import React, { useEffect } from 'react';

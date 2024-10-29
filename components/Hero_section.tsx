@@ -1,8 +1,7 @@
 "use client";
 import React from 'react';
-import { Box, Button, Typography, Container } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Carousel_Hero from '@/components/Carousel_Hero' // Adjust the path as needed
 import { DownArrowSVG } from './DownArrowSVG';
 
