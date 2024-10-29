@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
-import { Box, Button, Typography, Container } from '@mui/material';
+import { Box, Button, Typography, Container, Paper } from '@mui/material';
 import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
+import Band1 from '@/components/band1';
 
 const CodeXSection: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const CodeXSection: React.FC = () => {
       id="codex-section"
       sx={{
         position: 'relative',
-        backgroundImage: 'url(/crumpled_paper2.jpg)',
+        backgroundImage: 'url(/codex_event_section_bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh', // Make the CodeX section full viewport height
@@ -21,18 +22,20 @@ const CodeXSection: React.FC = () => {
         textAlign: 'center', // Center text
       }}>
       {/* Yellow Overlay */}
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(255, 255, 0, 0.4)', // Semi-transparent yellow
+          backgroundColor: 'rgba(217, 234, 18, 0.4)', // Semi-transparent yellow
           zIndex: 0, // Ensure it is above the background
         }}
-      />
-      <Container maxWidth="lg" sx={{zIndex: 2}}>
+      /> */}
+      
+      <Container maxWidth="lg" sx={{zIndex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <Paper elevation={3} sx={{ padding: '2rem', maxWidth: '800px', textAlign: 'center', opacity: 0.9, backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: 3, color: 'white' }}>
         <Grid2 container spacing={4} alignItems="center" justifyContent="center">
           {/* Logo on top */}
           <Grid2 size={{ xs: 12 }} sx={{ textAlign: 'center' }}>
@@ -49,13 +52,13 @@ const CodeXSection: React.FC = () => {
             <Typography
               variant="h2"
               component="h1"
-              sx={{ fontWeight: 'bold', color: 'black' }}
+              sx={{ fontWeight: 'bold'}}
             >
               CodeX Event
             </Typography>
             <Typography
               variant="body1"
-              sx={{ mt: 2, color: 'black' }}
+              sx={{ mt: 2}}
             >
               The ultimate coding challenge for developers of all skill levels. Join us for an exciting event full of innovation, problem-solving, and competition!
             </Typography>
@@ -79,6 +82,7 @@ const CodeXSection: React.FC = () => {
             </Button>
           </Grid2>
         </Grid2>
+        </Paper>
       </Container>
     </Box>
   );
