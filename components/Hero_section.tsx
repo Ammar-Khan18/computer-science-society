@@ -90,7 +90,7 @@ const HeroSection: React.FC = () => {
           position: 'relative',
           textAlign: 'center',
           height: '250px',
-          background: 'linear-gradient(to bottom, transparent, #D9EA12)', // Gradient to yellow 
+          // background: 'linear-gradient(to bottom, transparent, #D9EA12)', // Gradient to yellow 
         }}
       >
         <Box
