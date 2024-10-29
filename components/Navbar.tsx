@@ -35,13 +35,11 @@ const Navbar: React.FC = () => {
             <ListItemText primary="CodeX" />
           </ListItemButton>
         </ListItem>
-        {/*
-        <ListItem disablePadding>
+        {/* <ListItem disablePadding>
           <ListItemButton component="a" href="#">
             <ListItemText primary="Probattle" />
           </ListItemButton>
-        </ListItem>
-        */}
+        </ListItem> */}
       </List>
     </Box>
   );
