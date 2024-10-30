@@ -5,6 +5,7 @@ import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
 
 const CodeXSection: React.FC = () => {
   return (
+    <Container maxWidth="lg">
     <Box
       id="codex-section"
       sx={{
@@ -84,6 +85,7 @@ const CodeXSection: React.FC = () => {
         </Paper>
       </Container>
     </Box>
+    </Container>
   );
 };
 

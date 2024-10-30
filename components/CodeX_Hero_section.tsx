@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const CodeXHero: React.FC = () => {
   return (
+    <Container maxWidth="lg">
     <Box
       sx={{
         height: '200px',
@@ -38,6 +39,7 @@ const CodeXHero: React.FC = () => {
         </Grid2>
       </Container>
     </Box>
+    </Container>
   );
 };
 

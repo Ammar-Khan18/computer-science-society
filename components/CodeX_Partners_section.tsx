@@ -1,7 +1,8 @@
-import { Grid2, Box, Paper, Typography } from '@mui/material';
+import { Grid2, Box, Paper, Typography, Container } from '@mui/material';
 
 const Partners = () => {
   return (
+    <Container maxWidth="lg">
     <Box
       sx={{
         padding: '4rem 2rem',
@@ -128,6 +129,7 @@ const Partners = () => {
         </Grid2>
       </Grid2>
     </Box>
+    </Container>
   );
 };
 
