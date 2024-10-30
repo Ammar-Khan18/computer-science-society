@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         <Toolbar>
           {/* Left side: CSS LOGO for both desktop and mobile */}
           <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
-            <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
+            <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
           </Link>
           {/* Right side for larger screens */}
           <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
