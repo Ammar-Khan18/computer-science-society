@@ -101,26 +101,6 @@ const HeroSection: React.FC = () => {
             padding: '0 20px',
           }}
         >
-          {/* Left Arrow */}
-          <Box sx={{ display: 'flex', alignItems: 'center', width: '48px', height: '48px' }}>
-            <DownArrowSVG />
-          </Box>
-
-          {/* Center CodeX Image */}
-          <Box
-            component="img"
-            src="/codex_title.png"
-            alt="CodeX"
-            sx={{
-              width: '200px',
-              height: 'auto',
-            }}
-          />
-
-          {/* Right Arrow */}
-          <Box sx={{ display: 'flex', alignItems: 'center', width: '48px', height: '48px' }}>
-            <DownArrowSVG />
-          </Box>
         </Box>
       </Box>
     </Box>
