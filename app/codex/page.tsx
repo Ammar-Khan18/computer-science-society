@@ -1,11 +1,10 @@
 "use client";
 import { Box } from '@mui/material';
-import WeeklyContests from '@/components/CodeX_WeeklyContest';
-import MonthlyHackathons from '@/components/CodeX_MonthlyHackathons';
 import ArenaResearchProgram from '@/components/CodeX_ArenaResearchProgram';
 import Blogs from '@/components/CodeX_Blogs';
 import CodeX_Hero_section from '@/components/CodeX_Hero_section';
 import CodeX_Partners_section from '@/components/CodeX_Partners_section';
+import CodeX_HackathonsAndContests from '@/components/CodeX_HackathonsAndContests';
 
 const CodeXPage = () => {
   return (
@@ -13,11 +12,8 @@ const CodeXPage = () => {
       {/* Hero Section */}
       <CodeX_Hero_section />
 
-      {/* Weekly Contests Section */}
-      <WeeklyContests />
-
-      {/* Monthly Hackathons Section */}
-      <MonthlyHackathons />
+      {/* Hackathons and Contests Section */}
+      <CodeX_HackathonsAndContests />
 
       {/* Partners Section */}
       <CodeX_Partners_section />
