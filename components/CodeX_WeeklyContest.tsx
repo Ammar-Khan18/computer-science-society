@@ -1,37 +1,74 @@
-"use client";
-import React from 'react';
-import { Box, Accordion, AccordionSummary, AccordionDetails, Typography, Container } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Image from 'next/image';
+import { Grid2, Card, CardContent, Typography, Box, Grow } from '@mui/material';
 
-const WeeklyContests: React.FC = () => {
-  const contests = [
-    { week: "Week 1", image: "/Week 1 Code Clash.jpg", description: "Challenge your coding skills!" },
-    /*{ week: "Week 2", image: "/path-to-week2-image.jpg", description: "A new set of problems awaits." },
-    { week: "Week 3", image: "/path-to-week3-image.jpg", description: "Sharpen your algorithms." },*/
-    // Add more weeks as needed
-  ];
-
+const EventsSection = () => {
   return (
-    <Container maxWidth="lg" sx={{ my: 5, backgroundColor: '#f0f0f0' }}>
-      <Typography variant="h3" gutterBottom sx={{ textAlign: 'center' }}>
-        Weekly Contests
-      </Typography>
-      {contests.map((contest, index) => (
-        <Accordion key={index}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel${index}-content`} id={`panel${index}-header`}>
-            <Typography variant="h6">{contest.week}</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-              <Image src={contest.image} alt={`${contest.week} image`} width={800} height={300} style={{ width: '100%', objectFit: 'cover' }} />
-              <Typography>{contest.description}</Typography>
-            </Box>
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </Container>
+    <Box sx={{ padding: '2rem' }}>
+      {/* Pixel Art Logo with Animation */}
+      <Box sx={{ textAlign: 'center', mb: 4 }}>
+        <Typography variant="h2" className="pixel-font">
+          Card Grid Layout
+        </Typography>
+        <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
+          Join us in exploring the world of coding with weekly contests and challenges!
+        </Typography>
+      </Box>
+
+      {/* Weekly Contests */}
+      <Typography variant="h3" sx={{ mb: 3 }}>Weekly Contests</Typography>
+      <Grid2 container spacing={3}>
+        {[1, 2, 3, 4].map((week) => (
+          <Grid2 size={{ xs: 12, md: 6, lg: 3 }} key={week}>
+            <Grow in timeout={500 * week}>
+              <Card 
+                sx={{ 
+                  height: '100%',
+                  transition: '0.3s',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: 6
+                  }
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h5">Week {week}</Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Challenge details and submissions
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grow>
+          </Grid2>
+        ))}
+      </Grid2>
+
+      {/* Monthly Hackathons */}
+      <Typography variant="h3" sx={{ mt: 6, mb: 3 }}>Monthly Hackathons</Typography>
+      <Grid2 container spacing={4}>
+        {['January', 'February'].map((month) => (
+          <Grid2 size={{ xs: 12, md: 6 }} key={month}>
+            <Card 
+              sx={{ 
+                height: '100%',
+                background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                color: 'white',
+                transition: '0.3s',
+                '&:hover': {
+                  transform: 'scale(1.02)',
+                }
+              }}
+            >
+              <CardContent>
+                <Typography variant="h4">{month}</Typography>
+                <Typography variant="body1">
+                  Hackathon theme and details
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid2>
+        ))}
+      </Grid2>
+    </Box>
   );
 };
 
-export default WeeklyContests;
+export default EventsSection;

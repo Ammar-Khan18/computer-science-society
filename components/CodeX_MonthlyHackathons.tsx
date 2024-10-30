@@ -1,53 +1,94 @@
-"use client";
-import React from 'react';
-import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, Container } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
+import { useState } from 'react';
+import { Grid2, Tabs, Tab, Box, Paper, Typography } from '@mui/material';
 
-const MonthlySection: React.FC = () => {
+interface TabPanelProps {
+  children: React.ReactNode;
+  value: string;
+  index: string;
+}
+
+const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => {
   return (
-    <Box
-      sx={{
-        py: 8,
-        backgroundColor: '#f0f0f0', // Example background color for Monthly section
-      }}
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`event-tabpanel-${index}`}
+      aria-labelledby={`event-tab-${index}`}
+      {...other}
     >
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center' }}>
-          Monthly Hackathons
-        </Typography>
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+};
 
-        <Grid2 container spacing={4}>
-          <Grid2 size={{ xs: 12 }}>
-            {/* Accordion items for each monthly event */}
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="h6">Hackathon - January</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  This January, participate in our exciting hackathon focusing on innovative problem-solving. Join fellow tech enthusiasts to build solutions.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+const EventsTabs = () => {
+  const [value, setValue] = useState<string>('0');
 
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="h6">Hackathon - February</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  February’s hackathon invites participants to challenge themselves with advanced projects. Work on real-world applications with peers.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+  return (
+    <Box sx={{ padding: '2rem' }}>
+      <Typography variant="h2" sx={{ textAlign: 'center', mb: 4 }}>
+        Tabs Implementation
+      </Typography>
 
-            {/* Add more Accordions as needed for each monthly event */}
-          </Grid2>
+      <Tabs 
+        value={value} 
+        onChange={(e, newValue: string) => setValue(newValue)}
+        centered
+        sx={{ mb: 4 }}
+      >
+        <Tab label="Weekly Contests" value="0" />
+        <Tab label="Monthly Hackathons" value="1" />
+      </Tabs>
+
+      {/* Weekly Contests Panel */}
+      <TabPanel value={value} index="0">
+        <Grid2 container spacing={3}>
+          {[1, 2, 3, 4].map((week) => (
+            <Grid2 size={{ xs:12 }} key={week}>
+              <Paper 
+                sx={{ 
+                  p: 3,
+                  cursor: 'pointer',
+                  transition: '0.3s',
+                  '&:hover': {
+                    bgcolor: 'action.hover',
+                    transform: 'translateX(10px)'
+                  }
+                }}
+              >
+                <Typography variant="h6">Week {week}</Typography>
+                <Typography>Contest details</Typography>
+              </Paper>
+            </Grid2>
+          ))}
         </Grid2>
-      </Container>
+      </TabPanel>
+
+      {/* Monthly Hackathons Panel */}
+      <TabPanel value={value} index="1">
+        <Grid2 container spacing={4}>
+          {['January', 'February'].map((month) => (
+            <Grid2 size={{ xs:12 }} key={month}>
+              <Paper 
+                sx={{ 
+                  p: 4,
+                  background: 'linear-gradient(to right, #00b4db, #0083b0)',
+                  color: 'white'
+                }}
+              >
+                <Typography variant="h5">{month} Hackathon</Typography>
+                <Typography>Hackathon details</Typography>
+              </Paper>
+            </Grid2>
+          ))}
+        </Grid2>
+      </TabPanel>
     </Box>
   );
 };
 
-export default MonthlySection;
+export default EventsTabs;
