@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
-import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
+import { Grid2, Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
 const CodeXHero: React.FC = () => {
