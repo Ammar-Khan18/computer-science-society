@@ -1,7 +1,8 @@
+import 'keen-slider/keen-slider.min.css';
 import { Box } from '@mui/material';
 import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 
 interface Slide {
   image: string;
@@ -33,7 +34,7 @@ const HeroCarousel: React.FC = () => {
     <Box ref={sliderRef} className="keen-slider" sx={{ width: '100%', height: '300px' }}>
       {slides.map((slide, i) => (
         <Box key={i} className="keen-slider__slide" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-          <img src={slide.image} alt={`Slide ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <Image src={slide.image} alt={`Slide ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </Box>
       ))}
     </Box>

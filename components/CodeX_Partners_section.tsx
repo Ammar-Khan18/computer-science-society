@@ -1,4 +1,5 @@
 import { Grid2, Box, Paper, Typography, Container } from '@mui/material';
+import Image from 'next/image';
 
 const Partners = () => {
   return (
@@ -82,7 +83,7 @@ const Partners = () => {
               },
             }}
           >
-            <img
+            <Image
               src="/Notion_partner.jpg" // Add your sponsor image here
               alt="Sponsor 1"
               style={{
@@ -115,7 +116,7 @@ const Partners = () => {
               },
             }}
           >
-            <img
+            <Image
               src="/GDG_partner.jpg" // Add your sponsor image here
               alt="Sponsor 2"
               style={{
