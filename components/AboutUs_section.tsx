@@ -77,7 +77,7 @@ const AboutUs = () => {
             What We Do
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1.25rem' }}>
-            We organize events such as CodeX and ProBattle, host workshops, and offer learning resources to enhance members' technical skills. Whether it's weekly coding contests, monthly hackathons, or research programs, we provide a platform for students to grow and collaborate.
+            We organize events such as CodeX and ProBattle, host workshops, and offer learning resources to enhance members&apos; technical skills. Whether it&apos;s weekly coding contests, monthly hackathons, or research programs, we provide a platform for students to grow and collaborate.
           </Typography>
 
           {/* Our Goals */}
