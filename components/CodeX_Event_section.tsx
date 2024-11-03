@@ -5,12 +5,35 @@ import Grid2 from '@mui/material/Grid2'; // Correct Grid2 import
 
 const CodeXSection: React.FC = () => {
   return (
+
+    <Box
+      sx={{
+        position: 'relative',
+        minHeight: '100vh',
+        overflow: 'hidden',
+        zIndex: 0, // To ensure the background is behind all other content
+      }}>
+      {/* Full-width Background Image */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundImage: 'url(/codex_event_section_bg.png)', // Replace with your image path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          zIndex: -1, // To keep the image behind other elements
+        }}
+      />
     <Container maxWidth="lg">
     <Box
       id="codex-section"
       sx={{
         position: 'relative',
-        backgroundImage: 'url(/codex_event_section_bg.png)',
+        // backgroundImage: 'url(/codex_event_section_bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh', // Make the CodeX section full viewport height
@@ -21,21 +44,8 @@ const CodeXSection: React.FC = () => {
         justifyContent: 'center', // Center content horizontally
         textAlign: 'center', // Center text
       }}>
-      {/* Yellow Overlay */}
-      {/* <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(217, 234, 18, 0.4)', // Semi-transparent yellow
-          zIndex: 0, // Ensure it is above the background
-        }}
-      /> */}
-      
       <Container maxWidth="lg" sx={{zIndex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-        <Paper elevation={3} sx={{ padding: '2rem', maxWidth: '800px', textAlign: 'center', opacity: 0.9, backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: 3, color: 'white' }}>
+        <Paper elevation={3} sx={{ padding: '2rem', maxWidth: '800px', textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.8)', zIndex: 3, color: 'white' }}>
         <Grid2 container spacing={4} alignItems="center" justifyContent="center">
           {/* Logo on top */}
           <Grid2 size={{ xs: 12 }} sx={{ textAlign: 'center' }}>
@@ -86,6 +96,7 @@ const CodeXSection: React.FC = () => {
       </Container>
     </Box>
     </Container>
+    </Box>
   );
 };
 
