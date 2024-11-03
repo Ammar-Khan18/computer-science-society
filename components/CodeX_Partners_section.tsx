@@ -86,6 +86,8 @@ const Partners = () => {
             <Image
               src="/Notion_partner.jpg" // Add your sponsor image here
               alt="Sponsor 1"
+              width={400} // Adjust width as needed
+              height={400} // Adjust height as needed
               style={{
                 maxWidth: '80%',
                 maxHeight: '80%',
@@ -119,6 +121,8 @@ const Partners = () => {
             <Image
               src="/GDG_partner.jpg" // Add your sponsor image here
               alt="Sponsor 2"
+              width={400} // Adjust width as needed
+              height={400} // Adjust height as needed
               style={{
                 maxWidth: '80%',
                 maxHeight: '80%',
