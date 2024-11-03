@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero_section />
       <CodeX_Event_section />
-      <Social_section />
+      {/* <Social_section /> */}
       <AboutUs_section />
     </>
   );
