@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
           top: 0,
           left: 0,
           width: '100vw',
-          height: { xs: '100%', md: '100vh' },
+          height: { xs: '100%', md: '100%' },
           backgroundImage: 'url(/gradient_bg_hero.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -42,24 +42,28 @@ const HeroSection: React.FC = () => {
         >
           <Grid2 container spacing={4}>
             {/* Top Left Section: Title and Description */}
-            <Grid2 size={{ xs: 12, sm: 8 }}>
+            <Grid2 size={{ xs: 12, sm: 8 }} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               <Paper
                 elevation={3}
                 sx={{
                   padding: { xs: '1rem', sm: '2rem' },
                   backgroundColor: 'rgba(0, 0, 0, 0.8)',
                   color: '#ffffff',
-                  textAlign: 'left',
+                  textAlign: 'left', // Keeps text left-aligned horizontally
+                  display: 'flex', // Enables flexbox for vertical centering
+                  flexDirection: 'column',
+                  justifyContent: 'center', // Centers content vertically
                   height: '100%',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  width: '100%',
                 }}
               >
+                
                 <Typography variant="h4" component="h1" gutterBottom sx={{ fontSize: '2.5rem' }}>
                   Computer Science Society
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, fontSize: '1rem' }}>
-                  Welcome to the Computer Science Society, a hub for tech enthusiasts to connect, collaborate, and grow together. Join us for exciting events like CodeX and Pro Battle!
+                  Welcome to the Computer Science Society, a hub for tech enthusiasts to connect, collaborate, and grow together. 
+                  Join us for exciting events like CodeX and Pro Battle!
                 </Typography>
                 {/* Follow Us Section */}
                 <Box sx={{ mt: 4 }}>
@@ -96,7 +100,7 @@ const HeroSection: React.FC = () => {
                 sx={{
                   padding: { xs: '1rem', sm: '2rem' },
                   // backgroundColor: '#e3e3e3',
-                  backgroundImage: 'url(/codex_event_section_bg.png)',
+                  backgroundImage: 'url(/codex_event_section_bg_2.png)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   textAlign: 'center',
