@@ -9,7 +9,7 @@ const CodeXSection: React.FC = () => {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '100%',
         overflow: 'hidden',
         zIndex: 0, // To ensure the background is behind all other content
       }}>
@@ -21,7 +21,7 @@ const CodeXSection: React.FC = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          backgroundImage: 'url(/codex_event_section_bg.png)', // Replace with your image path
+          backgroundImage: 'url(/codex_event_section_bg_2.png)', // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

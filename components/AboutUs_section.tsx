@@ -15,7 +15,7 @@ const AboutUs = () => {
         alignItems: 'center', // Center content vertically if needed
         justifyContent: 'center', // Center content horizontally if needed
         textAlign: 'center', // Center text
-        minHeight: '100vh', // Full viewport height
+        minHeight: '100%',
 
         // Black overlay to darken the image
         '&::before': {
