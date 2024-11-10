@@ -1,141 +1,86 @@
-import { Grid2, Box, Paper, Typography, Container } from '@mui/material';
-import Image from 'next/image';
+'use client';
+import React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid2';
 
-const Partners = () => {
+export default function Example() {
   return (
-    <Container maxWidth="lg">
-    <Box
-      sx={{
-        padding: '4rem 2rem',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundImage: 'url(/About_us_bg-30-Oct-2024-12-06-AM-6631.jpg)', // Add your background image here
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(128, 0, 128, 0.5)', // Semi-transparent purple overlay
-          zIndex: 1,
-        },
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: 'url(/paper_texture_1.jpg)', // Texture overlay
+    <Box sx={{py: { xs: 6, sm: 8 } }}>
+
+      <Box
+        sx={{
+          padding: '4rem 2rem',
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          backgroundImage: 'url(/About_us_bg-30-Oct-2024-12-06-AM-6631.jpg)', // Add your background image here
           backgroundSize: 'cover',
-          opacity: 0.2,
-          zIndex: 2,
-        },
-      }}
-    >
-      {/* Title */}
-      <Typography 
-        variant="h2" 
-        sx={{ 
-          textAlign: 'center', 
-          mb: 6, 
-          color: 'white',
-          position: 'relative',
-          zIndex: 3,
+          backgroundPosition: 'center',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(128, 0, 128, 0.2)', // Semi-transparent purple overlay
+            zIndex: 1,
+          },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/paper_texture_1.jpg)', // Texture overlay
+            backgroundSize: 'cover',
+            opacity: 0.2,
+            zIndex: 2,
+          },
         }}
       >
-        Our Partners
-      </Typography>
 
-      {/* Sponsors Grid */}
-      <Grid2 
-        container 
-        spacing={4} 
-        justifyContent="center" 
-        alignItems="center"
-        sx={{ 
-          position: 'relative',
-          zIndex: 3,
-        }}
-      >
-        {/* First Sponsor */}
-        <Grid2 size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Paper
-            elevation={3}
-            sx={{
-              width: '400px',
-              height: '400px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'transparent',
-              border: '2px solid gold',
-              backdropFilter: 'blur(5px)',
-              position: 'relative',
-              overflow: 'hidden',
-              '&:hover img': {
-                transform: 'scale(1.1)',
-              },
-            }}
-          >
-            <Image
-              src="/Notion_partner.jpg" // Add your sponsor image here
-              alt="Sponsor 1"
-              width={400} // Adjust width as needed
-              height={400} // Adjust height as needed
-              style={{
-                maxWidth: '80%',
-                maxHeight: '80%',
-                objectFit: 'contain',
-                transition: 'transform 0.3s ease',
+      <Box sx={{ maxWidth: '1200px', mx: 'auto', px: 3 }}>
+        <Typography
+          variant="h3"
+          align="center"
+          sx={{ fontWeight: 'bold', color: '#fff', marginBottom: 6 }}
+        >
+          Our Partners
+        </Typography>
+        
+        <Grid container spacing={18} justifyContent="center" sx={{marginBottom: 10}}>
+          {[{ src: '/Notion_partner-removebg-preview.png', alt: 'Sponsor 1' }, { src: '/GDG_partner-removebg-preview.png', alt: 'Sponsor 2' }].map((logo, index) => (
+            <Grid
+              size={{ xs: 12, md: 6 }}
+              key={index}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
               }}
-            />
-          </Paper>
-        </Grid2>
-
-        {/* Second Sponsor */}
-        <Grid2 size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Paper
-            elevation={3}
-            sx={{
-              width: '400px',
-              height: '400px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'transparent',
-              border: '2px solid gold',
-              backdropFilter: 'blur(5px)',
-              position: 'relative',
-              overflow: 'hidden',
-              '&:hover img': {
-                transform: 'scale(1.1)',
-              },
-            }}
-          >
-            <Image
-              src="/GDG_partner.jpg" // Add your sponsor image here
-              alt="Sponsor 2"
-              width={400} // Adjust width as needed
-              height={400} // Adjust height as needed
-              style={{
-                maxWidth: '80%',
-                maxHeight: '80%',
-                objectFit: 'contain',
-                transition: 'transform 0.3s ease',
-              }}
-            />
-          </Paper>
-        </Grid2>
-      </Grid2>
+            >
+              <Box sx={{ width: '300px', height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff',
+                 border: '2px solid gold', backdropFilter: 'blur(2px)', position: 'relative', overflow: 'hidden' }}>
+              <img
+                alt={logo.alt}
+                src={logo.src}
+                width={300}
+                height={300}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                }}
+              />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
-    </Container>
+  </Box>
   );
-};
-
-export default Partners;
+}
