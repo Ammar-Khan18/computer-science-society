@@ -6,6 +6,7 @@ import Image from 'next/image';
 const CodeXHero: React.FC = () => {
   return (
     <Container maxWidth="lg">
+
     <Box
       sx={{
         height: '200px',
@@ -13,7 +14,6 @@ const CodeXHero: React.FC = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0', // Example background color
         position: 'relative',
       }}
     >
@@ -32,7 +32,7 @@ const CodeXHero: React.FC = () => {
 
           {/* Subtitle or Additional Text */}
           <Grid2 size={{ xs: 12, sm: 12 }} sx={{ mt: 2 }}>
-            <Typography variant="h6" color="textSecondary">
+            <Typography variant="h5" color="#000000">
               Join us in exploring the world of coding with weekly contests and challenges!
             </Typography>
           </Grid2>
