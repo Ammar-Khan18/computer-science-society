@@ -1,6 +1,6 @@
 import { Box, Container, Paper, Typography } from '@mui/material';
 
-const AboutUs = () => {
+const AboutUs: React.FC = () => {
   return (
     <Box
       id="about-us-section"
@@ -60,9 +60,18 @@ const AboutUs = () => {
           }}
         >
           {/* Section Title */}
-          <Typography variant="h6" textTransform="uppercase" sx={{ mb: 3 }}>
+            <Typography
+            variant="h6"
+            textTransform="uppercase"
+            sx={{
+              mb: 3,
+              ml: { xs: 0, lg: 44 }, // Margin left 0 for small screens, 44 for large screens
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+            >
             About Us
-          </Typography>
+            </Typography>
 
           {/* Who We Are */}
           <Typography variant="h3" sx={{ mb: 1 }}>
@@ -72,6 +81,9 @@ const AboutUs = () => {
             We are the Computer Science Society, a group of passionate students dedicated to fostering a collaborative environment for those interested in technology, coding, and innovation. Our members come from diverse backgrounds, but we are united by our shared love for computer science.
           </Typography>
 
+          {/* adding a plain line, a divider */}
+          <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} />
+
           {/* What We Do */}
           <Typography variant="h3" sx={{ mb: 1 }}>
             What We Do
@@ -79,6 +91,9 @@ const AboutUs = () => {
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1.25rem' }}>
             We organize events such as CodeX and ProBattle, host workshops, and offer learning resources to enhance members&apos; technical skills. Whether it&apos;s weekly coding contests, monthly hackathons, or research programs, we provide a platform for students to grow and collaborate.
           </Typography>
+
+          {/* adding a plain line, a divider */}
+          <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} />
 
           {/* Our Goals */}
           <Typography variant="h3" sx={{ mb: 1 }}>
