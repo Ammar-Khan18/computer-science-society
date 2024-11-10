@@ -16,6 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,63 +25,117 @@ const Navbar: React.FC = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const drawerVariants = {
+    hidden: { x: '100%', opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
       </Typography>
       <List>
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/codex">
-            <ListItemText primary="CodeX" />
+        <ListItem disablePadding sx={{ justifyContent: 'center', flexDirection: 'column' }}>
+          <ListItemButton component={Link} href="/" sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Home" sx={{ color: '#fff' }} />
+          </ListItemButton>
+
+          <ListItemButton component={Link} href="/codex" sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Codex" sx={{ color: '#fff' }} />
+          </ListItemButton>
+
+          <ListItemButton component={Link} href="/forms" sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Forms" sx={{ color: '#fff' }} />
           </ListItemButton>
         </ListItem>
-        {/* <ListItem disablePadding>
-          <ListItemButton component="a" href="#">
-            <ListItemText primary="Probattle" />
-          </ListItemButton>
-        </ListItem> */}
       </List>
     </Box>
   );
 
   return (
     <>
-      <AppBar position="relative" sx={{backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none'}}>
+      <AppBar id="NavBar" position="relative" sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none' }}>
         <Toolbar>
-          {/* Left side: CSS LOGO for both desktop and mobile */}
-          <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1 }}>
             <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
-          </Link>
-          {/* Right side for larger screens */}
-          <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
-            <Button LinkComponent={Link} href="/codex" color="inherit" sx={{ mr: 2 }}>CodeX</Button>
-            {/*<Button color="inherit">Probattle</Button>*/}
           </Box>
+          
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Button 
+              LinkComponent={Link} 
+              href="/" 
+              sx={{ 
+              mr: 2, 
+              color: '#000', 
+              '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.1)',
+              },
+              }}
+            >
+              Home
+            </Button>
 
-          {/* Mobile menu button on the right side */}
+            <Button 
+              LinkComponent={Link} 
+              href="/codex" 
+              sx={{ 
+              mr: 2, 
+              color: '#000', 
+              '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.1)',
+              },
+              }}
+            >
+              Codex
+            </Button>
+
+            <Button 
+              LinkComponent={Link} 
+              href="/forms" 
+              sx={{ 
+              mr: 2, 
+              color: '#000', 
+              '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.1)',
+              },
+              }}
+            >
+              Forms 
+            </Button>
+
+            {/* add more */}
+          </Box>
           <IconButton
-            color="inherit"
-            edge="end" // Moves the menu button to the right in mobile view
+            edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }}
+            sx={{ display: { sm: 'none', color: '#000' } }}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Mobile drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ '& .MuiDrawer-paper': {
-          backgroundColor: '#333', // Drawer background color
-          color: '#fff',           // Drawer text color
-        }, display: { xs: 'block', sm: 'none' } }}
+        sx={{
+          '& .MuiDrawer-paper': {
+            backgroundColor: '#333',
+            color: '#fff',
+          },
+          display: { xs: 'block', sm: 'none' },
+        }}
       >
-        {drawer}
+        <motion.div
+          initial="hidden"
+          animate={mobileOpen ? "visible" : "hidden"}
+          variants={drawerVariants}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        >
+          {drawer}
+        </motion.div>
       </Drawer>
     </>
   );
