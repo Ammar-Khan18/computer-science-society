@@ -23,7 +23,7 @@ const forms: Form[] = [
   { Title: 'Form 4', Description: 'This is the fourth form with a long description, much more will be added when this will be done', Link: 'https://www.google.com' },
 ];
 
-const Example: React.FC = () => {
+const FormPage: React.FC = () => {
   return (
     <Box sx={{ position: 'relative', minHeight: '100vh', p: 4 }}>
       {/* Background Image */}
@@ -119,4 +119,4 @@ const Example: React.FC = () => {
   );
 };
 
-export default Example;
+export default FormPage;
