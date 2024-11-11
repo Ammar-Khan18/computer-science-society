@@ -7,6 +7,7 @@ interface Post {
   id: number;
   title: string;
   description: string;
+  link ?: string;
   date: string;
   category: string;
   author: {
@@ -22,6 +23,7 @@ const posts: Post[] = [
     title: 'Topic1', // Title of the blog
     description: // Description of the blog
       'details of the topic will be added here as long as the description is not too long.',
+    link : 'https://www.google.com',
     date: 'Mar 16, 2020', // Date of the blog
     category: 'Marketing', // Category of the blog
     author: { // Author of the blog, name and role
@@ -36,6 +38,7 @@ const posts: Post[] = [
     title: 'Topic2',
     description:
       'details of the topic will be added here as long as the description is not too long.',
+    link : 'https://www.google.com',
     date: 'Mar 16, 2020',
     category: 'Case Study',
     author: {
@@ -50,6 +53,7 @@ const posts: Post[] = [
     title: 'Topic3',
     description:
       'details of the topic will be added here as long as the description is not too long.',
+    link : 'https://www.google.com',
     date: 'Mar 16, 2020',
     category: 'Marketing',
     author: {
@@ -63,6 +67,7 @@ const posts: Post[] = [
     title: 'Topic4',
     description:
       'details of the topic will be added here as long as the description is not too long.',
+    link : 'https://www.google.com',
     date: 'Mar 16, 2020',
     category: 'Marketing',
     author: {
@@ -130,6 +135,10 @@ const Blog: FC = () => {
                   <Typography variant="body2" color="text.secondary" paragraph>
                     {post.description}
                   </Typography>
+
+                  <Link href={post.link} color="primary" underline="hover">
+                    Read more
+                  </Link>
                 
                 </CardContent>
 
