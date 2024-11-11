@@ -13,14 +13,15 @@ interface Form {
   Title: string;
   Description: string;
   Link: string;
+  Status: 'Active' | 'Inactive';
 }
 
 // Dummy Data, replace with actual data
 const forms: Form[] = [
-  { Title: 'Form 1', Description: 'This is the first form', Link: 'https://www.google.com' },
-  { Title: 'Form 2', Description: 'This is the second form', Link: 'https://www.google.com' },
-  { Title: 'Form 3', Description: 'This is the third form', Link: 'https://www.google.com' },
-  { Title: 'Form 4', Description: 'This is the fourth form with a long description, much more will be added when this will be done', Link: 'https://www.google.com' },
+  { Title: 'Form 1', Description: 'This is the first form', Link: 'https://www.google.com', Status: 'Active' },
+  { Title: 'Form 2', Description: 'This is the second form', Link: 'https://www.google.com', Status: 'Active' },
+  { Title: 'Form 3', Description: 'This is the third form', Link: 'https://www.google.com', Status: 'Inactive' },
+  { Title: 'Form 4', Description: 'This is the fourth form with a long description, much more will be added when this will be done', Link: 'https://www.google.com', Status: 'Inactive' },
 ];
 
 const FormPage: React.FC = () => {
@@ -83,7 +84,7 @@ const FormPage: React.FC = () => {
                 <ListItemText
                   primary={
                     <Typography variant="body1" fontWeight="bold" component="span">
-                      {form.Title}
+                      {form.Title} <Chip label={form.Status} size='small' variant='filled' color={form.Status === 'Active' ? 'success' : 'error'} />
                     </Typography>
                   }
                   secondary={
