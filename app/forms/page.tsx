@@ -82,12 +82,12 @@ const Example: React.FC = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <ListItemText
                   primary={
-                    <Typography variant="body1" fontWeight="bold">
+                    <Typography variant="body1" fontWeight="bold" component="span">
                       {form.Title}
                     </Typography>
                   }
                   secondary={
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" component="span">
                       {form.Description}
                     </Typography>
                   }
