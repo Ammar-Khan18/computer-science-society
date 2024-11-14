@@ -2,13 +2,20 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, Button } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import Image from 'next/image';
+
+// Images
+import community from '../public/community.png';
+import challenges from '../public/challenges.png';
+import weekly_competition from '../public/weekly_competition.png';
+import reward from '../public/reward.png';
 
 const CodeXSection: React.FC = () => {
   return (
-    <Box sx={{ bgcolor: 'grey.50', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+    <Box sx={{ bgcolor: '#EBF5EE', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}>
       
       {/* Full-width Background Image */}
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute',
           top: 0,
@@ -22,10 +29,10 @@ const CodeXSection: React.FC = () => {
           zIndex: -1,
           opacity: 0.72,
         }}
-      />
+      /> */}
 
       {/* Background blur effect - top */}
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute',
           top: '-10%',
@@ -38,26 +45,35 @@ const CodeXSection: React.FC = () => {
           zIndex: -1,
           filter: 'blur(60px)', 
         }}
-      />
+      /> */}
 
       <Container maxWidth="lg" id="codex-section">
-        <Typography variant="h3" color="#6102D3" align="center" gutterBottom sx={{ fontWeight: 700, marginTop: 10 }}>
+        <Typography variant="h3" color="#D81B60" align="center" gutterBottom sx={{ fontWeight: 700, marginTop: 10, borderBottom: '2px solid #D81B60', display: 'inline-block' }}>
           CodeX Event 
         </Typography>
         <Typography
-          variant="h6"
-          align="center"
+          variant="h5"
+          align="left"
           color="text.primary"
-          sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 600 }}
+          sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 500 }}
           gutterBottom
         >
-          The ultimate coding challenge for developers of all skill levels. Join us for an exciting event full of innovation, problem-solving, and competition! 
+          The ultimate coding challenge for developers of all skill levels. 
+        </Typography>
+        <Typography
+          variant="h5"
+          align="left"
+          color="text.secondary"
+          sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 400 }}
+          gutterBottom
+        >
+          Join us for an exciting event full of innovation, problem-solving, and competition! 
         </Typography>
 
         <Grid container spacing={4} sx={{ mt: { xs: 5, sm: 8 } }}>
           
           {/* Left Column */}
-          <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '530px' } }}>
+          <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '600px' } }}>
             <Paper 
               elevation={2} 
               sx={{ 
@@ -71,7 +87,7 @@ const CodeXSection: React.FC = () => {
                 overflow: 'hidden'
               }}
             >
-              <Typography variant="h6" color="text.primary" gutterBottom>
+              <Typography variant="h5" color="text.primary" gutterBottom>
                 Challenges
               </Typography>
               <Typography color="text.secondary">
@@ -79,72 +95,75 @@ const CodeXSection: React.FC = () => {
               </Typography>
               <Box
                 sx={{
-                  mt: 2,
-                  width: '100%',
-                  height: { xs: 150, sm: 300},
-                  position: 'absolute',
-                  bottom: 0,
+                  position: 'relative',
+                  top: { xs: 40, sm: 90 },
                   left: 0,
-                  borderRadius: '0 0 5px 5px',
-                  overflow: 'hidden',
+                  width: '100%',
+                  height: { xs: 200, sm: 300, lg: 450 },  // Use responsive height values
+                  backgroundImage: `url(${challenges.src})`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
                 }}
-              >
-                <img 
-                  src="https://tailwindui.com/plus/img/component-images/bento-03-mobile-friendly.png"
-                  alt="Challenges"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Box>
+              />
             </Paper>
           </Grid>
 
           {/* Middle Column with Two Stacked Components */}
           <Grid size={{ xs: 12, lg: 4 }}>
-            <Grid container direction="column" spacing={4}>
+            <Grid container direction="column" spacing={3}>
               <Grid>
                 <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
-                  <Typography variant="h6" color="text.primary" gutterBottom>
+                  <Typography variant="h5" color="text.primary" gutterBottom>
                     Weekly Competitions
                   </Typography>
                   <Typography color="text.secondary">
                     Weekly competitions to test your skills in computer science and programming.
                   </Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                    <img
-                      src="https://tailwindui.com/plus/img/component-images/bento-03-performance.png"
-                      alt=""
-                      style={{ width: '100%', maxWidth: '300px' }}
-                    />
-                  </Box>
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: 136,
+                      backgroundImage: `url(${weekly_competition.src})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  />
                 </Paper>
               </Grid>
 
               <Grid>
                 <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
-                  <Typography variant="h6" color="text.primary" gutterBottom>
+                  <Typography variant="h5" color="text.primary" gutterBottom>
                     Rewards
                   </Typography>
                   <Typography color="text.secondary">
                     Rewards for the winners of the competitions
                   </Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-                    <img
-                      src="https://tailwindui.com/plus/img/component-images/bento-03-security.png"
-                      alt=""
-                      style={{ width: '100%', maxWidth: '300px', objectFit: 'cover' }}
-                    />
-                  </Box>
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: 136,
+                      backgroundImage: `url(${reward.src})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                    }}
+                  />
                 </Paper>
               </Grid>
             </Grid>
           </Grid>
 
           {/* Right Column */}
-          <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '530px' } }}>
+          <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '600px' } }}>
             <Paper 
               elevation={2} 
               sx={{ 
@@ -158,7 +177,7 @@ const CodeXSection: React.FC = () => {
                 overflow: 'hidden'
               }}
             >
-              <Typography variant="h6" color="text.primary" gutterBottom>
+              <Typography variant="h5" color="text.primary" gutterBottom>
                 Community
               </Typography>
               <Typography color="text.secondary">
@@ -166,27 +185,18 @@ const CodeXSection: React.FC = () => {
               </Typography>
               <Box
                 sx={{
-                  mt: 2,
-                  width: '100%',
-                  height: 300,
-                  position: 'absolute',
-                  bottom: 0,
+                  position: 'relative',
+                  top: { xs: 40, sm: 100 },
                   left: 0,
-                  borderRadius: '0 0 5px 5px',
-                  overflow: 'hidden',
+                  width: '100%',
+                  height: { xs: 200, sm: 500 },  // Use responsive height values
+                  backgroundImage: `url(${community.src})`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  transform: {xs: 'scale(1.2, 1.3)', sm: 'scale(1.2, 1.7)'},
                 }}
-              >
-                <img 
-                  src="https://tailwindui.com/plus/img/component-images/bento-03-security.png"
-                  alt="Challenges"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    
-                  }}
-                />
-              </Box>
+              />
             </Paper>
           </Grid>
 
