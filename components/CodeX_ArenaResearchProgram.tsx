@@ -4,8 +4,9 @@ import React from 'react';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import LockIcon from '@mui/icons-material/Lock';
 import StorageIcon from '@mui/icons-material/Storage';
-import { Box, Typography, Container, IconButton, Paper } from '@mui/material';
+import { Box, Typography, Container, IconButton } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import coding from '../public/coding.jpg';
 
 interface Feature {
   name: string;
@@ -68,16 +69,14 @@ export default function ArenaResearchProgram() {
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
-            <Paper
+            <Box
               component="img"
               alt="Product screenshot"
-              src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png" // replace with image url
+              src={coding.src}
+              // src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png" // replace with image url
               sx={{
                 width: '100%',
                 maxWidth: { xs: '100%', md: '48rem' },
-                borderRadius: 2,
-                boxShadow: 3,
-                ring: 1,
               }}
             />
           </Grid>
