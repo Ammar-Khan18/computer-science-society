@@ -5,8 +5,8 @@ import {
   Box,
   Toolbar,
   Typography,
-  Button,
   IconButton,
+  Divider,
   Drawer,
   Paper,
   List,
@@ -15,6 +15,8 @@ import {
   ListItemButton,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -32,28 +34,53 @@ const Navbar: React.FC = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
-      </Typography>
+    <Box sx={{ textAlign: "center", height: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          p: 2,
+        }}
+      >
+        <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
+        <IconButton onClick={handleDrawerToggle} sx={{ color: "#fff" }}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+      
       <List>
-        <ListItem disablePadding sx={{ justifyContent: 'center', flexDirection: 'column' }}>
-          <ListItemButton component={Link} href="/" sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Home" sx={{ color: '#fff' }} />
-          </ListItemButton>
-
-          <ListItemButton component={Link} href="/codex" sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Codex" sx={{ color: '#fff' }} />
-          </ListItemButton>
-
-          <ListItemButton component={Link} href="/pro-battle" sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Pro Battle" sx={{ color: '#fff' }} />
-          </ListItemButton>
-
-          <ListItemButton component={Link} href="/forms" sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Forms" sx={{ color: '#fff' }} />
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href="/" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
+            <ListItemText primary="Home" primaryTypographyProps={{ sx: { color: "#fff" } }} />
           </ListItemButton>
         </ListItem>
+
+        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href="/codex" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
+            <ListItemText primary="Codex" primaryTypographyProps={{ sx: { color: "#fff"} }} />
+          </ListItemButton>
+        </ListItem>
+
+        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href="/pro-battle" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
+            <ListItemText primary="Pro Battle" primaryTypographyProps={{ sx: { color: "#fff" } }} />
+          </ListItemButton>
+        </ListItem>
+
+        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href="/forms" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
+            <ListItemText primary="Forms" primaryTypographyProps={{ sx: { color: "#fff" } }} />
+          </ListItemButton>
+        </ListItem>
+
+        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
       </List>
     </Box>
   );
@@ -74,69 +101,33 @@ const Navbar: React.FC = () => {
               justifyContent: 'center',
               backgroundColor: 'transparent',
               borderRadius: '25px',
-              padding: '2px',
+              padding: '10px',
               paddingX: '16px',
               }}
             >
-              <Button 
-              LinkComponent={Link} 
-              href="/" 
-              sx={{ 
-                mr: 2, 
-                color: '#000',  
-                '&:hover': {
-                color: '#D81B60',
-                backgroundColor: 'transparent',
-                },
-              }}
-              >
-              Home
-              </Button>
+              <Link href="/" passHref>
+                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
+                  Home
+                </Typography>
+              </Link>
 
-              <Button 
-                LinkComponent={Link} 
-                href="/codex" 
-                sx={{ 
-                  mr: 2, 
-                  color: '#000', 
-                  '&:hover': {
-                    color: '#D81B60',
-                    backgroundColor: 'transparent',
-                  },
-                }}
-              >
-                Codex
-              </Button>
+              <Link href="/codex" passHref>
+                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
+                  Codex
+                </Typography>
+              </Link>
 
-              <Button 
-                LinkComponent={Link} 
-                href="/pro-battle" 
-                sx={{ 
-                  mr: 2, 
-                  color: '#000', 
-                  '&:hover': {
-                    color: '#D81B60',
-                    backgroundColor: 'transparent',
-                  },
-                }}
-              >
-                Pro Battle
-              </Button>
+              <Link href="/pro-battle" passHref>
+                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
+                  Pro Battle
+                </Typography>
+              </Link>
 
-              <Button 
-                LinkComponent={Link} 
-                href="/forms" 
-                sx={{ 
-                  mr: 2, 
-                  color: '#000', 
-                  '&:hover': {
-                    color: '#D81B60',
-                    backgroundColor: 'transparent',
-                  },
-                }}
-              >
-                Forms 
-              </Button>
+              <Link href="/forms" passHref>
+                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
+                  Forms
+                </Typography>
+              </Link>
             </Paper>
 
             {/* add more */}
@@ -161,6 +152,9 @@ const Navbar: React.FC = () => {
           '& .MuiDrawer-paper': {
             backgroundColor: '#333',
             color: '#fff',
+            width: '60%',
+            height: '50%',
+            borderRadius: '0 0 0 15px',
           },
           display: { xs: 'block', sm: 'none' },
         }}
