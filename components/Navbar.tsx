@@ -8,6 +8,7 @@ import {
   Button,
   IconButton,
   Drawer,
+  Paper,
   List,
   ListItem,
   ListItemText,
@@ -45,6 +46,10 @@ const Navbar: React.FC = () => {
             <ListItemText primary="Codex" sx={{ color: '#fff' }} />
           </ListItemButton>
 
+          <ListItemButton component={Link} href="/pro-battle" sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Pro Battle" sx={{ color: '#fff' }} />
+          </ListItemButton>
+
           <ListItemButton component={Link} href="/forms" sx={{ textAlign: 'center' }}>
             <ListItemText primary="Forms" sx={{ color: '#fff' }} />
           </ListItemButton>
@@ -57,62 +62,94 @@ const Navbar: React.FC = () => {
     <>
       <AppBar id="NavBar" position="relative" sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none' }}>
         <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box>
             <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
           </Box>
-          
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button 
+
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
+            <Paper 
+              elevation={3} 
+              sx={{ 
+              display: 'inline-flex', 
+              justifyContent: 'center',
+              backgroundColor: 'transparent',
+              borderRadius: '25px',
+              padding: '2px',
+              paddingX: '16px',
+              }}
+            >
+              <Button 
               LinkComponent={Link} 
               href="/" 
               sx={{ 
-              mr: 2, 
-              color: '#000', 
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
-              },
+                mr: 2, 
+                color: '#000',  
+                '&:hover': {
+                color: '#D81B60',
+                backgroundColor: 'transparent',
+                },
               }}
-            >
+              >
               Home
-            </Button>
+              </Button>
 
-            <Button 
-              LinkComponent={Link} 
-              href="/codex" 
-              sx={{ 
-              mr: 2, 
-              color: '#000', 
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
-              },
-              }}
-            >
-              Codex
-            </Button>
+              <Button 
+                LinkComponent={Link} 
+                href="/codex" 
+                sx={{ 
+                  mr: 2, 
+                  color: '#000', 
+                  '&:hover': {
+                    color: '#D81B60',
+                    backgroundColor: 'transparent',
+                  },
+                }}
+              >
+                Codex
+              </Button>
 
-            <Button 
-              LinkComponent={Link} 
-              href="/forms" 
-              sx={{ 
-              mr: 2, 
-              color: '#000', 
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
-              },
-              }}
-            >
-              Forms 
-            </Button>
+              <Button 
+                LinkComponent={Link} 
+                href="/pro-battle" 
+                sx={{ 
+                  mr: 2, 
+                  color: '#000', 
+                  '&:hover': {
+                    color: '#D81B60',
+                    backgroundColor: 'transparent',
+                  },
+                }}
+              >
+                Pro Battle
+              </Button>
+
+              <Button 
+                LinkComponent={Link} 
+                href="/forms" 
+                sx={{ 
+                  mr: 2, 
+                  color: '#000', 
+                  '&:hover': {
+                    color: '#D81B60',
+                    backgroundColor: 'transparent',
+                  },
+                }}
+              >
+                Forms 
+              </Button>
+            </Paper>
 
             {/* add more */}
           </Box>
+
           <IconButton
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none', color: '#000' } }}
+            sx={{ display: { sm: 'none', color: '#000' }, ml: 'auto' }}
           >
             <MenuIcon />
           </IconButton>
+
         </Toolbar>
       </AppBar>
 
