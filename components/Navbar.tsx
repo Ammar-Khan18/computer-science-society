@@ -67,16 +67,14 @@ const Navbar: React.FC = () => {
   function CustomBreadcrumbs() {
     return (
       <Box sx={{ display: "flex", alignItems: "center", ml: 2 }}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 1 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 1 }} separator="›">
           {navLinks.map((link) => (
             <Link href={link.href} key={link.label} passHref>
-              <Link href={link.href} passHref>
                 <StyledChip
                   label={link.label}
                   icon={link.icon}
                   clickable
                 />
-              </Link>
             </Link>
           ))}
         </Breadcrumbs>
@@ -99,42 +97,33 @@ const Navbar: React.FC = () => {
           <CloseIcon />
         </IconButton>
       </Box>
-      
+  
       <List>
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
-            <ListItemText primary="Home" primaryTypographyProps={{ sx: { color: "#fff" } }} />
-          </ListItemButton>
-        </ListItem>
-
-        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/codex" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
-            <ListItemText primary="Codex" primaryTypographyProps={{ sx: { color: "#fff"} }} />
-          </ListItemButton>
-        </ListItem>
-
-        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/pro-battle" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
-            <ListItemText primary="Pro Battle" primaryTypographyProps={{ sx: { color: "#fff" } }} />
-          </ListItemButton>
-        </ListItem>
-
-        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/forms" sx={{ justifyContent: "flex-start" }} onClick={handleDrawerToggle}>
-            <ListItemText primary="Forms" primaryTypographyProps={{ sx: { color: "#fff" } }} />
-          </ListItemButton>
-        </ListItem>
-
-        <Divider sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }} />
+        {navLinks.map((link) => (
+          <React.Fragment key={link.label}>
+            <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                href={link.href}
+                sx={{ justifyContent: "flex-start", gap: 2 }}
+                onClick={handleDrawerToggle}
+              >
+                {link.icon}
+                <ListItemText
+                  primary={link.label}
+                  primaryTypographyProps={{ sx: { color: "#fff" } }}
+                />
+              </ListItemButton>
+            </ListItem>
+            <Divider
+              sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }}
+            />
+          </React.Fragment>
+        ))}
       </List>
     </Box>
   );
+  
 
   return (
     <>
