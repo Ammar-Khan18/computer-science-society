@@ -9,10 +9,13 @@ import {
   Divider,
   Drawer,
   Paper,
+  Breadcrumbs,
   List,
   ListItem,
   ListItemText,
   ListItemButton,
+  Chip,
+  styled,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -20,6 +23,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+
+// Icons
+import HomeIcon from '@mui/icons-material/Home';
+import CodeIcon from '@mui/icons-material/Code';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,6 +41,48 @@ const Navbar: React.FC = () => {
     hidden: { x: '100%', opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
+
+  const navLinks = [
+    { href: "/", label: "Home", icon: <HomeIcon /> },
+    { href: "/codex", label: "Codex", icon: <CodeIcon /> },
+    { href: "/pro-battle", label: "Pro Battle", icon: <SportsEsportsIcon /> },
+    { href: "/forms", label: "Forms", icon: <DescriptionIcon /> },
+  ];
+
+  // Styled chip similar to the original StyledBreadcrumb
+  const StyledChip = styled(Chip)(({ theme }) => ({
+    backgroundColor: theme.palette.grey[100],
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightRegular,
+    "&:hover, &:focus": {
+      backgroundColor: theme.palette.grey[200],
+    },
+    "&:active": {
+      boxShadow: theme.shadows[1],
+      backgroundColor: theme.palette.grey[300],
+    },
+    cursor: "pointer",
+  }));
+
+  function CustomBreadcrumbs() {
+    return (
+      <Box sx={{ display: "flex", alignItems: "center", ml: 2 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 1 }}>
+          {navLinks.map((link) => (
+            <Link href={link.href} key={link.label} passHref>
+              <Link href={link.href} passHref>
+                <StyledChip
+                  label={link.label}
+                  icon={link.icon}
+                  clickable
+                />
+              </Link>
+            </Link>
+          ))}
+        </Breadcrumbs>
+      </Box>
+    );
+  }
 
   const drawer = (
     <Box sx={{ textAlign: "center", height: "100%" }}>
@@ -94,43 +145,9 @@ const Navbar: React.FC = () => {
           </Box>
 
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
-            <Paper 
-              elevation={3} 
-              sx={{ 
-              display: 'inline-flex', 
-              justifyContent: 'center',
-              backgroundColor: 'transparent',
-              borderRadius: '25px',
-              padding: '10px',
-              paddingX: '16px',
-              }}
-            >
-              <Link href="/" passHref>
-                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
-                  Home
-                </Typography>
-              </Link>
+  
+            <CustomBreadcrumbs />
 
-              <Link href="/codex" passHref>
-                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
-                  Codex
-                </Typography>
-              </Link>
-
-              <Link href="/pro-battle" passHref>
-                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, mr: 3, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
-                  Pro Battle
-                </Typography>
-              </Link>
-
-              <Link href="/forms" passHref>
-                <Typography sx={{ color: '#000', '&:hover': { color: '#D81B60' }, cursor: 'pointer', justifyContent: 'center', display: 'flex' }}>
-                  Forms
-                </Typography>
-              </Link>
-            </Paper>
-
-            {/* add more */}
           </Box>
 
           <IconButton
