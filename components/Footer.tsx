@@ -3,6 +3,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
+import { audio } from 'framer-motion/client';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Footer: React.FC = () => {
     >
       <Grid container spacing={2}>
         
-          <Grid size={{ xs: 10, sm: 3.5 }}>
+          <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fcb045' }}>Connect With Us</Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
               <IconButton
@@ -58,17 +59,23 @@ const Footer: React.FC = () => {
           sx={{ bgcolor: 'white', display: { xs: 'none', md: 'block' } }}
         />
 
+        <Divider 
+          orientation='horizontal'
+          flexItem
+          sx={{ bgcolor: 'white', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
+        />
+
         {/* Contact Us */}
-        <Grid size={{ xs: 10, sm: 3.5 }}>
+        <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fcb045' }}>Contact Us</Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               <a href="mailto:contact@css.com" style={{ color: '#D9EA12', textDecoration: 'none' }}>
-                <span style={{ color: 'white' }}>Email:</span> contact@css.com
+                contact@css.com
               </a>
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               <a href="tel:+1234567890" style={{ color: '#D9EA12', textDecoration: 'none' }}>
-                <span style={{ color: 'white' }}>Phone:</span> +123-456-7890
+                +123 - 456 - 7890
               </a>
             </Typography>
 
@@ -80,9 +87,15 @@ const Footer: React.FC = () => {
           sx={{ bgcolor: 'white', display: { xs: 'none', md: 'block' } }}
         />
 
+        <Divider 
+          orientation='horizontal'
+          flexItem
+          sx={{ bgcolor: 'white', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
+        />
+
 
         {/* Our Society section */}
-        <Grid size={{ xs: 10, sm: 3.5 }}>
+        <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fcb045' }}>Our Society</Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               <span style={{ color: '#D9EA12' }}>&copy; {new Date().getFullYear()}</span> Computer Science Society. <span style={{ color: '#D9EA12' }}>All rights reserved.</span>
