@@ -1,9 +1,9 @@
-import { Box, Typography, IconButton, Grid2, Divider } from '@mui/material';
+import { Box, Typography, IconButton, Divider } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
-import { audio } from 'framer-motion/client';
+import { Avatar, Link, Chip } from '@mui/material';
 
 const Footer: React.FC = () => {
   return (
@@ -103,6 +103,54 @@ const Footer: React.FC = () => {
           
         </Grid>
       </Grid>
+        
+      
+      <Box
+        sx={{
+          mt: 9,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Link
+          href="https://www.linkedin.com/in/abdullahtariq78/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            textDecoration: 'none',
+            color: '#D9EA12'
+          }}
+        >
+          {/* Typography with underline */}
+          <Typography
+            variant="body2"
+            sx={{
+              mr: 1,
+              textDecoration: 'none', // Add underline
+              '&:hover': { textDecoration: 'underline' }, // Maintain underline on hover
+            }}
+          >
+            Designed & Developed by
+          </Typography>
+
+          {/* Chip without underline */}
+          <Chip
+            avatar={<Avatar />}
+            label="Abdullah Tariq"
+            variant="filled"
+            sx={{
+              bgcolor: '#F3DEBA',
+              color: 'black',
+              fontWeight: 'normal',
+            }}
+          />
+        </Link>
+
+      </Box>
+
     </Box>
   );
 };
