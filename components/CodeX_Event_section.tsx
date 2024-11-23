@@ -12,7 +12,7 @@ import reward from '../public/reward.png';
 
 const CodeXSection: React.FC = () => {
   return (
-    <Box sx={{ bgcolor: '#EBF5EE', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+    <Box sx={{ bgcolor: '#CDC1FF', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}> {/* #EBF5EE */}
       
       {/* Full-width Background Image */}
       {/* <Box
