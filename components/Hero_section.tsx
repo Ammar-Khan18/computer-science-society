@@ -9,7 +9,8 @@ import Grid from '@mui/material/Grid2';
 
 import { motion } from 'framer-motion';
 
-import Home from '../public/Home1.jpg';
+import Home from '../public/Home.png';
+import Codex_event from '../public/Codex_event.png';
 
 export default function HeroSection(): JSX.Element {
 
@@ -37,15 +38,15 @@ export default function HeroSection(): JSX.Element {
     <div style={{ backgroundColor: '#CDC1FF', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
 
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         sx={{
           position: 'relative',
           paddingTop: { xs: 8, sm: 14 },
           paddingBottom: { xs: 8, sm: 14 },
         }}
       >
-        <Grid container spacing={2}>
-          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17 }}>
+        <Grid container spacing={1} justifyContent="center">
+          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17, ml: {xs: 0, md: 30} }}>
             <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'text.primary', lineHeight: 1.2 }}>
               IBA <span style={{ color: '#D81B60', borderBottom: '2px solid #D81B60'}}>Computer Science</span> Society
             </Typography>
@@ -133,12 +134,12 @@ export default function HeroSection(): JSX.Element {
           </Box>
 
           <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17 }}>
-            <Image src={Home} alt="Home" width={300} height={200} />
+            <Image src={Home} alt="Home" width={470} height={350} />
           </Box>
         </Grid>
 
         {/* CodeX Section */}
-        <Container maxWidth="lg" sx={{ mt: 6 }}>
+        <Container maxWidth="xl" sx={{ mt: 6 }}>
           <Card
             sx={{
               position: "relative",
@@ -242,28 +243,26 @@ export default function HeroSection(): JSX.Element {
               sx={{
                 position: "relative",
                 mt: { xs: 4, lg: 0 },
-                height: 320,
+                height: 220,
                 flex: 1,
               }}
             >
               <img
-                src="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
+                src={Codex_event.src}
                 alt="App screenshot"
                 style={{
                   position: "absolute",
                   top: 0,
                   left: 0,
                   width: "100%",
-                  borderRadius: "8px",
-                  boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.1)",
                 }}
               />
             </Box>
           </Card>
         </Container>
         
-        <Box sx={{ mt: 6, width: '100%' }}>
-          <Paper elevation={3} sx={{ padding: { xs: '1rem', sm: '1.5rem' }, backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
+        <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
+          <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
             <Carousel_Hero />
           </Paper>
         </Box>
