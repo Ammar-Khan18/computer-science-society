@@ -1,5 +1,5 @@
 'use client'
-import { Button, Typography, Container, Box, IconButton, Paper, Card, SvgIcon} from '@mui/material'
+import { Button, Typography, Container, Box, IconButton, Paper, Card, SvgIcon, Link} from '@mui/material'
 import Carousel_Hero from '@/components/Carousel_Hero';
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
@@ -52,7 +52,7 @@ export default function HeroSection(): JSX.Element {
             </Typography>
 
             <Typography variant='h4' sx={{ mt: 3, fontSize: { xs: '1.8rem', sm: '2.2rem' }, color: 'text.secondary' }}>
-              Introducing Pro Battle 
+              Introducing <Link href="/pro-battle" underline="hover" sx={{ color: '#D81B60' }}>Pro Battle</Link>
             </Typography>
 
             <Typography variant="body1" sx={{ mt: 3, fontSize: { xs: '1.125rem', sm: '1.25rem' }, color: 'text.secondary' }}>
