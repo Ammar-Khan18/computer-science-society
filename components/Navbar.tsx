@@ -5,17 +5,30 @@ import {
   Box,
   Toolbar,
   Typography,
-  Button,
   IconButton,
+  Divider,
   Drawer,
+  Paper,
+  Breadcrumbs,
   List,
   ListItem,
   ListItemText,
   ListItemButton,
+  Chip,
+  styled,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Icons
+import HomeIcon from '@mui/icons-material/Home';
+import CodeIcon from '@mui/icons-material/Code';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,63 +37,142 @@ const Navbar: React.FC = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const drawerVariants = {
+    hidden: { x: '100%', opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const navLinks = [
+    { href: "/", label: "Home", icon: <HomeIcon /> },
+    { href: "/codex", label: "Codex", icon: <CodeIcon /> },
+    { href: "/pro-battle", label: "Pro Battle", icon: <SportsEsportsIcon /> },
+    { href: "/forms", label: "Forms", icon: <DescriptionIcon /> },
+  ];
+
+  // Styled chip similar to the original StyledBreadcrumb
+  const StyledChip = styled(Chip)(({ theme }) => ({
+    backgroundColor: theme.palette.grey[100],
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightRegular,
+    "&:hover, &:focus": {
+      backgroundColor: theme.palette.grey[200],
+    },
+    "&:active": {
+      boxShadow: theme.shadows[1],
+      backgroundColor: theme.palette.grey[300],
+    },
+    cursor: "pointer",
+  }));
+
+  function CustomBreadcrumbs() {
+    return (
+      <Box sx={{ display: "flex", alignItems: "center", ml: 2 }}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 1 }} separator="›">
+          {navLinks.map((link) => (
+            <Link href={link.href} key={link.label} passHref>
+                <StyledChip
+                  label={link.label}
+                  icon={link.icon}
+                  clickable
+                />
+            </Link>
+          ))}
+        </Breadcrumbs>
+      </Box>
+    );
+  }
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <Image src="/css_transparent.png" alt="Logo" width={80} height={80} />
-      </Typography>
+    <Box sx={{ textAlign: "center", height: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          p: 2,
+        }}
+      >
+        <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
+        <IconButton onClick={handleDrawerToggle} sx={{ color: "#fff" }}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+  
       <List>
-        <ListItem disablePadding>
-          <ListItemButton component={Link} href="/codex">
-            <ListItemText primary="CodeX" />
-          </ListItemButton>
-        </ListItem>
-        {/* <ListItem disablePadding>
-          <ListItemButton component="a" href="#">
-            <ListItemText primary="Probattle" />
-          </ListItemButton>
-        </ListItem> */}
+        {navLinks.map((link) => (
+          <React.Fragment key={link.label}>
+            <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                href={link.href}
+                sx={{ justifyContent: "flex-start", gap: 2 }}
+                onClick={handleDrawerToggle}
+              >
+                {link.icon}
+                <ListItemText
+                  primary={link.label}
+                  primaryTypographyProps={{ sx: { color: "#fff" } }}
+                />
+              </ListItemButton>
+            </ListItem>
+            <Divider
+              sx={{ backgroundColor: "#555", width: "90%", marginLeft: "6%" }}
+            />
+          </React.Fragment>
+        ))}
       </List>
     </Box>
   );
+  
 
   return (
     <>
-      <AppBar position="relative" sx={{backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none'}}>
+      <AppBar id="NavBar" position="relative" sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none' }}>
         <Toolbar>
-          {/* Left side: CSS LOGO for both desktop and mobile */}
-          <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
+          <Box>
             <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
-          </Link>
-          {/* Right side for larger screens */}
-          <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
-            <Button LinkComponent={Link} href="/codex" color="inherit" sx={{ mr: 2 }}>CodeX</Button>
-            {/*<Button color="inherit">Probattle</Button>*/}
           </Box>
 
-          {/* Mobile menu button on the right side */}
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', flexGrow: 1 }}>
+  
+            <CustomBreadcrumbs />
+
+          </Box>
+
           <IconButton
-            color="inherit"
-            edge="end" // Moves the menu button to the right in mobile view
+            edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }}
+            sx={{ display: { sm: 'none', color: '#000' }, ml: 'auto' }}
           >
             <MenuIcon />
           </IconButton>
+
         </Toolbar>
       </AppBar>
 
-      {/* Mobile drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ '& .MuiDrawer-paper': {
-          backgroundColor: '#333', // Drawer background color
-          color: '#fff',           // Drawer text color
-        }, display: { xs: 'block', sm: 'none' } }}
+        sx={{
+          '& .MuiDrawer-paper': {
+            backgroundColor: '#333',
+            color: '#fff',
+            width: '60%',
+            height: '50%',
+            borderRadius: '0 0 0 15px',
+          },
+          display: { xs: 'block', sm: 'none' },
+        }}
       >
-        {drawer}
+        <motion.div
+          initial="hidden"
+          animate={mobileOpen ? "visible" : "hidden"}
+          variants={drawerVariants}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        >
+          {drawer}
+        </motion.div>
       </Drawer>
     </>
   );

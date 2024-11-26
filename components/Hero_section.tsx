@@ -1,144 +1,272 @@
-"use client";
-import React from 'react';
-import { Grid2, Box, Button, IconButton, Typography, Container, Paper } from '@mui/material';
+'use client'
+import { Button, Typography, Container, Box, IconButton, Paper, Card, SvgIcon, Link} from '@mui/material'
 import Carousel_Hero from '@/components/Carousel_Hero';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import Image from 'next/image';
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import Image from 'next/image'
+import React from 'react';
+import Grid from '@mui/material/Grid2';
 
-const HeroSection: React.FC = () => {
+import { motion } from 'framer-motion';
+
+import Home from '../public/Home.png';
+import Codex_event from '../public/Codex_event.png';
+
+export default function HeroSection(): JSX.Element {
+
+  const [animateIcons, setAnimateIcons] = React.useState(false);
+
+  const handleFollowUsClick = () => {
+    setAnimateIcons(true);
+    setTimeout(() => setAnimateIcons(false), 1000); // Reset animation after 1 second
+  };
+
+  const iconContainerVariants = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const iconVariants = {
+    initial: { y: 0 },
+    animate: { y: [0, -10, 0], transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
+
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        zIndex: 0,
-      }}
-    >
-      {/* Full-width Background Image */}
-      <Box
+    <div style={{ backgroundColor: '#CDC1FF', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+
+      <Container
+        maxWidth="xl"
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: { xs: '100%', md: '100%' },
-          backgroundImage: 'url(/gradient_bg_hero.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          zIndex: -1,
+          position: 'relative',
+          paddingTop: { xs: 8, sm: 14 },
+          paddingBottom: { xs: 8, sm: 14 },
         }}
-      />
-      <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', minHeight: { xs: 'auto', md: '100vh' } }}>
-        <Box
-          sx={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            paddingTop: 5,
-            paddingBottom: {xs: 5},
-          }}
-        >
-          <Grid2 container spacing={4}>
-            {/* Top Left Section: Title and Description */}
-            <Grid2 size={{ xs: 12, sm: 8 }} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-              <Paper
-                elevation={3}
-                sx={{
-                  padding: { xs: '1rem', sm: '2rem' },
-                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                  color: '#ffffff',
-                  textAlign: 'left', // Keeps text left-aligned horizontally
-                  display: 'flex', // Enables flexbox for vertical centering
-                  flexDirection: 'column',
-                  justifyContent: 'center', // Centers content vertically
-                  height: '100%',
-                  width: '100%',
-                }}
+      >
+        <Grid container spacing={1} justifyContent="center">
+          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17, ml: {xs: 0, md: 30} }}>
+            <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'text.primary', lineHeight: 1.2 }}>
+              IBA <span style={{ color: '#D81B60', borderBottom: '2px solid #D81B60'}}>Computer Science</span> Society
+            </Typography>
+
+            <Typography variant='h4' sx={{ mt: 3, fontSize: { xs: '1.8rem', sm: '2.2rem' }, color: 'text.secondary' }}>
+              Introducing <Link href="/pro-battle" underline="hover" sx={{ color: '#D81B60' }}>Pro Battle</Link>
+            </Typography>
+
+            <Typography variant="body1" sx={{ mt: 3, fontSize: { xs: '1.125rem', sm: '1.25rem' }, color: 'text.secondary' }}>
+              Where tech enthusiasts connect, collaborate, and grow. Join us for thrilling events like CodeX and Pro Battle!
+            </Typography>
+
+            <Box mt={4} display="flex" justifyContent="center" gap={3}>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ fontWeight: 'bold', textTransform: 'none', padding: '0.125rem 1rem' }}
+                endIcon={<span>&rarr;</span>}
+                onClick={handleFollowUsClick}
               >
-                
-                <Typography variant="h4" component="h1" gutterBottom sx={{ fontSize: '2.5rem' }}>
-                  Computer Science Society
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 3, fontSize: '1rem' }}>
-                  Welcome to the Computer Science Society, a hub for tech enthusiasts to connect, collaborate, and grow together. 
-                  Join us for exciting events like CodeX and Pro Battle!
-                </Typography>
-                {/* Follow Us Section */}
-                <Box sx={{ mt: 4 }}>
-                  <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'left' }, gap: { xs: '0.5rem', sm: '1.5rem' }, flexWrap: 'wrap' }}>
-                    <Button
-                      href="https://www.instagram.com/css.iba/"
+                Follow us
+              </Button>
+              <motion.div variants={iconContainerVariants} initial="initial" animate={animateIcons ? 'animate' : 'initial'}>
+                <Box display="flex" gap={2}>
+                  <motion.div variants={iconVariants}>
+                    <IconButton
+                      color="inherit"
+                      component="a"
+                      href="https://www.linkedin.com/company/iba-computer-science-society/"
                       target="_blank"
-                      variant="outlined"
-                      color="secondary"
-                      startIcon={<InstagramIcon />}
+                      rel="noopener"
                       sx={{
-                        color: 'white',
-                        '&:hover': { backgroundColor: '#ad276c' },
-                        textTransform: 'none',
-                        fontSize: '1rem',
+                        backgroundColor: 'white',
+                        color: 'black',
+                        '&:hover': {
+                        backgroundColor: 'gray',
+                        borderRadius: '50%',
+                        },
                       }}
                     >
-                      Instagram
-                    </Button>
-                    <IconButton href="https://www.linkedin.com/company/iba-computer-science-society/" target="_blank" sx={{ color: '#0077B5' }}>
-                      <LinkedInIcon fontSize="large" />
+                      <LinkedInIcon />
                     </IconButton>
-                    <IconButton href="https://discord.com" target="_blank" sx={{ color: '#7289DA' }}>
-                      <Image src="/Discord-Emblem.svg" alt="Discord" width={35} height={35} />
+                  </motion.div>
+                  <motion.div variants={iconVariants}>
+                    <IconButton
+                      color="inherit"
+                      component="a"
+                      href="https://discord.com"
+                      target="_blank"
+                      rel="noopener"
+                      sx={{
+                        backgroundColor: 'white',
+                        color: 'black',
+                        '&:hover': {
+                        backgroundColor: 'gray',
+                        borderRadius: '50%',
+                        },
+                      }}
+                    >
+                      <Image src="/Discord-Emblem.svg" alt="Discord" width={24} height={24} />
                     </IconButton>
-                  </Box>
+                  </motion.div>
+                  <motion.div variants={iconVariants}>
+                    <IconButton
+                      color="inherit"
+                      component="a"
+                      href="https://www.instagram.com/css.iba/"
+                      target="_blank"
+                      rel="noopener"
+                      sx={{
+                        backgroundColor: 'white',
+                        color: 'black',
+                        '&:hover': {
+                        backgroundColor: 'gray',
+                        borderRadius: '50%',
+                        },
+                      }}
+                    >
+                      <InstagramIcon />
+                    </IconButton>
+                  </motion.div>
                 </Box>
-              </Paper>
-            </Grid2>
-            {/* Top Right Section: CodeX Title Box */}
-            <Grid2 size={{ xs: 12, sm: 4 }}>
-              <Paper
-                elevation={3}
-                sx={{
-                  padding: { xs: '1rem', sm: '2rem' },
-                  // backgroundColor: '#e3e3e3',
-                  backgroundImage: 'url(/codex_event_section_bg_2.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  textAlign: 'center',
-                  height: '100%',
-                }}
+              </motion.div>
+            </Box>
+          </Box>
+
+          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17 }}>
+            <Image src={Home} alt="Home" width={470} height={350} />
+          </Box>
+        </Grid>
+
+        {/* CodeX Section */}
+        <Container maxWidth="xl" sx={{ mt: 6 }}>
+          <Card
+            sx={{
+              position: "relative",
+              overflow: "hidden",
+              backgroundColor: "grey.900",
+              p: { xs: 4, sm: 6, md: 8 },
+              display: { lg: "flex" },
+              gap: 4,
+              borderRadius: 2,
+              boxShadow: 6,
+            }}
+          >
+            {/* Background Gradient */}
+            <SvgIcon
+              sx={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                zIndex: -1,
+                width: "64rem",
+                height: "64rem",
+                transform: {
+                  xs: "translate(-50%, -50%)",
+                  sm: "translateX(0)",
+                  lg: "translate(-50%, 0)",
+                },
+                maskImage: "radial-gradient(closest-side, white, transparent)",
+              }}
+              viewBox="0 0 1024 1024"
+              aria-hidden="true"
+            >
+              <circle
+                cx="512"
+                cy="512"
+                r="512"
+                fill="url(#gradient)"
+                fillOpacity="0.7"
+              />
+              <defs>
+                <radialGradient id="gradient">
+                  <stop offset="0%" stopColor="#7775D6" />
+                  <stop offset="100%" stopColor="#E935C1" />
+                </radialGradient>
+              </defs>
+            </SvgIcon>
+
+            {/* Content Section */}
+            <Box
+              sx={{
+                textAlign: { xs: "center", lg: "left" },
+                mx: "auto",
+                py: { lg: 6 },
+                maxWidth: 480,
+              }}
+            >
+              <Typography
+                variant="h3"
+                component="h2"
+                sx={{ fontWeight: "semibold", color: "grey.400", borderBottom: "4px solid #D81B60", display: "inline-block", mb: 3, fontSize: { xs: '1.8rem', lg: '3rem' } }}
               >
-                <Box sx={{ width: '100%', maxWidth: { xs: '150px', sm: '150px' }, margin: '0 auto' }}>
-                  <Image src="/codeX_logo.png" alt="CodeX Logo" width={150} height={150} />
-                </Box>
-                <Typography variant="h5" component="h2" color='black' sx={{ fontSize: { xs: '1.8rem', sm: '2rem' } }}>
-                  CodeX
-                </Typography>
+                Codex Event
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ color: "grey.300", mb: 4, lineHeight: 1.8, justifyContent: "center", alignItems: "center" }}
+              >
+                Codex is a competitive programming event that challenges you to solve real-world problems using your coding skills. Join us for a thrilling experience!
+              </Typography>
+              <Box sx={{ display: "flex", gap: 2, justifyContent: "center", lg: { justifyContent: "start" } }}>
                 <Button
                   variant="contained"
-                  color="primary"
                   href="#codex-section"
                   sx={{
-                    mt: 2,
-                    backgroundColor: 'purple',
-                    color: 'white',
-                    '&:hover': { backgroundColor: '#5d2a7d' },
+                  backgroundColor: "white",
+                  color: "grey.900",
+                  fontSize: { xs: '0.75rem', sm: '1rem' }, // Smaller font size for smaller screens
+                  padding: { xs: '0.25rem 0.5rem', sm: '0.5rem 1rem' }, // Smaller padding for smaller screens
+                  "&:hover": { backgroundColor: "grey.100" },
                   }}
                 >
-                  Explore CodeX
+                  Get started
                 </Button>
-              </Paper>
-            </Grid2>
-            {/* Bottom Section: Carousel */}
-            <Grid2 size={{ xs: 12 }}>
-              <Paper elevation={3} sx={{ padding: { xs: '0.5rem', sm: '1rem' }, backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
-                <Carousel_Hero />
-              </Paper>
-            </Grid2>
-          </Grid2>
+                <Button
+                  variant="text"
+                  href='/codex'
+                  sx={{ 
+                    color: "white", 
+                    fontWeight: "bold",
+                    fontSize: { xs: '0.75rem', sm: '1rem' }, // Smaller font size for smaller screens
+                    padding: { xs: '0.25rem 0.5rem', sm: '0.5rem 1rem' }, // Smaller padding for smaller screens
+                  }}
+                  endIcon={<span aria-hidden="true">→</span>}
+                >
+                  Learn more
+                </Button>
+              </Box>
+            </Box>
+
+            {/* Image Section */}
+            <Box
+              sx={{
+                position: "relative",
+                mt: { xs: 4, lg: 0 },
+                height: 220,
+                flex: 1,
+              }}
+            >
+              <img
+                src={Codex_event.src}
+                alt="App screenshot"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                }}
+              />
+            </Box>
+          </Card>
+        </Container>
+        
+        <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
+          <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
+            <Carousel_Hero />
+          </Paper>
         </Box>
       </Container>
-    </Box>
-  );
-};
-
-export default HeroSection;
+    </div>
+  )
+}
