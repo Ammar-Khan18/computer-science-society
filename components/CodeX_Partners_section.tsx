@@ -3,6 +3,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
+import Image from 'next/image';
 
 export default function Example() {
   return (
@@ -66,7 +67,7 @@ export default function Example() {
             >
               <Box sx={{ width: '300px', height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center',
                 position: 'relative', overflow: 'hidden' }}>
-              <img
+              <Image
                 alt={logo.alt}
                 src={logo.src}
                 width={300}

@@ -261,11 +261,11 @@ export default function HeroSection(): JSX.Element {
           </Card>
         </Container>
         
-        <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
+        {/* <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
           <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
             <Carousel_Hero />
           </Paper>
-        </Box>
+        </Box> */}
       </Container>
     </div>
   )
