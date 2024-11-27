@@ -81,7 +81,7 @@ const ProBattleSection: React.FC = () => {
           <Grid size={12} >
             <Button
               component="a"
-              href="/register" // Replace with your registration link
+              href="#register" // Replace with your registration link
               variant="contained"
               color="primary"
               endIcon={<HowToRegIcon />} // Icon on the right side
@@ -96,7 +96,7 @@ const ProBattleSection: React.FC = () => {
               },
               }}
             >
-              Register
+              Get Started
             </Button>
           </Grid>
         </Grid>
