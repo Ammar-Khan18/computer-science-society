@@ -5,8 +5,6 @@ import ProBattle_Event_section from "@/components/ProBattle_Event_section";
 
 import { Box } from "@mui/material";
 
-import { Box } from "@mui/material";
-
 export default function Home() {
   return (
     <>
