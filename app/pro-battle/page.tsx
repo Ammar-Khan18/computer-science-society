@@ -1,27 +1,10 @@
 import React from 'react';
 import {
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  Box,
-  Divider,
-  Chip,
+  Box
 } from '@mui/material';
-
-interface Form {
-  Title: string;
-  Description: string;
-  Link: string;
-}
-
-// Dummy Data, replace with actual data
-const forms: Form[] = [
-  { Title: 'Form 1', Description: 'This is the first form', Link: 'https://www.google.com' },
-  { Title: 'Form 2', Description: 'This is the second form', Link: 'https://www.google.com' },
-  { Title: 'Form 3', Description: 'This is the third form', Link: 'https://www.google.com' },
-  { Title: 'Form 4', Description: 'This is the fourth form with a long description, much more will be added when this will be done', Link: 'https://www.google.com' },
-];
+import ProBattle_Event_section from '@/components/ProBattle_Event_section';
+import ProBattle_Info from '@/components/ProBattle_Info';
+import ProBattle_Register from '@/components/ProBattle_Register';
 
 const ProBattle: React.FC = () => {
   return (
@@ -60,61 +43,20 @@ const ProBattle: React.FC = () => {
         }}
       />
 
-      {/* Heading */}
-      <Typography variant="h4" align="center" fontWeight="bold" gutterBottom sx={{ borderBottom: 1, borderColor: 'black', display: 'inline-block' }}>
-        Available Forms
-      </Typography>
+      {/* Main Content */}
+      <Box sx={{ position: 'relative', zIndex: 1 }}>
+        {/* Event Section */}
+        <ProBattle_Event_section />
+          
+        {/* Info Section */}
+        <ProBattle_Info />
 
-      {/* Form List */}
-      <List>
-        {forms.map((form, index) => (
-          <React.Fragment key={form.Title}>
-            <ListItem
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                py: 2,
-                px: 3,
-                bgcolor: 'inherit',
-                mb: 1,
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <ListItemText
-                  primary={
-                    <Typography variant="body1" fontWeight="bold" component="span">
-                      {form.Title}
-                    </Typography>
-                  }
-                  secondary={
-                    <Typography variant="body2" color="text.secondary" component="span">
-                      {form.Description}
-                    </Typography>
-                  }
-                />
-              </Box>
-              <Chip
-                label="Open Form"
-                component="a"
-                href={form.Link}
-                clickable
-                color="primary"
-                sx={{ textAlign: 'right' }}
-              />
-            </ListItem>
-            {index < forms.length - 1 && (
-              <Divider
-                sx={{
-                  bgcolor: 'black',
-                  my: 1,
-                  width: { xs: '90%', md: '97%' },
-                  mx: 'auto',
-                }}
-              />
-            )}
-          </React.Fragment>
-        ))}
-      </List>
+        {/* Register Section */}
+        <ProBattle_Register />
+      </Box>
+      
+    
+      
     </Box>
   );
 };
