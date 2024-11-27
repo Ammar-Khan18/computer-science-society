@@ -247,7 +247,7 @@ export default function HeroSection(): JSX.Element {
                 flex: 1,
               }}
             >
-              <img
+              <Image
                 src={Codex_event.src}
                 alt="App screenshot"
                 style={{
