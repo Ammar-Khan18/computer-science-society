@@ -185,7 +185,7 @@ const CodeXSection: React.FC = () => {
               <Box
                 sx={{
                   position: 'relative',
-                  top: { xs: 40, sm: 100 },
+                  top: { xs: 40, sm: 101 },
                   left: 0,
                   width: '100%',
                   height: { xs: 200, sm: 500 },  // Use responsive height values
