@@ -32,14 +32,10 @@ const ProBattleRegister: React.FC = () => {
                                 color="primary"
                                 endIcon={<HowToRegIcon />} // Icon on the right side
                                 sx={{
-                                backgroundColor: "#FFD700", // Gold color
-                                color: "black",
-                                fontWeight: "bold",
-                                px: 4, // Extra padding for better button appearance
-                                py: 1.5,
-                                "&:hover": {
-                                backgroundColor: "#FFA500", // Darker gold on hover
-                                },
+                                    color: "black",
+                                    fontWeight: "semibold",
+                                    px: 4, // Extra padding for better button appearance
+                                    py: 1.5,
                                 }}
                             >
                                 Register Now
