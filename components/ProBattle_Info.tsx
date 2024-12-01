@@ -162,10 +162,32 @@ const ProBattleInfo: React.FC = () => {
                             borderRadius: 2,
                             boxShadow: 2,
                             transition: "0.3s",
+                            overflow: "visible",
                             "&:hover": { boxShadow: 5 },
                             backgroundColor: "#f9f9f9",
                             }}
                         >
+                            {/* Event ID Badge */}
+                            <Box
+                                sx={{
+                                position: "relative",
+                                top: -16, // Half of the circle height
+                                left: "45%", 
+                                width: 32, // Circle width
+                                height: 32, // Circle height
+                                backgroundColor: "primary.main",
+                                borderRadius: "50%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "white",
+                                fontWeight: "bold",
+                                boxShadow: 1,
+                                }}
+                            >
+                                {event.id}
+                            </Box>
+
                             {/* Card Content */}
                             <CardContent sx={{ flexGrow: 1 }}>
                                 {/* Title */}
@@ -221,10 +243,31 @@ const ProBattleInfo: React.FC = () => {
                             borderRadius: 2,
                             boxShadow: 2,
                             transition: "0.3s",
+                            overflow: "visible",
                             "&:hover": { boxShadow: 5 },
                             backgroundColor: "#f9f9f9",
                             }}
                         >
+                            <Box
+                                sx={{
+                                position: "relative",
+                                top: -16, // Half of the circle height
+                                left: "45%", 
+                                width: 32, // Circle width
+                                height: 32, // Circle height
+                                backgroundColor: "primary.main",
+                                borderRadius: "50%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "white",
+                                fontWeight: "bold",
+                                boxShadow: 1,
+                                }}
+                            >
+                                {event.id}
+                            </Box>
+
                             {/* Card Content */}
                             <CardContent sx={{ flexGrow: 1 }}>
                                 {/* Title */}
