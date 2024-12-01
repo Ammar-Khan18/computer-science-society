@@ -32,6 +32,7 @@ const ProBattleSection: React.FC = () => {
         textAlign: "center", // Center text
         color: "white", // Text color
         minHeight: "100vh", // Full height
+        backgroundColor: "inherit", // Inherit background color
       }}
     >
       <motion.div
@@ -74,6 +75,7 @@ const ProBattleSection: React.FC = () => {
                 fontWeight: "bold",
                 fontSize: { xs: "3rem", sm: "4rem" },
                 mb: 2,
+                color: "#D81B60",
                 borderBottom: "2px solid", 
                 borderColor: "primary.secondary",
                 display: "inline-block",
@@ -105,6 +107,7 @@ const ProBattleSection: React.FC = () => {
                 fontSize: "1.2rem",
                 mb: 3,
                 px: 2,
+                color: "text.secondary",
               }}
             >
               Join the ultimate competitive coding event, where top developers
