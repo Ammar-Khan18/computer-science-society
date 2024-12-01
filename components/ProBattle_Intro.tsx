@@ -13,9 +13,8 @@ export default function ProBattle_Intro() {
         position: "relative",
         overflow: "hidden",
         bgcolor: "inherit",
-        px: { xs: 4, sm: 6 },
-        py: { xs: 8, sm: 12 },
         display: "flex",
+        pb: { xs: 6, sm: 8 },
         flexDirection: "column",
         gap: { xs: 6, sm: 8 },
       }}
@@ -65,7 +64,7 @@ export default function ProBattle_Intro() {
         }}
       >
         <Box>
-          <Typography variant="h6" color="white" fontWeight="bold" gutterBottom>
+          <Typography variant="h6" color="#D81B60" fontWeight="bold" gutterBottom>
             Introduction
           </Typography>
           <Typography
@@ -76,15 +75,13 @@ export default function ProBattle_Intro() {
           >
             Learn about ProBattle
           </Typography>
-          <Box sx={{ alignItems: "center", justifyContent: "center" }}>
-            <Typography variant="body1" sx={{ color: "#F5F5F5", textAlign: "center" }}>
-                The event is meticulously structured to offer participants an array of
-                opportunities to test their skills, explore cutting-edge technologies, and
-                glean insights from industry leaders. By fostering a collaborative
-                environment, ProBattle 2024 encourages the exchange of ideas and
-                creativity, ensuring a platform where participants can thrive.
-            </Typography>
-          </Box>
+          <Typography variant="body1" sx={{ color: "text.tertiary", textAlign: "left", alignItems: "flex-start" }}>
+              The event is meticulously structured to offer participants an array of
+              opportunities to test their skills, explore cutting-edge technologies, and
+              glean insights from industry leaders. By fostering a collaborative
+              environment, ProBattle 2024 encourages the exchange of ideas and
+              creativity, ensuring a platform where participants can thrive.
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -96,7 +93,7 @@ export default function ProBattle_Intro() {
             width: "100%",
           }}
         >
-          <Typography variant="body1" sx={{ color: "#F5F5F5" }}>
+          <Typography variant="body1" sx={{ color: "text.tertiary" }}>
             ProBattle is a premier hackathon event that brings together students,
             professionals, and industry experts to collaborate and innovate. With a
             focus on emerging technologies and real-world problem-solving, ProBattle
@@ -165,7 +162,7 @@ export default function ProBattle_Intro() {
                   <Typography variant="body1" fontWeight="bold" color="text.primary" sx={{ mb: 0.5 }}>
                     {title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "#F5F5F5" }}>
+                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
                     {description}
                   </Typography>
                 </Box>
