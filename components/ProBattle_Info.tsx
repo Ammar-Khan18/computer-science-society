@@ -158,13 +158,12 @@ const ProBattleInfo: React.FC = () => {
                             sx={{
                             display: "flex",
                             flexDirection: "column",
-                            height: "100%",
+                            height: "350px",
                             borderRadius: 2,
-                            boxShadow: 2,
+                            // applying shadow effect only on right and bottom side 
+                            boxShadow: "4px 6px #1B1A55",
                             transition: "0.3s",
                             overflow: "visible",
-                            "&:hover": { boxShadow: 5 },
-                            backgroundColor: "#f9f9f9",
                             }}
                         >
                             {/* Event ID Badge */}
@@ -241,11 +240,9 @@ const ProBattleInfo: React.FC = () => {
                             flexDirection: "column",
                             height: "100%",
                             borderRadius: 2,
-                            boxShadow: 2,
+                            boxShadow: "4px 6px #1B1A55",
                             transition: "0.3s",
                             overflow: "visible",
-                            "&:hover": { boxShadow: 5 },
-                            backgroundColor: "#f9f9f9",
                             }}
                         >
                             <Box
