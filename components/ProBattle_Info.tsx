@@ -226,9 +226,11 @@ const ProBattleInfo: React.FC = () => {
                 ))}
             </Grid>
 
-            <Typography variant="h4" align="center" sx={{ fontSize: { xs: '1.5rem', md: '2rem', lg: '2.5rem' }, mb: 4 }}>
-                New Events
-            </Typography>
+            <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+                <Typography variant="h4" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.5rem', md: '2rem', lg: '2.5rem' }, mb: 4, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
+                    New Events
+                </Typography>
+            </Box>
 
             <Grid container spacing={8} sx={{ mb: 10 }}>
                 {newevents.map((event) => (
