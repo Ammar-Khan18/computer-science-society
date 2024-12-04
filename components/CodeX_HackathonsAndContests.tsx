@@ -66,16 +66,19 @@ const CodeX_HackathonsAndContests = () => {
               <TimelineContent>
                 <Card
                   sx={{
-                    bgcolor: 'rgba(255, 255, 255, 0.8)',
+                    bgcolor: '#F5EBEB',
                     width: { xs: '100%', sm: '80%', md: '60%' },
                     mx: 'auto',
                     mt: 4,
                   }}
                 >
+
                   <CardContent>
-                    <Typography variant="h6" sx={{ borderBottom: '1px solid #000', display: 'inline-block', mb: 2 }}>
-                      Week {weekNumber}
-                    </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <Typography variant="h6" sx={{ borderBottom: '1px solid #000', display: 'inline-block', mb: 2 }}>
+                        Week {weekNumber}
+                      </Typography>
+                    </Box>
                     <Accordion sx={{ mt: 2, bgcolor: '#CDC1FF' }}>
                       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography>Details</Typography>
@@ -104,16 +107,18 @@ const CodeX_HackathonsAndContests = () => {
               <TimelineContent>
                 <Card
                   sx={{
-                    bgcolor: 'rgba(255, 255, 255, 0.8)',
+                    bgcolor: '#F5EBEB',
                     width: { xs: '100%', sm: '80%', md: '60%' },
                     mx: 'auto',
                     mt: 4,
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h6" sx={{ borderBottom: '1px solid #000', display: 'inline-block', mb: 2 }}>
-                      {monthName}
-                    </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <Typography variant="h6" sx={{ borderBottom: '1px solid #000', display: 'inline-block', mb: 2 }}>
+                        {monthName}
+                      </Typography>
+                    </Box>
                     <Accordion sx={{ mt: 2, bgcolor: '#FFC1C1' }}>
                       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography>Details</Typography>
