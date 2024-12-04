@@ -115,7 +115,7 @@ const Blog: FC = () => {
         <Grid container spacing={4}>
           {posts.map((post) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={post.id}>
-              <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: 2, boxShadow: 2, transition: '0.3s', '&:hover': { boxShadow: 5 }, backgroundColor: '#f9f9f9' }}>
+              <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: 2, boxShadow: "4px 6px #1B1A55", transition: '0.3s', '&:hover': { boxShadow: 5 }, backgroundColor: '#f9f9f9' }}>
 
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Box display="flex" alignItems="center" gap={1} mb={1}>
