@@ -28,6 +28,7 @@ const ProBattleSection: React.FC = () => {
                 fontWeight: "semibold",
                 fontSize: { xs: "1.2rem", sm: "1.5rem" },
                 mb: 1,
+                color: "#000000",
               }}
             >
               Introducing
