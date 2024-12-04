@@ -70,6 +70,9 @@ const CodeX_HackathonsAndContests = () => {
                     width: { xs: '100%', sm: '80%', md: '60%' },
                     mx: 'auto',
                     mt: 4,
+                    borderRadius: '8px',
+                    boxShadow: "4px 6px #1B1A55",
+                    transition: "0.3s",
                   }}
                 >
 
@@ -111,6 +114,9 @@ const CodeX_HackathonsAndContests = () => {
                     width: { xs: '100%', sm: '80%', md: '60%' },
                     mx: 'auto',
                     mt: 4,
+                    borderRadius: '8px',
+                    boxShadow: "4px 6px #1B1A55",
+                    transition: "0.3s",
                   }}
                 >
                   <CardContent>
