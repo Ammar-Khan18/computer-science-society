@@ -36,6 +36,40 @@ export default function HeroSection(): JSX.Element {
 
   return (
     <div style={{ backgroundColor: '#E5E3D4', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: -1,
+          overflow: "hidden",
+        }}
+      >
+        <svg
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "calc(max(50%, 25rem))",
+            top: 0,
+            height: "64rem",
+            width: "128rem",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <defs>
+            <pattern
+              id="grid-pattern"
+              x="50%"
+              y={-1}
+              width={200}
+              height={200}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V0.5M0.5 0.5H200" fill="none" stroke="rgba(200,200,200,0.5)" />
+            </pattern>
+          </defs>
+          <rect fill="url(#grid-pattern)" width="100%" height="100%" />
+        </svg>
+      </Box>
 
       <Container
         maxWidth="xl"
@@ -190,7 +224,6 @@ export default function HeroSection(): JSX.Element {
             <Box
               sx={{
                 textAlign: { xs: "center", lg: "left" },
-                alignContent: "center",
                 mx: "auto",
                 py: { lg: 6 },
                 maxWidth: 480,
@@ -239,34 +272,29 @@ export default function HeroSection(): JSX.Element {
               </Box>
             </Box>
 
+            {/* Image Section */}
             <Box
               sx={{
                 position: "relative",
                 mt: { xs: 4, lg: 0 },
-                width: "100%", // Ensures full width of the container
-                height: "auto", // Allows the height to adapt to the content (image in this case)
+                height: 220,
                 flex: 1,
               }}
             >
-              <Image
-                src={Codex_event} // Ensure the full image object is passed
+              <img
+                src={Codex_event.src}
                 alt="App screenshot"
                 style={{
-                  width: "100%", // Makes the image span the width of the container
-                  height: "auto", // Maintains the aspect ratio of the image
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
                 }}
               />
             </Box>
-
           </Card>
         </Container>
         
-        {/* Carousel Section */}
-        {/* <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
-          <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
-            <Carousel_Hero />
-          </Paper>
-        </Box> */}
       </Container>
     </div>
   )
