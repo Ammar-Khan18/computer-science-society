@@ -11,7 +11,7 @@ import reward from '../public/reward.png';
 
 const CodeXSection: React.FC = () => {
   return (
-    <Box sx={{ bgcolor: '#ECEBDE', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}> {/* #EBF5EE */}
+    <Box sx={{ bgcolor: '#ECEBDE', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}>
       
       {/* Full-width Background Image */}
       {/* <Box
@@ -45,6 +45,41 @@ const CodeXSection: React.FC = () => {
           filter: 'blur(60px)', 
         }}
       /> */}
+
+<Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: -1,
+          overflow: "hidden",
+        }}
+      >
+        <svg
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "calc(max(50%, 25rem))",
+            top: 0,
+            height: "64rem",
+            width: "128rem",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <defs>
+            <pattern
+              id="grid-pattern"
+              x="50%"
+              y={-1}
+              width={200}
+              height={200}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V0.5M0.5 0.5H200" fill="none" stroke="rgba(200,200,200,0.5)" />
+            </pattern>
+          </defs>
+          <rect fill="url(#grid-pattern)" width="100%" height="100%" />
+        </svg>
+      </Box>
 
       <Container maxWidth="lg" id="codex-section">
         <Typography variant="h3" color="#D81B60" align="center" gutterBottom sx={{ fontWeight: 700, marginTop: 10, borderBottom: '2px solid #D81B60', display: 'inline-block' }}>
