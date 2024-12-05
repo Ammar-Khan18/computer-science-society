@@ -35,7 +35,7 @@ export default function HeroSection(): JSX.Element {
   };
 
   return (
-    <div style={{ backgroundColor: '#CDC1FF', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+    <div style={{ backgroundColor: '#E5E3D4', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
 
       <Container
         maxWidth="xl"
