@@ -5,6 +5,7 @@ import {
 import ProBattle_Event_section from '@/components/ProBattle_Event_section';
 import ProBattle_Info from '@/components/ProBattle_Info';
 import ProBattle_Register from '@/components/ProBattle_Register';
+import ProBattle_Intro from '@/components/ProBattle_Intro';
 
 const ProBattle: React.FC = () => {
   return (
@@ -17,16 +18,17 @@ const ProBattle: React.FC = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          backgroundImage: 'url(/gradient_bg_hero.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          // backgroundImage: 'url(/gradient_bg_hero.jpg)',
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'center',
+          // backgroundRepeat: 'no-repeat',
+          backgroundColor: '#E5E3D4',
           zIndex: -2,
         }}
       />
 
       {/* Background Blur Effect - Decorative */}
-      <Box
+      {/* <Box
         sx={{
           position: 'fixed',
           top: '-10%',
@@ -41,12 +43,15 @@ const ProBattle: React.FC = () => {
           zIndex: -1,
           filter: 'blur(40px)',
         }}
-      />
+      /> */}
 
       {/* Main Content */}
       <Box sx={{ position: 'relative', zIndex: 1 }}>
         {/* Event Section */}
         <ProBattle_Event_section />
+
+        {/* Intro Section */}
+        <ProBattle_Intro />
           
         {/* Info Section */}
         <ProBattle_Info />
