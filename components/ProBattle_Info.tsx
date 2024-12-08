@@ -139,13 +139,76 @@ const newevents: NewEvents[] = [
     },
 ];
 
+const robotics: NewEvents[] = [
+    {
+        id : 1,
+        title: "Line Following Robot",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 5,
+        link: "https://www.google.com",
+    },
+    {
+        id : 2,
+        title: "Robo Soccer",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 7,
+        link: "https://www.google.com",
+    },
+    {
+        id : 3,
+        title: "Robo Rumble",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 3,
+        link: "https://www.google.com",
+    },
+    {
+        id : 4,
+        title: "Robo War light Weight",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 4,
+        link: "https://www.google.com",
+    },
+];
+
+const highschool: NewEvents[] = [
+    {
+        id : 1,
+        title: "Scratch Off Coding",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 5,
+        link: "https://www.google.com",
+    },
+    {
+        id : 2,
+        title: "Binary Treasure Hunt",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 7,
+        link: "https://www.google.com",
+    },
+    {
+        id : 3,
+        title: "Encryption Relay",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 3,
+        link: "https://www.google.com",
+    },
+    {
+        id : 4,
+        title: "LED Coding",
+        details: "Details of the event will be added here as long as the description is not too long.",
+        members: 4,
+        link: "https://www.google.com",
+    },
+];
+
+
 
 
 const ProBattleInfo: React.FC = () => {
     return (
         <Container maxWidth="lg">
             <Box sx={{ mt: 4, mb: 10, justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-                <Typography variant="h3" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.8rem', md: '2.5rem', lg: '3rem' }, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
+                <Typography variant="h2" align="center" sx={{ color: '#D81B60', fontSize: { xs: '2.2rem', md: '3rem', lg: '4rem' }, mb: 4, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
                     ProBattle Events
                 </Typography>
             </Box>
@@ -227,8 +290,8 @@ const ProBattleInfo: React.FC = () => {
             </Grid>
 
             <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-                <Typography variant="h4" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.5rem', md: '2rem', lg: '2.5rem' }, mb: 4, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
-                    New Events
+                <Typography variant="h2" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.7rem', md: '3rem', lg: '3.5rem' }, mb: 10, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
+                    New Additions
                 </Typography>
             </Box>
 
@@ -305,6 +368,167 @@ const ProBattleInfo: React.FC = () => {
                     </Grid>
                 ))}
             </Grid>
+
+            <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+                <Typography variant="h2" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.7rem', md: '3rem', lg: '3.5rem' }, mb: 10, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
+                    Robotics
+                </Typography>
+            </Box>
+
+            <Grid container spacing={8} sx={{ mb: 10 }}>
+                {robotics.map((event) => (
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={event.id}>
+                        <Card
+                            sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                            borderRadius: 2,
+                            boxShadow: "4px 6px #1B1A55",
+                            transition: "0.3s",
+                            overflow: "visible",
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                position: "relative",
+                                top: -16, // Half of the circle height
+                                left: "45%", 
+                                width: 32, // Circle width
+                                height: 32, // Circle height
+                                backgroundColor: "primary.main",
+                                borderRadius: "50%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "white",
+                                fontWeight: "bold",
+                                boxShadow: 1,
+                                }}
+                            >
+                                {event.id}
+                            </Box>
+
+                            {/* Card Content */}
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                {/* Title */}
+                                <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="h3"
+                                    sx={{
+                                    fontWeight: "bold",
+                                    mb: 2,
+                                    color: "primary.main",
+                                    }}
+                                >
+                                    {event.title}
+                                </Typography>
+                    
+                                {/* Details */}
+                                <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                    sx={{ mb: 2 }}
+                                >
+                                    {event.details}
+                                </Typography>
+                    
+                                {/* Number of Members */}
+                                <Box display="flex" alignItems="center" gap={1} mb={2}>
+                                    <Chip icon={<FaceIcon />} label={`Members: ${event.members}`} variant="outlined" />
+                                </Box>
+                    
+                                {/* Link */}
+                                <Link href={event.link} color="primary" underline="hover" variant="button">
+                                    Learn More
+                                </Link>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+
+            <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+                <Typography variant="h2" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.7rem', md: '3rem', lg: '3.5rem' }, mb: 10, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
+                    High School Categories
+                </Typography>
+            </Box>
+
+            <Grid container spacing={8} sx={{ mb: 10 }}>
+                {highschool.map((event) => (
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={event.id}>
+                        <Card
+                            sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                            borderRadius: 2,
+                            boxShadow: "4px 6px #1B1A55",
+                            transition: "0.3s",
+                            overflow: "visible",
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                position: "relative",
+                                top: -16, // Half of the circle height
+                                left: "45%", 
+                                width: 32, // Circle width
+                                height: 32, // Circle height
+                                backgroundColor: "primary.main",
+                                borderRadius: "50%",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "white",
+                                fontWeight: "bold",
+                                boxShadow: 1,
+                                }}
+                            >
+                                {event.id}
+                            </Box>
+
+                            {/* Card Content */}
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                {/* Title */}
+                                <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="h3"
+                                    sx={{
+                                    fontWeight: "bold",
+                                    mb: 2,
+                                    color: "primary.main",
+                                    }}
+                                >
+                                    {event.title}
+                                </Typography>
+                    
+                                {/* Details */}
+                                <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                    sx={{ mb: 2 }}
+                                >
+                                    {event.details}
+                                </Typography>
+                    
+                                {/* Number of Members */}
+                                <Box display="flex" alignItems="center" gap={1} mb={2}>
+                                    <Chip icon={<FaceIcon />} label={`Members: ${event.members}`} variant="outlined" />
+                                </Box>
+                    
+                                {/* Link */}
+                                <Link href={event.link} color="primary" underline="hover" variant="button">
+                                    Learn More
+                                </Link>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+    
         </Container>
     );
 };
