@@ -1,9 +1,11 @@
-import { Box, Typography, IconButton, Divider } from '@mui/material';
+import { Box, Typography, IconButton, Divider, Stack } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
 import { Avatar, Link, Chip } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
+import CallIcon from '@mui/icons-material/Call';
 
 const Footer: React.FC = () => {
   return (
@@ -68,16 +70,26 @@ const Footer: React.FC = () => {
         {/* Contact Us */}
         <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fcb045' }}>Contact Us</Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
-              <a href="mailto:contact@css.com" style={{ color: '#D9EA12', textDecoration: 'none' }}>
-                contact@css.com
-              </a>
-            </Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
-              <a href="tel:+1234567890" style={{ color: '#D9EA12', textDecoration: 'none' }}>
-                +123 - 456 - 7890
-              </a>
-            </Typography>
+
+            <Stack direction="column" spacing={1} sx={{ mt: 1 }}>
+              <Link href="mailto:contact@css.com" sx={{ textDecoration: 'none' }}>
+                <Chip 
+                  icon={<EmailIcon />}
+                  label="contact@css.com"
+                  variant="outlined"
+                  sx={{ bgcolor: '#F3DEBA', color: 'black', fontWeight: 'normal' }}
+                />
+              </Link>
+              
+              <Link href="tel:+1234567890" sx={{ textDecoration: 'none' }}>
+                <Chip 
+                  icon={<CallIcon />}
+                  label="+123 - 456 - 7890"
+                  variant="filled"
+                  sx={{ bgcolor: '#F3DEBA', color: 'black', fontWeight: 'normal' }}
+                />
+              </Link>
+            </Stack>
 
         </Grid>
 
