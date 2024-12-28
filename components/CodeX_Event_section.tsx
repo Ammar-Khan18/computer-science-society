@@ -46,7 +46,7 @@ const CodeXSection: React.FC = () => {
         }}
       /> */}
 
-<Box
+      <Box
         sx={{
           position: "absolute",
           inset: 0,
@@ -118,7 +118,9 @@ const CodeXSection: React.FC = () => {
                 borderRadius: 5, 
                 backgroundColor: 'grey.100', 
                 position: 'relative', 
-                overflow: 'hidden'
+                overflow: 'hidden',
+                boxShadow: "2px 3px #1B1A55",
+                transition: "0.3s",
               }}
             >
               <Typography variant="h5" color="text.primary" gutterBottom>
@@ -147,7 +149,7 @@ const CodeXSection: React.FC = () => {
           <Grid size={{ xs: 12, lg: 4 }}>
             <Grid container direction="column" spacing={3}>
               <Grid>
-                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
+                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100', boxShadow: "2px 3px #1B1A55", transition: "0.3s" }}>
                   <Typography variant="h5" color="text.primary" gutterBottom>
                     Weekly Competitions
                   </Typography>
@@ -171,7 +173,7 @@ const CodeXSection: React.FC = () => {
               </Grid>
 
               <Grid>
-                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
+                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100', boxShadow: "2px 3px #1B1A55", transition: "0.3s" }}>
                   <Typography variant="h5" color="text.primary" gutterBottom>
                     Rewards
                   </Typography>
@@ -208,7 +210,9 @@ const CodeXSection: React.FC = () => {
                 borderRadius: 5, 
                 backgroundColor: 'grey.100', 
                 position: 'relative', 
-                overflow: 'hidden'
+                overflow: 'hidden',
+                boxShadow: "2px 3px #1B1A55",
+                transition: "0.3s",
               }}
             >
               <Typography variant="h5" color="text.primary" gutterBottom>
