@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
               '&:hover': { textDecoration: 'underline' }, // Maintain underline on hover
             }}
           >
-            Designed & Developed by
+            In collaboration with
           </Typography>
 
           {/* Chip without underline */}
