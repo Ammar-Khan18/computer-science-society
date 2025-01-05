@@ -8,8 +8,10 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Divider,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import LabelSharpIcon from '@mui/icons-material/LabelSharp';
 import { useTheme } from '@mui/material/styles';
 import {
   Timeline,
@@ -33,7 +35,7 @@ const CodeX_HackathonsAndContests = () => {
     timings: '2:00 PM - 5:00 PM',
     days: 'Saturday',
     winners: 'John Doe, Jane Smith',
-    topics: 'Algorithms, Data Structures, Problem Solving',
+    topics: ['Algorithms', 'Data Structures', 'Problem Solving'],
   };
 
   return (
@@ -87,11 +89,22 @@ const CodeX_HackathonsAndContests = () => {
                         <Typography>Details</Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography><b>Contest Details:</b> {sampleDetails.contestDetails}</Typography>
-                        <Typography><b>Timings:</b> {sampleDetails.timings}</Typography>
-                        <Typography><b>Days:</b> {sampleDetails.days}</Typography>
-                        <Typography><b>Winners:</b> {sampleDetails.winners}</Typography>
-                        <Typography><b>Topics:</b> {sampleDetails.topics}</Typography>
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Contest Details:</b> {sampleDetails.contestDetails}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Timings:</b> {sampleDetails.timings}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Days:</b> {sampleDetails.days}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Winners:</b> {sampleDetails.winners}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Topics:</b>
+                        {sampleDetails.topics.map((topic) => (
+                          <Box key={topic} sx={{ display: 'flex', alignItems: 'center' }}>
+                            <LabelSharpIcon sx={{ fontSize: '1rem', mr: 1 }} />
+                            <Typography>{topic}</Typography>
+                          </Box>
+                        ))}
+                        </Typography>
                       </AccordionDetails>
                     </Accordion>
                   </CardContent>
@@ -130,11 +143,22 @@ const CodeX_HackathonsAndContests = () => {
                         <Typography>Details</Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography><b>Contest Details:</b> {sampleDetails.contestDetails}</Typography>
-                        <Typography><b>Timings:</b> {sampleDetails.timings}</Typography>
-                        <Typography><b>Days:</b> {sampleDetails.days}</Typography>
-                        <Typography><b>Winners:</b> {sampleDetails.winners}</Typography>
-                        <Typography><b>Topics:</b> {sampleDetails.topics}</Typography>
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Contest Details:</b> {sampleDetails.contestDetails}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Timings:</b> {sampleDetails.timings}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Days:</b> {sampleDetails.days}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Winners:</b> {sampleDetails.winners}</Typography>
+                        <Divider sx={{ my: 1 }} />
+                        <Typography sx={{ alignItems: 'left', textAlign: 'left' }}><b>Topics:</b>  
+                        {sampleDetails.topics.map((topic) => (
+                          <Box key={topic} sx={{ display: 'flex', alignItems: 'center' }}>
+                            <LabelSharpIcon sx={{ fontSize: '1rem', mr: 1 }} />
+                            <Typography>{topic}</Typography>
+                          </Box>
+                        ))}
+                        </Typography>
                       </AccordionDetails>
                     </Accordion>
                   </CardContent>
