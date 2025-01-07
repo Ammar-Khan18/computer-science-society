@@ -15,15 +15,15 @@ export default function Home() {
           top: 0,
           left: 0,
           width: '100vw',
+          background: 'black',
           height: '100vh',
-          backgroundImage: 'url(/gradient_bg_hero.jpg)',
-          backgroundSize: 'cover',
+          // background: 'rgb(2,0,36) linear-gradient(to bottom, black 5%, rgba(2,0,36,1) 0%, rgba(121,9,118,1) 35%, rgba(255,0,114,1) 100%)',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           zIndex: -2,
         }}
       />
-      
+
       <Hero_section />
       <CodeX_Event_section />
       {/* <Social_section /> */}

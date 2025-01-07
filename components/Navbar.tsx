@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <AppBar id="NavBar" position="relative" sx={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', color: 'white', boxShadow: 'none' }}>
+      <AppBar id="NavBar" position="fixed" sx={{ backgroundColor: 'transparent', color: 'white', boxShadow: 'none' }}>
         <Toolbar>
           <Box>
             <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
           <IconButton
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none', color: '#000' }, ml: 'auto' }}
+            sx={{ display: { sm: 'none', color: 'white' }, ml: 'auto' }}
           >
             <MenuIcon />
           </IconButton>
@@ -156,10 +156,9 @@ const Navbar: React.FC = () => {
         onClose={handleDrawerToggle}
         sx={{
           '& .MuiDrawer-paper': {
-            backgroundColor: '#333',
+            backgroundColor: '#000',
             color: '#fff',
-            width: '60%',
-            height: '50%',
+            width: '100%',
             borderRadius: '0 0 0 15px',
           },
           display: { xs: 'block', sm: 'none' },

@@ -1,25 +1,44 @@
-'use client'
-import { Button, Typography, Container, Box, IconButton, Paper, Card, SvgIcon, Link} from '@mui/material'
-import Carousel_Hero from '@/components/Carousel_Hero';
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import Image from 'next/image'
-import React from 'react';
-import Grid from '@mui/material/Grid2';
+"use client";
+import {
+  Button,
+  Typography,
+  Container,
+  Box,
+  IconButton,
+  Paper,
+  Card,
+  SvgIcon,
+  Link,
+} from "@mui/material";
+import Carousel_Hero from "@/components/Carousel_Hero";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import Image from "next/image";
+import React from "react";
+import Grid from "@mui/material/Grid2";
+import Home from "../public/Home.png";
+import Codex_event from "../public/Codex_event.png";
+import AnimatedBackground from "./animated-background";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 
-import { motion } from 'framer-motion';
-
-import Home from '../public/Home.png';
-import Codex_event from '../public/Codex_event.png';
-
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
 export default function HeroSection(): JSX.Element {
-
   const [animateIcons, setAnimateIcons] = React.useState(false);
 
   const handleFollowUsClick = () => {
     setAnimateIcons(true);
     setTimeout(() => setAnimateIcons(false), 1000); // Reset animation after 1 second
   };
+  const { scrollYProgress } = useScroll();
+  const y = useParallax(scrollYProgress, 100);
 
   const iconContainerVariants = {
     animate: {
@@ -31,45 +50,83 @@ export default function HeroSection(): JSX.Element {
 
   const iconVariants = {
     initial: { y: 0 },
-    animate: { y: [0, -10, 0], transition: { duration: 0.5, ease: 'easeInOut' } },
+    animate: {
+      y: [0, -10, 0],
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
   };
 
   return (
-    <div style={{ backgroundColor: '#CDC1FF', position: 'relative', overflow: 'hidden', zIndex: 0 }}>
+    <div style={{ position: "relative", overflow: "hidden", zIndex: 0 }}>
+      <div style={{ position: "absolute", top: 0, zIndex: -1, left: 0 }}>
+        <AnimatedBackground />
+        <div
+          style={{
+            position: "absolute",
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+          }}
+        ></div>
+      </div>
 
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
-          position: 'relative',
+          position: "relative",
           paddingTop: { xs: 8, sm: 14 },
           paddingBottom: { xs: 8, sm: 14 },
         }}
       >
-        <Grid container spacing={1} justifyContent="center">
-          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17, ml: {xs: 0, md: 30} }}>
-            <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'text.primary', lineHeight: 1.2 }}>
-              IBA <span style={{ color: '#D81B60', borderBottom: '2px solid #D81B60'}}>Computer Science</span> Society
+        <Grid container spacing={1}>
+          <Box textAlign="left" sx={{ paddingBottom: 17 }}>
+            <Typography
+              variant="h1"
+              sx={{ fontWeight: "bold", color: "white", lineHeight: 1.2 }}
+            >
+              IBA{" "}
+              <span
+                style={{ WebkitTextStroke: "1px white", color: "transparent" }}
+              >
+                Computer Science
+              </span>{" "}
+              Society
             </Typography>
 
-            <Typography variant='h4' sx={{ mt: 3, fontSize: { xs: '1.8rem', sm: '2.2rem' }, color: 'text.secondary' }}>
-              Introducing <Link href="/pro-battle" underline="hover" sx={{ color: '#D81B60' }}>Pro Battle</Link>
+            <Typography variant="body1" sx={{ mt: 3, color: "white" }}>
+              Introducing{" "}
+              <Link
+                href="/pro-battle"
+                underline="hover"
+                sx={{ color: "#D81B60" }}
+              >
+                Pro Battle
+              </Link>
             </Typography>
 
-            <Typography variant="body1" sx={{ mt: 3, fontSize: { xs: '1.125rem', sm: '1.25rem' }, color: 'text.secondary' }}>
-              Where tech enthusiasts connect, collaborate, and grow. Join us for thrilling events like CodeX and Pro Battle!
+            <Typography variant="body1" sx={{ mt: 3, color: "white" }}>
+              Where tech enthusiasts connect, collaborate, and grow. Join us for
+              thrilling events like CodeX and Pro Battle!
             </Typography>
 
-            <Box mt={4} display="flex" justifyContent="center" gap={3}>
+            <Box mt={4} display="flex" justifyContent="space-between" gap={3}>
               <Button
-                variant="contained"
-                color="primary"
-                sx={{ fontWeight: 'bold', textTransform: 'none', padding: '0.125rem 1rem' }}
+                variant="link"
+                color="white"
+                sx={{ fontWeight: "bold", textTransform: "none", padding: "0" }}
                 endIcon={<span>&rarr;</span>}
                 onClick={handleFollowUsClick}
               >
                 Follow us
               </Button>
-              <motion.div variants={iconContainerVariants} initial="initial" animate={animateIcons ? 'animate' : 'initial'}>
+              <motion.div
+                variants={iconContainerVariants}
+                initial="initial"
+                animate={animateIcons ? "animate" : "initial"}
+              >
                 <Box display="flex" gap={2}>
                   <motion.div variants={iconVariants}>
                     <IconButton
@@ -79,11 +136,11 @@ export default function HeroSection(): JSX.Element {
                       target="_blank"
                       rel="noopener"
                       sx={{
-                        backgroundColor: 'white',
-                        color: 'black',
-                        '&:hover': {
-                        backgroundColor: 'gray',
-                        borderRadius: '50%',
+                        backgroundColor: "transparent",
+                        color: "white",
+                        "&:hover": {
+                          backgroundColor: "black",
+                          borderRadius: "50%",
                         },
                       }}
                     >
@@ -98,15 +155,20 @@ export default function HeroSection(): JSX.Element {
                       target="_blank"
                       rel="noopener"
                       sx={{
-                        backgroundColor: 'white',
-                        color: 'black',
-                        '&:hover': {
-                        backgroundColor: 'gray',
-                        borderRadius: '50%',
+                        backgroundColor: "transparent",
+                        color: "white",
+                        "&:hover": {
+                          backgroundColor: "black",
+                          borderRadius: "50%",
                         },
                       }}
                     >
-                      <Image src="/Discord-Emblem.svg" alt="Discord" width={24} height={24} />
+                      <Image
+                        src="/Discord-Emblem.svg"
+                        alt="Discord"
+                        width={24}
+                        height={24}
+                      />
                     </IconButton>
                   </motion.div>
                   <motion.div variants={iconVariants}>
@@ -117,11 +179,11 @@ export default function HeroSection(): JSX.Element {
                       target="_blank"
                       rel="noopener"
                       sx={{
-                        backgroundColor: 'white',
-                        color: 'black',
-                        '&:hover': {
-                        backgroundColor: 'gray',
-                        borderRadius: '50%',
+                        backgroundColor: "transparent",
+                        color: "white",
+                        "&:hover": {
+                          backgroundColor: "black",
+                          borderRadius: "50%",
                         },
                       }}
                     >
@@ -133,23 +195,39 @@ export default function HeroSection(): JSX.Element {
             </Box>
           </Box>
 
-          <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17 }}>
+          {/* <Box textAlign="center" sx={{ maxWidth: '650px', margin: 'auto', paddingBottom: 17 }}>
             <Image src={Home} alt="Home" width={470} height={350} />
-          </Box>
+          </Box> */}
         </Grid>
 
         {/* CodeX Section */}
-        <Container maxWidth="xl" sx={{ mt: 6 }}>
+        <Container
+          disableGutters
+          maxWidth="lg"
+          sx={{ mt: 6 }}
+          style={{ justifyContent: "center", display: "flex" }}
+        >
           <Card
+            component={motion.div}
+            PaperProps={{
+              style: {
+                maxWidth: 650,
+              },
+            }}
+            style={{ y }}
             sx={{
               position: "relative",
-              overflow: "hidden",
-              backgroundColor: "grey.900",
+              // overflow: "hidden",
+              border: "1px white",
+              backdropFilter: "blur(5px)",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              boxShadow:
+                "0 19px 38px rgba(255,255,255,1), 0 15px 12px rgba(121,9,118,1)",
               p: { xs: 4, sm: 6, md: 8 },
               display: { lg: "flex" },
               gap: 4,
               borderRadius: 2,
-              boxShadow: 6,
+              boxShadow: "6px white",
             }}
           >
             {/* Background Gradient */}
@@ -197,40 +275,67 @@ export default function HeroSection(): JSX.Element {
               }}
             >
               <Typography
-                variant="h3"
-                component="h2"
-                sx={{ fontWeight: "semibold", color: "grey.400", borderBottom: "4px solid #D81B60", display: "inline-block", mb: 3, fontSize: { xs: '1.8rem', lg: '3rem' } }}
+                variant="h1"
+                sx={{
+                  fontSize: { xs: "3rem", sm: "4rem" },
+                  fontWeight: "bold",
+                  color: "white",
+                  lineHeight: 1.2,
+                }}
               >
-                Codex Event
+                <small>CSS / </small>
+                <span
+                  style={{
+                    WebkitTextStroke: "1px white",
+                    color: "transparent",
+                  }}
+                >
+                  ProBattle
+                </span>
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ color: "grey.300", mb: 4, lineHeight: 1.8, justifyContent: "center", alignItems: "center" }}
+                sx={{
+                  color: "white",
+                  mb: 4,
+                  lineHeight: 1.8,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
-                Codex is a competitive programming event that challenges you to solve real-world problems using your coding skills. Join us for a thrilling experience!
+                Codex is a competitive programming event that challenges you to
+                solve real-world problems using your coding skills. Join us for
+                a thrilling experience!
               </Typography>
-              <Box sx={{ display: "flex", gap: 2, justifyContent: "center", lg: { justifyContent: "start" } }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  justifyContent: "space-between",
+                  lg: { justifyContent: "start" },
+                }}
+              >
                 <Button
                   variant="contained"
                   href="#codex-section"
                   sx={{
-                  backgroundColor: "white",
-                  color: "grey.900",
-                  fontSize: { xs: '0.75rem', sm: '1rem' }, // Smaller font size for smaller screens
-                  padding: { xs: '0.25rem 0.5rem', sm: '0.5rem 1rem' }, // Smaller padding for smaller screens
-                  "&:hover": { backgroundColor: "grey.100" },
+                    backgroundColor: "white",
+                    color: "grey.900",
+                    fontSize: { xs: "0.75rem", sm: "1rem" }, // Smaller font size for smaller screens
+                    padding: { xs: "0.25rem 0.5rem", sm: "0.5rem 1rem" }, // Smaller padding for smaller screens
+                    "&:hover": { backgroundColor: "grey.100" },
                   }}
                 >
                   Get started
                 </Button>
                 <Button
                   variant="text"
-                  href='/codex'
-                  sx={{ 
-                    color: "white", 
+                  href="/codex"
+                  sx={{
+                    color: "white",
                     fontWeight: "bold",
-                    fontSize: { xs: '0.75rem', sm: '1rem' }, // Smaller font size for smaller screens
-                    padding: { xs: '0.25rem 0.5rem', sm: '0.5rem 1rem' }, // Smaller padding for smaller screens
+                    fontSize: { xs: "0.75rem", sm: "1rem" }, // Smaller font size for smaller screens
+                    padding: { xs: "0.25rem 0.5rem", sm: "0.5rem 1rem" }, // Smaller padding for smaller screens
                   }}
                   endIcon={<span aria-hidden="true">→</span>}
                 >
@@ -257,10 +362,9 @@ export default function HeroSection(): JSX.Element {
                 }}
               />
             </Box>
-
           </Card>
         </Container>
-        
+
         {/* Carousel Section */}
         {/* <Box sx={{ maxWidth: 'lg', mt: 15, mx: 'auto' }}>
           <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.8)', borderRadius: 3 }}>
@@ -269,5 +373,5 @@ export default function HeroSection(): JSX.Element {
         </Box> */}
       </Container>
     </div>
-  )
+  );
 }

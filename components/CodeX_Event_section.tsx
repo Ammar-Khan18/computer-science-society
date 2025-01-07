@@ -11,8 +11,8 @@ import reward from '../public/reward.png';
 
 const CodeXSection: React.FC = () => {
   return (
-    <Box sx={{ bgcolor: '#CDC1FF', py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0 }}> {/* #EBF5EE */}
-      
+    <Box sx={{ py: { xs: 8, sm: 10 }, position: 'relative', overflow: 'hidden', zIndex: 0, background: 'black' }}> {/* #EBF5EE */}
+
       {/* Full-width Background Image */}
       {/* <Box
         sx={{
@@ -47,49 +47,40 @@ const CodeXSection: React.FC = () => {
       /> */}
 
       <Container maxWidth="lg" id="codex-section">
-        <Typography variant="h3" color="#D81B60" align="center" gutterBottom sx={{ fontWeight: 700, marginTop: 10, borderBottom: '2px solid #D81B60', display: 'inline-block' }}>
-          CodeX Event 
+        <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'white', lineHeight: 1.2 }}>
+          <small>CSS / </small><span style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>Codex</span>
         </Typography>
         <Typography
-          variant="h5"
+          variant="body1"
           align="left"
-          color="text.primary"
+          color="white"
           sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 500 }}
           gutterBottom
         >
-          The ultimate coding challenge for developers of all skill levels. 
-        </Typography>
-        <Typography
-          variant="h5"
-          align="left"
-          color="text.secondary"
-          sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 400 }}
-          gutterBottom
-        >
-          Join us for an exciting event full of innovation, problem-solving, and competition! 
+          The ultimate coding challenge for developers of all skill levels. Join us for an exciting event full of innovation, problem-solving, and competition!
         </Typography>
 
         <Grid container spacing={4} sx={{ mt: { xs: 5, sm: 8 } }}>
-          
           {/* Left Column */}
           <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '600px' } }}>
-            <Paper 
-              elevation={2} 
-              sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                p: 4, 
-                borderRadius: 5, 
-                backgroundColor: 'grey.100', 
-                position: 'relative', 
+            <Paper
+              elevation={2} variant="outlined"
+              sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                p: 4,
+                backgroundColor: 'transparent',
+                borderRadius: 5,
+                borderColor: 'white',
+                position: 'relative',
                 overflow: 'hidden'
               }}
             >
-              <Typography variant="h5" color="text.primary" gutterBottom>
+              <Typography variant="h5" color="white" gutterBottom>
                 Challenges
               </Typography>
-              <Typography color="text.secondary">
+              <Typography color="white">
                 Different challenges to test your skills in computer science and programming related to many fields such as AI, ML, Web Development, etc.
               </Typography>
               <Box
@@ -112,11 +103,15 @@ const CodeXSection: React.FC = () => {
           <Grid size={{ xs: 12, lg: 4 }}>
             <Grid container direction="column" spacing={3}>
               <Grid>
-                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
-                  <Typography variant="h5" color="text.primary" gutterBottom>
+                <Paper variant="outlined" elevation={2} sx={{
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: 'white', display: 'flex', flexDirection: 'column', p: 4
+                }}>
+                  <Typography variant="h5" color="white" gutterBottom>
                     Weekly Competitions
                   </Typography>
-                  <Typography color="text.secondary">
+                  <Typography color="white">
                     Weekly competitions to test your skills in computer science and programming.
                   </Typography>
                   <Box
@@ -136,11 +131,16 @@ const CodeXSection: React.FC = () => {
               </Grid>
 
               <Grid>
-                <Paper elevation={2} sx={{ display: 'flex', flexDirection: 'column', p: 4, borderRadius: 5, backgroundColor: 'grey.100' }}>
-                  <Typography variant="h5" color="text.primary" gutterBottom>
+                <Paper variant="outlined" elevation={2} sx={{ 
+                  display: 'flex', 
+                  backgroundColor: 'transparent',
+                  borderRadius: 5,
+                  borderColor: 'white',
+                  flexDirection: 'column', p: 4 }}>
+                  <Typography variant="h5" color="white" gutterBottom>
                     Rewards
                   </Typography>
-                  <Typography color="text.secondary">
+                  <Typography color="white">
                     Rewards for the winners of the competitions
                   </Typography>
                   <Box
@@ -163,23 +163,24 @@ const CodeXSection: React.FC = () => {
 
           {/* Right Column */}
           <Grid size={{ xs: 12, lg: 4 }} sx={{ maxHeight: '600px', height: { xs: '330px', lg: '600px' } }}>
-            <Paper 
-              elevation={2} 
-              sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                p: 4, 
-                borderRadius: 5, 
-                backgroundColor: 'grey.100', 
-                position: 'relative', 
+            <Paper
+              elevation={2} variant="outlined"
+              sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                p: 4,
+                backgroundColor: 'transparent',
+                borderRadius: 5,
+                borderColor: 'white',
+                position: 'relative',
                 overflow: 'hidden'
               }}
             >
-              <Typography variant="h5" color="text.primary" gutterBottom>
+              <Typography variant="h5" color="white" gutterBottom>
                 Community
               </Typography>
-              <Typography color="text.secondary">
+              <Typography color="white">
                 Join a community of developers and programmers to share ideas, learn new skills, and collaborate on projects.
               </Typography>
               <Box
@@ -193,7 +194,7 @@ const CodeXSection: React.FC = () => {
                   backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
-                  transform: {xs: 'scale(1.2, 1.3)', sm: 'scale(1.2, 1.7)'},
+                  transform: { xs: 'scale(1.2, 1.3)', sm: 'scale(1.2, 1.7)' },
                 }}
               />
             </Paper>
@@ -220,7 +221,7 @@ const CodeXSection: React.FC = () => {
             Explore CodeX!
           </Button>
         </Box>
-    
+
       </Container>
     </Box>
   );
