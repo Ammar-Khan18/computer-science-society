@@ -59,7 +59,7 @@ const AboutUs: React.FC = () => {
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#4B5563', lineHeight: 1.8 }}>
                   We organize events such as CodeX and ProBattle, host workshops, and offer learning resources to
-                  enhance members' technical skills. Whether it's weekly coding contests, monthly hackathons, or research
+                  enhance members technical skills. Whether its weekly coding contests, monthly hackathons, or research
                   programs, we provide a platform for students to grow and collaborate.
                 </Typography>
               </CardContent>
