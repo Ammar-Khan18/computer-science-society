@@ -25,7 +25,15 @@ import FaceIcon from "@mui/icons-material/Face";
 import { events, newevents, robotics, highschool } from "./constants";
 
 // EventCard Component
-const EventCard: React.FC<{ event: any }> = ({ event }) => (
+interface Event {
+  id: number;
+  title: string;
+  details: string;
+  members: number;
+  link: string;
+}
+
+const EventCard: React.FC<{ event: Event }> = ({ event }) => (
   <Grid size={{ xs: 12, sm: 6, md: 4 }} key={event.id}>
     <Card
       sx={{
