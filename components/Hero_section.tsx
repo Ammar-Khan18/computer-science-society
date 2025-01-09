@@ -5,7 +5,6 @@ import {
   Container,
   Box,
   IconButton,
-  Paper,
   Card,
   SvgIcon,
   Link,
@@ -82,7 +81,7 @@ export default function HeroSection(): JSX.Element {
         }}
       >
         <Grid container spacing={1}>
-          <Box textAlign="left" sx={{ paddingBottom: 17 }}>
+          <Box textAlign="left" sx={{ paddingBottom: 20, paddingTop: 5 }}>
             <Typography
               variant="h1"
               sx={{ fontWeight: "bold", color: "white", lineHeight: 1.2, fontSize: { xs: "3rem", sm: "4rem", md: "6rem" } }}
