@@ -1,107 +1,164 @@
 "use client";
 import React from "react";
-import { Box, Button, Typography, Container } from "@mui/material";
-import Grid from "@mui/material/Grid2";
-import HowToRegIcon from '@mui/icons-material/HowToReg';
+import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
+import Image from "next/image";
 
 const ProBattleSection: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Detect mobile screens
+
   return (
-    <Box
-      id="probattle-section"
-      sx={{
-        display: "flex",
-        alignItems: "center", // Center content vertically
-        justifyContent: "center", // Center content horizontally
-        textAlign: "center", // Center text
-        color: "white", // Text color
-        minHeight: "100vh", // Full height
-      }}
-    >
-      <Container maxWidth="md">
-        <Grid container spacing={4} justifyContent="center" alignItems="center" >
-          {/* Title */}
-          <Grid size={12} >
+    <div style={{ backgroundColor: "#000", padding: "50px 0" }}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+
+        {/* Big Image */}
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            paddingY: 3,
+          }}
+        >
+          <Box
+            sx={{
+              width: { xs: "100%", md: 1200 },
+              height: { xs: 300, md: 460 },
+              overflow: "hidden",
+              borderRadius: 5,
+              position: "relative", // Needed for Image to scale properly
+            }}
+          >
+            <Image
+              src="/hero-video.jpg" // Replace with the path to your image
+              alt="ProBattle Title"
+              layout="fill" // Makes the image fill the parent container
+              objectFit={isMobile ? "cover" : "contain"} // Changes behavior based on screen size
+              style={{
+                transition: "transform 0.5s ease-in-out",
+                transformOrigin: "center",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "scale(1.1)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "scale(1)")
+              }
+            />
+          </Box>
+        </Box>
+
+        {/* Text */}
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            textAlign: "center",
+            paddingTop: 2,
+          }}
+        >
+          <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
+            January 30, 2023
+          </Typography>
+          <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
+            Live 
+          </Typography>
+          <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
+            IBA, Karachi
+          </Typography>
+        </Box>
+
+        {/* Another Image but with no hover effect */}
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            paddingY: 3,
+          }}
+        >
+          <Box
+            sx={{
+              width: { xs: "100%", md: 1200 },
+              height: { xs: 100, md: 300 },
+              overflow: "hidden",
+              borderRadius: 5,
+              position: "relative", // Needed for Image to scale properly
+            }}
+          >
+            <Image
+              src="/probattle white.png" // Replace with the path to your image
+              alt="ProBattle Title"
+              layout="fill" // Makes the image fill the parent container
+              objectFit={isMobile ? "cover" : "contain"} // Changes behavior based on screen size
+            />
+          </Box>
+        </Box>
+
+        {/* Text and a button on the right */}
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" }, // Column on mobile, row on larger screens
+              flexWrap: "wrap",
+              justifyContent: { xs: "center", sm: "space-between" }, // Center on mobile, space-between on larger screens
+              textAlign: { xs: "center", sm: "left" }, // Center-align text on mobile
+              alignItems: "center", // Align items in the center
+              gap: 2, // Add spacing between items
+            }}
+          >
             <Typography
               variant="h5"
-              component="h2"
+              color="#fff"
               sx={{
-                fontWeight: "semibold",
-                fontSize: { xs: "1.2rem", sm: "1.5rem" },
-                mb: 1,
+                fontSize: { xs: "1rem", sm: "1.5rem" }, // Smaller font size on mobile
+                lineHeight: { xs: 1.5, sm: 1.8 }, // Adjust line height for better readability
+                maxWidth: { xs: "90%", sm: "70%" }, // Restrict width for text on mobile
               }}
             >
-              Introducing
+              Our biggest event of the year is here!<br />
+              Register now to participate in the ProBattle event.
             </Typography>
-            <Typography
-              variant="h2"
-              component="h1"
-              sx={{
-                fontWeight: "bold",
-                fontSize: { xs: "3rem", sm: "4rem" },
-                mb: 2,
-                borderBottom: "2px solid", 
-                borderColor: "primary.secondary",
-                display: "inline-block",
-              }}
-            >
-              Pro Battle
-            </Typography>
-          </Grid>
-
-          {/* Logo */}
-          <Grid size={12} >
             <Box
-              component="img"
-              src="/path-to-your-logo.png" // Replace with your logo path
-              alt="Pro Battle Logo"
               sx={{
-                maxWidth: "200px", // Adjust the size as needed
-                width: "100%",
-                mx: "auto",
-              }}
-            />
-          </Grid>
-
-          {/* Description */}
-          <Grid size={{ xs: 12, sm: 8, md: 10 }} >
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.2rem",
-                mb: 3,
-                px: 2,
+                display: "flex",
+                justifyContent: "center",
+                width: { xs: "100%", sm: "auto" }, // Full width on mobile
+                marginTop: { xs: 2, sm: 0 }, // Add spacing on mobile
               }}
             >
-              Join the ultimate competitive coding event, where top developers
-              battle it out to solve complex challenges and win exciting prizes!
-            </Typography>
-          </Grid>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  border: "none",
+                  borderRadius: 5,
+                  cursor: "pointer",
+                }}
+              >
+                Register
+              </button>
+            </Box>
+          </Box>
+        </Container>
 
-          {/* Register Button with an icon */}
-          <Grid size={12} >
-            <Button
-              component="a"
-              href="#register" // Replace with your registration link
-              variant="contained"
-              color="primary"
-              endIcon={<HowToRegIcon />} // Icon on the right side
-              sx={{
-              backgroundColor: "#FFD700", // Gold color
-              color: "black",
-              fontWeight: "bold",
-              px: 4, // Extra padding for better button appearance
-              py: 1.5,
-              "&:hover": {
-                backgroundColor: "#FFA500", // Darker gold on hover
-              },
-              }}
-            >
-              Get Started
-            </Button>
-          </Grid>
-        </Grid>
+        
       </Container>
-    </Box>
+    </div>
   );
 };
 
