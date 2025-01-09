@@ -1,152 +1,313 @@
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React from "react";
 import {
-  Grid2,
+  Box,
+  Card,
+  CardContent,
+  Grid,
   TextField,
   Button,
-  Paper,
   Typography,
-  Input,
   MenuItem,
   Select,
   FormControl,
   InputLabel,
-  SelectChangeEvent,
+  CircularProgress,
+  IconButton,
+  Paper,
 } from "@mui/material";
-import { firestore } from "@/firebase"; // Import your Firebase configuration
+import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
+import { firestore } from "@/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { create } from "zustand";
 
-interface Member {
-  name: string;
-  email: string;
-  contact: string;
-  cnic: string;
-}
+const initialMember = { name: "", email: "", contact: "", cnic: "" };
+
+// Define modules with their respective min and max members
+const modules = [
+  { name: "Machine Learning", minMembers: 2, maxMembers: 5 },
+  { name: "App Development", minMembers: 3, maxMembers: 6 },
+  { name: "NLP", minMembers: 2, maxMembers: 4 },
+  { name: "Tech Tank", minMembers: 1, maxMembers: 3 },
+  { name: "Competitive Programming", minMembers: 2, maxMembers: 2 },
+  { name: "Robo Sumo", minMembers: 2, maxMembers: 5 },
+];
+
+// Zustand Store
+const useRegistrationStore = create((set) => ({
+  teamName: "",
+  moduleSelected: "",
+  baCode: "",
+  members: [{ ...initialMember }],
+  loading: false,
+  successMessage: "",
+  errors: {},
+
+  setTeamName: (value) => set({ teamName: value }),
+  setModuleSelected: (value) => set({ moduleSelected: value }),
+  setBaCode: (value) => set({ baCode: value }),
+  setMembers: (members) => set({ members }),
+  setLoading: (value) => set({ loading: value }),
+  setSuccessMessage: (message) => set({ successMessage: message }),
+  setErrors: (errors) => set({ errors }),
+}));
 
 const RegistrationForm: React.FC = () => {
-  const [teamName, setTeamName] = useState<string>("");
-  const [moduleSelected, setModuleSelected] = useState<string>("");
-  const [baCode, setBaCode] = useState<string>("");
-  const [societyCode, setSocietyCode] = useState<string>("");
-  const [numMembers, setNumMembers] = useState<number>(1);
-  const [members, setMembers] = useState<Member[]>([
-    { name: "", email: "", contact: "", cnic: "" },
-  ]);
-  const [paymentReceipt, setPaymentReceipt] = useState<File | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string>("");
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const {
+    teamName,
+    moduleSelected,
+    baCode,
+    members,
+    loading,
+    successMessage,
+    errors,
+    setTeamName,
+    setModuleSelected,
+    setBaCode,
+    setMembers,
+    setLoading,
+    setSuccessMessage,
+    setErrors,
+  } = useRegistrationStore();
 
-  // Validate Fields
-  const validateFields = (): boolean => {
-    const newErrors: { [key: string]: string } = {};
+  const selectedModule = modules.find((module) => module.name === moduleSelected);
 
-    if (!teamName) newErrors.teamName = "Team Name is required.";
-    if (!moduleSelected) newErrors.moduleSelected = "Module is required.";
-    if (!baCode) newErrors.baCode = "BA Code is required.";
-    if (!societyCode) newErrors.societyCode = "Society Code is required.";
-    if (!paymentReceipt) newErrors.paymentReceipt = "Payment receipt is required.";
+  const validateField = (field, value, index) => {
+    const newErrors = { ...errors };
 
-    members.forEach((member, index) => {
-      if (!member.name) newErrors[`member-${index}-name`] = `Member ${index + 1} name is required.`;
-      if (!member.email) newErrors[`member-${index}-email`] = `Member ${index + 1} email is required.`;
-      if (!member.contact) newErrors[`member-${index}-contact`] = `Member ${index + 1} contact is required.`;
-      if (!member.cnic) newErrors[`member-${index}-cnic`] = `Member ${index + 1} CNIC is required.`;
-    });
+    if (field === "teamName" && !value) {
+      newErrors.teamName = "Team Name is required.";
+    } else if (field === "moduleSelected" && !value) {
+      newErrors.moduleSelected = "Please select a module.";
+    } else if (field.includes("member")) {
+      const [_, idx, key] = field.split("-");
+      const memberIndex = parseInt(idx);
+
+      if (key === "name" && !value) {
+        newErrors[`member-${memberIndex}-name`] = "Name is required.";
+      } else if (key === "email" && (!value || !/\S+@\S+\.\S+/.test(value))) {
+        newErrors[`member-${memberIndex}-email`] = "A valid email is required.";
+      } else if (key === "contact" && (!value || value.length < 10)) {
+        newErrors[`member-${memberIndex}-contact`] = "A valid contact is required.";
+      } else if (key === "cnic" && (!value || value.length < 13)) {
+        newErrors[`member-${memberIndex}-cnic`] = "A valid CNIC is required.";
+      } else {
+        delete newErrors[field];
+      }
+    } else {
+      delete newErrors[field];
+    }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
   };
 
-  const handleNumMembersChange = (event: SelectChangeEvent<number>) => {
-    const value = parseInt(event.target.value.toString(), 10);
-    setNumMembers(value);
-
-    const newMembers = Array.from({ length: value }, (_, index) => ({
-      name: members[index]?.name || "",
-      email: members[index]?.email || "",
-      contact: members[index]?.contact || "",
-      cnic: members[index]?.cnic || "",
-    }));
-    setMembers(newMembers);
+  const validateMemberCount = () => {
+    const newErrors = { ...errors };
+    if (selectedModule) {
+      if (members.length < selectedModule.minMembers) {
+        newErrors.memberCount = `At least ${selectedModule.minMembers} team members required.`;
+      } else if (members.length > selectedModule.maxMembers) {
+        newErrors.memberCount = `No more than ${selectedModule.maxMembers} team members allowed.`;
+      } else {
+        delete newErrors.memberCount;
+      }
+    }
+    setErrors(newErrors);
   };
 
-  const handleMemberChange = (index: number, field: keyof Member, value: string) => {
-    const updatedMembers = [...members];
-    updatedMembers[index][field] = value;
-    setMembers(updatedMembers);
+  const handleAddMember = () => {
+    if (selectedModule && members.length >= selectedModule.maxMembers) {
+      setErrors({
+        ...errors,
+        memberCount: `No more than ${selectedModule.maxMembers} team members allowed.`,
+      });
+      return;
+    }
+    setMembers([...members, { ...initialMember }]);
+    validateMemberCount();
   };
 
-  const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setPaymentReceipt(file);
+  const handleRemoveMember = (index) => {
+    setMembers(members.filter((_, i) => i !== index));
+    validateMemberCount();
   };
 
   const handleSubmit = async () => {
-    if (!validateFields()) return;
+    const validationErrors = {};
 
+    if (!teamName) validationErrors["teamName"] = "Team Name is required.";
+    if (!moduleSelected) validationErrors["moduleSelected"] = "Please select a module.";
+
+    if (selectedModule) {
+      if (members.length < selectedModule.minMembers) {
+        validationErrors.memberCount = `At least ${selectedModule.minMembers} team members required.`;
+      }
+      if (members.length > selectedModule.maxMembers) {
+        validationErrors.memberCount = `No more than ${selectedModule.maxMembers} team members allowed.`;
+      }
+    }
+
+    members.forEach((member, index) => {
+      if (!member.name) validationErrors[`member-${index}-name`] = "Name is required.";
+      if (!member.email || !/\S+@\S+\.\S+/.test(member.email))
+        validationErrors[`member-${index}-email`] = "A valid email is required.";
+      if (!member.contact || member.contact.length < 10)
+        validationErrors[`member-${index}-contact`] = "A valid contact is required.";
+      if (!member.cnic || member.cnic.length < 13)
+        validationErrors[`member-${index}-cnic`] = "A valid CNIC is required.";
+    });
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) return;
+
+    setLoading(true);
     try {
       const participantsRef = collection(firestore, "participants");
-
-      const data = {
-        teamName,
-        moduleSelected,
-        baCode,
-        societyCode,
-        members,
-        paymentReceipt: paymentReceipt ? paymentReceipt.name : "",
-        timestamp: new Date(),
-      };
-
+      const data = { teamName, moduleSelected, baCode, members };
       await addDoc(participantsRef, data);
 
       setSuccessMessage("Successfully Registered!");
-
-      // Clear form fields
       setTeamName("");
       setModuleSelected("");
       setBaCode("");
-      setSocietyCode("");
-      setNumMembers(1);
-      setMembers([{ name: "", email: "", contact: "", cnic: "" }]);
-      setPaymentReceipt(null);
+      setMembers([{ ...initialMember }]);
       setErrors({});
     } catch (error) {
       console.error("Error registering participant:", error);
       alert("Failed to register. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <Paper
-  sx={{
-    padding: 3,
-    width: "80%",
-    margin: "0 auto",
-    height: "100vh", // Set the height of the Paper to fill the viewport
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center", // Center vertically
-    alignItems: "center", // Center horizontally
-  }}
->
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfUJWWMYXb2rOLFVk7Ydx-DvcxPEdLDJM6GX0xBTKidxTE_JQ/viewform?embedded=true"
-    width="640"
-    height="800" // Adjust height for better fit
-    frameBorder="0"
-    marginHeight={0}
-    marginWidth={0}
-    style={{
-      border: "none",
-      maxWidth: "100%",
-      overflow: "hidden",  // Hide scrollbars
-    }}
-    title="Google Form"
-  >
-    Loading…
-  </iframe>
-</Paper>
-
+    <Box sx={{ maxWidth: "800px", margin: "40px auto", padding: "20px" }}>
+      <Card elevation={3} sx={{ borderRadius: 4, padding: 3 }}>
+        <CardContent>
+          <Typography variant="h4" align="center" gutterBottom>
+            Team Registration
+          </Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <TextField
+                label="Team Name"
+                variant="outlined"
+                fullWidth
+                value={teamName}
+                onChange={(e) => {
+                  setTeamName(e.target.value);
+                  validateField("teamName", e.target.value);
+                }}
+                error={!!errors.teamName}
+                helperText={errors.teamName}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControl fullWidth>
+                <InputLabel>Module Selected</InputLabel>
+                <Select
+                  value={moduleSelected}
+                  onChange={(e) => {
+                    setModuleSelected(e.target.value);
+                    validateField("moduleSelected", e.target.value);
+                    validateMemberCount();
+                  }}
+                  label="Module Selected"
+                  error={!!errors.moduleSelected}
+                >
+                  {modules.map((module) => (
+                    <MenuItem key={module.name} value={module.name}>
+                      {module.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              {errors.memberCount && (
+                <Typography color="error" variant="body2" sx={{ mt: 1 }}>
+                  {errors.memberCount}
+                </Typography>
+              )}
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="BA Code (Optional)"
+                variant="outlined"
+                fullWidth
+                value={baCode}
+                onChange={(e) => setBaCode(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h6">Team Members</Typography>
+            </Grid>
+            {members.map((member, index) => (
+              <Paper
+                key={index}
+                elevation={1}
+                sx={{ padding: "16px", marginBottom: "16px" }}
+              >
+                <Grid container spacing={2}>
+                  {["name", "email", "contact", "cnic"].map((field) => (
+                    <Grid item xs={12} sm={6} key={field}>
+                      <TextField
+                        label={field.charAt(0).toUpperCase() + field.slice(1)}
+                        variant="outlined"
+                        fullWidth
+                        value={member[field]}
+                        onChange={(e) => {
+                          const updatedMembers = [...members];
+                          updatedMembers[index][field] = e.target.value;
+                          setMembers(updatedMembers);
+                          validateField(`member-${index}-${field}`, e.target.value);
+                        }}
+                        error={!!errors[`member-${index}-${field}`]}
+                        helperText={errors[`member-${index}-${field}`]}
+                      />
+                    </Grid>
+                  ))}
+                  <Grid item xs={12} display="flex" justifyContent="flex-end">
+                    {members.length > 1 && (
+                      <IconButton color="error" onClick={() => handleRemoveMember(index)}>
+                        <RemoveCircleOutline />
+                      </IconButton>
+                    )}
+                  </Grid>
+                </Grid>
+              </Paper>
+            ))}
+            <Grid item xs={12}>
+              <Button
+                variant="outlined"
+                startIcon={<AddCircleOutline />}
+                onClick={handleAddMember}
+                fullWidth
+              >
+                Add Teammate
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? <CircularProgress size={24} /> : "Register"}
+              </Button>
+            </Grid>
+            {successMessage && (
+              <Grid item xs={12}>
+                <Typography align="center" color="success.main">
+                  {successMessage}
+                </Typography>
+              </Grid>
+            )}
+          </Grid>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 

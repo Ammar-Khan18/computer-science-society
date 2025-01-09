@@ -1,4 +1,3 @@
-"use client"
 import React from "react";
 import { Box, Typography, Container, Button } from "@mui/material";
 import HowToRegIcon from '@mui/icons-material/HowToReg';
@@ -17,7 +16,6 @@ const ProBattleRegister: React.FC = () => {
                             Register Now
                         </Typography>
                     </Box>
-
                     <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, flexDirection: "column", alignItems: { xs: "center", md: "flex-start" }, textAlign: { xs: "center", md: "left" } }}>
                         <Box sx={{ width: { xs: "100%", sm: "100%" } }}>
                             <Typography variant="body1" sx={{ mb: 4 }}>
@@ -27,7 +25,7 @@ const ProBattleRegister: React.FC = () => {
                         <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}>
                             <Button 
                                 component="a"
-                                href="/pro-battle/Registration" 
+                                href="/pro-battle/registration" 
                                 variant="contained"
                                 color="primary"
                                 endIcon={<HowToRegIcon />} // Icon on the right side
