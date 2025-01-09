@@ -85,7 +85,7 @@ export default function HeroSection(): JSX.Element {
           <Box textAlign="left" sx={{ paddingBottom: 17 }}>
             <Typography
               variant="h1"
-              sx={{ fontWeight: "bold", color: "white", lineHeight: 1.2 }}
+              sx={{ fontWeight: "bold", color: "white", lineHeight: 1.2, fontSize: { xs: "3rem", sm: "4rem", md: "6rem" } }}
             >
               IBA{" "}
               <span
@@ -96,7 +96,7 @@ export default function HeroSection(): JSX.Element {
               Society
             </Typography>
 
-            <Typography variant="body1" sx={{ mt: 3, color: "white" }}>
+            <Typography variant="h6" sx={{ mt: 3, color: "white" }}>
               Introducing{" "}
               <Link
                 href="/pro-battle"
@@ -107,16 +107,16 @@ export default function HeroSection(): JSX.Element {
               </Link>
             </Typography>
 
-            <Typography variant="body1" sx={{ mt: 3, color: "white" }}>
+            <Typography variant="body1" sx={{ mt: 1, color: "white" }}>
               Where tech enthusiasts connect, collaborate, and grow. Join us for
               thrilling events like CodeX and Pro Battle!
             </Typography>
 
-            <Box mt={4} display="flex" justifyContent="space-between" gap={3}>
+            <Box mt={4} display="flex" justifyContent="start" gap={2} sx={{ alignItems: "center", width: "100%" }}>
               <Button
-                variant="link"
-                color="white"
-                sx={{ fontWeight: "bold", textTransform: "none", padding: "0" }}
+                variant="text"
+                color="inherit"
+                sx={{ fontWeight: "bold", textTransform: "none", color: "#fff" }}
                 endIcon={<span>&rarr;</span>}
                 onClick={handleFollowUsClick}
               >
@@ -208,21 +208,14 @@ export default function HeroSection(): JSX.Element {
           style={{ justifyContent: "center", display: "flex" }}
         >
           <Card
-            component={motion.div}
-            PaperProps={{
-              style: {
-                maxWidth: 650,
-              },
-            }}
-            style={{ y }}
             sx={{
               position: "relative",
               // overflow: "hidden",
               border: "1px white",
               backdropFilter: "blur(5px)",
               backgroundColor: "rgba(0,0,0,0.5)",
-              boxShadow:
-                "0 19px 38px rgba(255,255,255,1), 0 15px 12px rgba(121,9,118,1)",
+              // boxShadow:
+              //   "0 19px 38px rgba(255,255,255,1), 0 15px 12px rgba(121,9,118,1)",
               p: { xs: 4, sm: 6, md: 8 },
               display: { lg: "flex" },
               gap: 4,
