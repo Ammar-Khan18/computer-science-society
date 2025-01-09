@@ -6,7 +6,6 @@ import {
   Button,
   Paper,
   Typography,
-  Input,
   MenuItem,
   Select,
   FormControl,
@@ -27,12 +26,10 @@ const RegistrationForm: React.FC = () => {
   const [teamName, setTeamName] = useState<string>("");
   const [moduleSelected, setModuleSelected] = useState<string>("");
   const [baCode, setBaCode] = useState<string>("");
-  const [societyCode, setSocietyCode] = useState<string>("");
   const [numMembers, setNumMembers] = useState<number>(1);
   const [members, setMembers] = useState<Member[]>([
     { name: "", email: "", contact: "", cnic: "" },
   ]);
-  const [paymentReceipt, setPaymentReceipt] = useState<File | null>(null);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -43,8 +40,6 @@ const RegistrationForm: React.FC = () => {
     if (!teamName) newErrors.teamName = "Team Name is required.";
     if (!moduleSelected) newErrors.moduleSelected = "Module is required.";
     if (!baCode) newErrors.baCode = "BA Code is required.";
-    if (!societyCode) newErrors.societyCode = "Society Code is required.";
-    if (!paymentReceipt) newErrors.paymentReceipt = "Payment receipt is required.";
 
     members.forEach((member, index) => {
       if (!member.name) newErrors[`member-${index}-name`] = `Member ${index + 1} name is required.`;
@@ -76,11 +71,6 @@ const RegistrationForm: React.FC = () => {
     setMembers(updatedMembers);
   };
 
-  const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setPaymentReceipt(file);
-  };
-
   const handleSubmit = async () => {
     if (!validateFields()) return;
 
@@ -91,10 +81,7 @@ const RegistrationForm: React.FC = () => {
         teamName,
         moduleSelected,
         baCode,
-        societyCode,
         members,
-        paymentReceipt: paymentReceipt ? paymentReceipt.name : "",
-        timestamp: new Date(),
       };
 
       await addDoc(participantsRef, data);
@@ -105,10 +92,8 @@ const RegistrationForm: React.FC = () => {
       setTeamName("");
       setModuleSelected("");
       setBaCode("");
-      setSocietyCode("");
       setNumMembers(1);
       setMembers([{ name: "", email: "", contact: "", cnic: "" }]);
-      setPaymentReceipt(null);
       setErrors({});
     } catch (error) {
       console.error("Error registering participant:", error);
@@ -118,35 +103,162 @@ const RegistrationForm: React.FC = () => {
 
   return (
     <Paper
-  sx={{
-    padding: 3,
-    width: "80%",
-    margin: "0 auto",
-    height: "100vh", // Set the height of the Paper to fill the viewport
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center", // Center vertically
-    alignItems: "center", // Center horizontally
-  }}
->
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfUJWWMYXb2rOLFVk7Ydx-DvcxPEdLDJM6GX0xBTKidxTE_JQ/viewform?embedded=true"
-    width="640"
-    height="800" // Adjust height for better fit
-    frameBorder="0"
-    marginHeight={0}
-    marginWidth={0}
-    style={{
-      border: "none",
-      maxWidth: "100%",
-      overflow: "hidden",  // Hide scrollbars
-    }}
-    title="Google Form"
-  >
-    Loading…
-  </iframe>
-</Paper>
+      sx={{
+        padding: 3,
+        width: "80%",
+        margin: "20px auto", // Adds space above and below the Paper
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start", // Align content to the top
+        alignItems: "center", // Center horizontally
+      }}
+    >
+      <Grid2 container spacing={3} sx={{ justifyContent: "center" }}>
+        {/* Team Name */}
+        <Grid2 size={{ xs: 12, sm: 6 }}>
+          <TextField
+            label="Team Name"
+            variant="outlined"
+            fullWidth
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+            error={!!errors.teamName}
+            helperText={errors.teamName}
+          />
+        </Grid2>
 
+        {/* Module Selected */}
+        <Grid2 size={{ xs: 12, sm: 6 }}>
+          <FormControl fullWidth variant="outlined" error={!!errors.moduleSelected}>
+            <InputLabel>Module Selected</InputLabel>
+            <Select
+              label="Module Selected"
+              value={moduleSelected}
+              onChange={(e) => setModuleSelected(e.target.value)}
+            >
+              {[
+                "Machine Learning",
+                "App Development",
+                "Natural Language Processing (NLP)",
+                "Tech Tank",
+                "Competitive Programming",
+                "Pseudocode",
+                "Robo Sumo",
+                "Robo Soccer",
+                "Line Following Robot",
+                "Database Design",
+                "Cybersecurity",
+                "Business Intelligence",
+                "UI/UX",
+                "Blockchain Trading",
+                "Console Gaming",
+                "LED Coding",
+              ].map((module) => (
+                <MenuItem key={module} value={module}>
+                  {module}
+                </MenuItem>
+              ))}
+            </Select>
+            <Typography variant="caption" color="error">
+              {errors.moduleSelected}
+            </Typography>
+          </FormControl>
+        </Grid2>
+
+        {/* BA Code */}
+        <Grid2 size={{ xs: 12, sm: 6 }}>
+          <TextField
+            label="BA Code"
+            variant="outlined"
+            fullWidth
+            value={baCode}
+            onChange={(e) => setBaCode(e.target.value)}
+            error={!!errors.baCode}
+            helperText={errors.baCode}
+          />
+        </Grid2>
+
+        {/* Number of Members */}
+        <Grid2 size={{ xs: 12, sm: 6 }}>
+          <FormControl fullWidth variant="outlined">
+            <InputLabel>Number of Members</InputLabel>
+            <Select
+              label="Number of Members"
+              value={numMembers}
+              onChange={handleNumMembersChange}
+            >
+              {[1, 2, 3, 4].map((num) => (
+                <MenuItem key={num} value={num}>
+                  {num}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid2>
+
+        {/* Member Details */}
+        {members.map((member, index) => (
+          <Grid2 size={{ xs: 12 }} key={index}>
+            <Typography variant="h6" gutterBottom>
+              Member {index + 1} Details
+            </Typography>
+
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              value={member.name}
+              onChange={(e) => handleMemberChange(index, "name", e.target.value)}
+              error={!!errors[`member-${index}-name`]}
+              helperText={errors[`member-${index}-name`]}
+              sx={{ marginBottom: 2 }}
+            />
+            <TextField
+              label="Email"
+              variant="outlined"
+              fullWidth
+              value={member.email}
+              onChange={(e) => handleMemberChange(index, "email", e.target.value)}
+              error={!!errors[`member-${index}-email`]}
+              helperText={errors[`member-${index}-email`]}
+              sx={{ marginBottom: 2 }}
+            />
+            <TextField
+              label="Contact"
+              variant="outlined"
+              fullWidth
+              value={member.contact}
+              onChange={(e) => handleMemberChange(index, "contact", e.target.value)}
+              error={!!errors[`member-${index}-contact`]}
+              helperText={errors[`member-${index}-contact`]}
+              sx={{ marginBottom: 2 }}
+            />
+            <TextField
+              label="CNIC"
+              variant="outlined"
+              fullWidth
+              value={member.cnic}
+              onChange={(e) => handleMemberChange(index, "cnic", e.target.value)}
+              error={!!errors[`member-${index}-cnic`]}
+              helperText={errors[`member-${index}-cnic`]}
+              sx={{ marginBottom: 2 }}
+            />
+          </Grid2>
+        ))}
+
+        {/* Submit Button */}
+        <Grid2 size={{ xs: 12 }}>
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            onClick={handleSubmit}
+          >
+            Register
+          </Button>
+        </Grid2>
+      </Grid2>
+    </Paper>
   );
 };
 
