@@ -86,7 +86,7 @@ const EventCard: React.FC<{ event: any }> = ({ event }) => (
 
 const ProBattleInfo: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("events");
+  const [selectedCategory, setSelectedCategory] = useState<"events" | "newevents" | "robotics" | "highschool">("events");
 
   const categories = [
     { label: "ProBattle Events", value: "events" },
@@ -99,7 +99,7 @@ const ProBattleInfo: React.FC = () => {
   const handleClose = () => setOpen(false);
 
   const handleChange = (event: SelectChangeEvent<string>) => {
-    setSelectedCategory(event.target.value as string);
+    setSelectedCategory(event.target.value as "events" | "newevents" | "robotics" | "highschool");
     handleClose();
   };
 
