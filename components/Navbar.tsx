@@ -29,6 +29,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import DescriptionIcon from '@mui/icons-material/Description';
+import NorthIcon from '@mui/icons-material/North';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -142,7 +143,7 @@ const Navbar: React.FC = () => {
           <IconButton
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none', color: 'white' }, ml: 'auto' }}
+            sx={{ display: { sm: 'none', color: '#fff' }, ml: 'auto' }}
           >
             <MenuIcon />
           </IconButton>
@@ -156,9 +157,10 @@ const Navbar: React.FC = () => {
         onClose={handleDrawerToggle}
         sx={{
           '& .MuiDrawer-paper': {
-            backgroundColor: '#000',
+            backgroundColor: '#333',
             color: '#fff',
-            width: '100%',
+            width: '60%',
+            height: '50%',
             borderRadius: '0 0 0 15px',
           },
           display: { xs: 'block', sm: 'none' },
@@ -173,6 +175,23 @@ const Navbar: React.FC = () => {
           {drawer}
         </motion.div>
       </Drawer>
+
+      {/* Adding an circular arrow button to scroll to the top */}
+      <Box sx={{ position: 'fixed', bottom: 15, right: 15, zIndex: 1000 }}>
+        <IconButton
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          sx={{ backgroundColor: '#D81B60', color: '#ECEBDE',
+            '&:hover': {
+              backgroundColor: '#962D2D',
+              color: '#ECEBDE'
+            }
+          }}
+        >
+          <NorthIcon />
+        </IconButton>
+      </Box>
     </>
   );
 };
