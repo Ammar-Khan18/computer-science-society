@@ -67,7 +67,7 @@ export default function ProBattle_Intro() {
         <Box
           sx={{
             position: "absolute",
-            width: "100%",
+            width: "90%",
             zIndex: 100,
             height: 30,
             backgroundColor: "#000",
