@@ -25,7 +25,7 @@ const ProBattleRegister: React.FC = () => {
                         <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}>
                             <Button 
                                 component="a"
-                                href="/pro-battle/registration" 
+                                href="/pro-battle/registration"
                                 variant="contained"
                                 color="primary"
                                 endIcon={<HowToRegIcon />} // Icon on the right side
