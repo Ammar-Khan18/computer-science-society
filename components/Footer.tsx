@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
           sx={{ bgcolor: 'black', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
         />
 
-        {/* Contact Us */}
+        {/* Contact Us
         <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#000' }}>Contact Us</Typography>
 
@@ -91,9 +91,9 @@ const Footer: React.FC = () => {
               </Link>
             </Stack>
 
-        </Grid>
+        </Grid> */}
 
-        <Divider
+        {/* <Divider
           orientation="vertical"
           flexItem
           sx={{ bgcolor: 'black', display: { xs: 'none', md: 'block' } }}
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
           orientation='horizontal'
           flexItem
           sx={{ bgcolor: 'black', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
-        />
+        /> */}
 
 
         {/* Our Society section */}
