@@ -39,7 +39,6 @@ const RegistrationForm: React.FC = () => {
 
     if (!teamName) newErrors.teamName = "Team Name is required.";
     if (!moduleSelected) newErrors.moduleSelected = "Module is required.";
-    if (!baCode) newErrors.baCode = "BA Code is required.";
 
     members.forEach((member, index) => {
       if (!member.name) newErrors[`member-${index}-name`] = `Member ${index + 1} name is required.`;
@@ -80,7 +79,7 @@ const RegistrationForm: React.FC = () => {
       const data = {
         teamName,
         moduleSelected,
-        baCode,
+        baCode, // BA Code is now optional
         members,
       };
 
@@ -165,10 +164,10 @@ const RegistrationForm: React.FC = () => {
           </FormControl>
         </Grid2>
 
-        {/* BA Code */}
+        {/* BA Code (Optional) */}
         <Grid2 size={{ xs: 12, sm: 6 }}>
           <TextField
-            label="BA Code"
+            label="BA Code (Optional)"
             variant="outlined"
             fullWidth
             value={baCode}
@@ -248,15 +247,19 @@ const RegistrationForm: React.FC = () => {
 
         {/* Submit Button */}
         <Grid2 size={{ xs: 12 }}>
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            onClick={handleSubmit}
-          >
+          <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
             Register
           </Button>
         </Grid2>
+
+        {/* Success Message */}
+        {successMessage && (
+          <Grid2 size={{ xs: 12 }} sx={{ marginTop: 2 }}>
+            <Typography variant="h6" color="success.main">
+              {successMessage}
+            </Typography>
+          </Grid2>
+        )}
       </Grid2>
     </Paper>
   );
