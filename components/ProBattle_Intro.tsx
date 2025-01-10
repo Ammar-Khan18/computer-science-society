@@ -79,7 +79,7 @@ export default function ProBattle_Intro() {
                   src={item.img.src} // Use the src property of the imported 'hero' image
                   alt={item.title}
                   fill 
-                  sizes="50%"
+                  sizes="100%"
                   loading="lazy"
                   style={{ objectFit: "cover", width: "100%", height: "100%", opacity: 0.6 }}
                 />
