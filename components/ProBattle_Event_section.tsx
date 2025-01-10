@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import Image from "next/image";
 import AnimatedBackground from "./animated-background";
+import { object } from "framer-motion/client";
 
 const ProBattleSection: React.FC = () => {
   const theme = useTheme();
@@ -57,11 +58,11 @@ const ProBattleSection: React.FC = () => {
             <Image
               src="/hero-video.jpg" // Replace with the path to your image
               alt="ProBattle Title"
-              layout="fill" // Makes the image fill the parent container
-              objectFit={isMobile ? "cover" : "contain"} // Changes behavior based on screen size
+              fill // Makes the image fill the parent container
               style={{
                 transition: "transform 0.5s ease-in-out",
                 transformOrigin: "center",
+                objectFit: isMobile ? "cover" : "contain", // Changes behavior based on screen size
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.transform = "scale(1.1)")
@@ -117,8 +118,10 @@ const ProBattleSection: React.FC = () => {
             <Image
               src="/probattle white.png" // Replace with the path to your image
               alt="ProBattle Title"
-              layout="fill" // Makes the image fill the parent container
-              objectFit={isMobile ? "cover" : "contain"} // Changes behavior based on screen size
+              fill // Makes the image fill the parent container
+              style={{ 
+                objectFit: isMobile ? "cover" : "contain", // Changes behavior based on screen size
+              }}
             />
           </Box>
         </Box>
