@@ -4,52 +4,52 @@ import { Box, Container, ImageList, ImageListItem, useTheme, useMediaQuery, Typo
 
 // Importing the image
 import Image from "next/image";
-import Pro1 from "../public/pro1.jpg";
-import Pro2 from "../public/pro2.jpg";
-import Pro3 from "../public/pro3.jpg";
-import Pro4 from "../public/pro4.jpg";
-import Pro5 from "../public/pro5.jpg";
-import Pro6 from "../public/pro6.jpg";
-import Pro7 from "../public/pro7.jpg";
-import Pro8 from "../public/pro8.jpg";
-import Pro9 from "../public/pro9.jpg";
+// import Pro1 from "../public/Pro1.jpg";
+// import Pro2 from "../public/pro2.jpg";
+// import Pro3 from "../public/pro3.jpg";
+// import Pro4 from "../public/pro4.jpg";
+// import Pro5 from "../public/pro5.jpg";
+// import Pro6 from "../public/pro6.jpg";
+// import Pro7 from "../public/pro7.jpg";
+// import Pro8 from "../public/pro8.jpg";
+// import Pro9 from "../public/pro9.jpg";
 
 // Images
 const itemData = [
   {
-    img: Pro1,
+    img: "/Pro1.jpg",
     title: "Pro1",
   },
   {
-    img: Pro2,
+    img: "/Pro2.jpg",
     title: "Pro2",
   },
   {
-    img: Pro3,
+    img: "/Pro3.jpg",
     title: "Pro3",
   },
   {
-    img: Pro4,
+    img: "/Pro4.jpg",
     title: "Pro4",
   },
   {
-    img: Pro5,
+    img: "/Pro5.jpg",
     title: "Pro5",
   },
   {
-    img: Pro6,
+    img: "/Pro6.jpg",
     title: "Pro6",
   },
   {
-    img: Pro7,
+    img: "/Pro7.jpg",
     title: "Pro7",
   },
   {
-    img: Pro8,
+    img: "/Pro8.jpg",
     title: "Pro8",
   },
   {
-    img: Pro9,
+    img: "/Pro9.jpg",
     title: "Pro9",
   },
 ];
@@ -76,7 +76,7 @@ export default function ProBattle_Intro() {
             {itemData.map((item) => (
               <ImageListItem key={item.title} sx={{ overflow: "hidden", borderRadius: 3 }}>
                 <Image
-                  src={item.img.src} // Use the src property of the imported 'hero' image
+                  src={item.img} // Use the src property of the imported 'hero' image
                   alt={item.title}
                   fill 
                   sizes="100%"
@@ -106,7 +106,7 @@ export default function ProBattle_Intro() {
             variant="h4"
             align="left"
             sx={{
-              color: "gray", // Base color for the text
+              color: "#D9DFC6", // Base color for the text
               marginTop: 5,
               maxWidth: 1160,
               fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
@@ -116,7 +116,7 @@ export default function ProBattle_Intro() {
             <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span> 
             This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
             By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
-            Whether you<span style={{color: "gray"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
+            Whether you<span style={{color: "#D9DFC6"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
             🚀 <span>Don<span>&#39;</span>t miss your chance to{" "} thrive and make your mark!</span> 💡
           </Typography>
         </Box>
