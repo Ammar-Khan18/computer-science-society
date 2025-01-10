@@ -2,6 +2,7 @@
 import React from "react";
 import { Box, Container, ImageList, ImageListItem, useTheme, useMediaQuery, Typography } from "@mui/material";
 import hero from "../public/hero-video.jpg"; // Importing the image correctly
+import Image from "next/image";
 
 
 
@@ -63,7 +64,7 @@ export default function ProBattle_Intro() {
           gap={30}>
             {itemData.map((item) => (
               <ImageListItem key={item.title} sx={{ overflow: "hidden", borderRadius: 3 }}>
-                <img
+                <Image
                   src={item.img.src} // Use the src property of the imported 'hero' image
                   alt={item.title}
                   loading="lazy"
@@ -102,7 +103,7 @@ export default function ProBattle_Intro() {
             <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span> 
             This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
             By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
-            Whether you<span style={{color: "gray"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
+            Whether you&#39;re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
             🚀 <span>Don<span>&#39;</span>t miss your chance to{" "} thrive and make your mark!</span> 💡
           </Typography>
         </Box>
