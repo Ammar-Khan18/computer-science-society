@@ -2,13 +2,30 @@
 import React from "react";
 import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import Image from "next/image";
+import AnimatedBackground from "./animated-background";
 
 const ProBattleSection: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Detect mobile screens
 
   return (
-    <div style={{ backgroundColor: "#000", padding: "50px 0" }}>
+    <div style={{ backgroundColor: "transparent", padding: "50px 0" }}>
+
+      <div style={{ position: "absolute", top: 0, zIndex: -1, left: 0 }}>
+        <AnimatedBackground />
+          <div
+            style={{
+              position: "absolute",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))",
+              width: "100%",
+              height: "100%",
+              top: 0,
+              left: 0,
+            }}
+          ></div>
+      </div>
+
       <Container
         maxWidth="xl"
         sx={{
@@ -90,7 +107,7 @@ const ProBattleSection: React.FC = () => {
         >
           <Box
             sx={{
-              width: { xs: "100%", md: 1200 },
+              width: { xs: "100%", md: 1150 },
               height: { xs: 100, md: 300 },
               overflow: "hidden",
               borderRadius: 5,

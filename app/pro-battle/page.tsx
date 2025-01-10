@@ -9,7 +9,7 @@ import ProBattle_Intro from '@/components/ProBattle_Intro';
 
 const ProBattle: React.FC = () => {
   return (
-    <Box sx={{ position: 'relative', minHeight: '100vh' }}>
+    <Box sx={{ position: 'relative', minHeight: '100vh', backgroundColor: 'black' }}>
 
       {/* Main Content */}
       <Box sx={{ position: 'relative', zIndex: 1 }}>
