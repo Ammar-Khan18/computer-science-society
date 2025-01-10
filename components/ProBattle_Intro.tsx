@@ -77,7 +77,7 @@ export default function ProBattle_Intro() {
           <Box
             sx={{
               position: "absolute",
-              width: "90%",
+              width: "80%",
               zIndex: 100,
               height: 30,
               backgroundColor: "#000",
@@ -139,9 +139,9 @@ export default function ProBattle_Intro() {
                 },
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 }}>
-                <Box
-                  sx={{
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: 1 }}>
+                  <Box
+                    sx={{
                     backgroundColor: "#444", // Icon background
                     padding: 1.5,
                     borderRadius: "50%",
@@ -151,15 +151,15 @@ export default function ProBattle_Intro() {
                     color: "#fff",
                     fontSize: "1.5rem", // Icon size
                     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)",
-                  }}
-                >
-                  <i className="fas fa-star"></i> {/* Replace this with your desired icon */}
-                </Box>
+                    }}
+                  >
+                    <i className="fas fa-star"></i> {/* Replace this with your desired icon */}
+                  </Box>
                 <Typography
                   variant="h5"
                   sx={{
-                    fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
-                    fontWeight: "bold",
+                  fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+                  fontWeight: "bold",
                   }}
                 >
                   {feature}
