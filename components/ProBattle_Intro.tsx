@@ -1,44 +1,57 @@
 "use client";
 import React from "react";
 import { Box, Container, ImageList, ImageListItem, useTheme, useMediaQuery, Typography } from "@mui/material";
-import hero from "../public/hero-video.jpg"; // Importing the image correctly
+
+// Importing the image
 import Image from "next/image";
-
-
+import Pro1 from "../public/pro1.jpg";
+import Pro2 from "../public/pro2.jpg";
+import Pro3 from "../public/pro3.jpg";
+import Pro4 from "../public/pro4.jpg";
+import Pro5 from "../public/pro5.jpg";
+import Pro6 from "../public/pro6.jpg";
+import Pro7 from "../public/pro7.jpg";
+import Pro8 from "../public/pro8.jpg";
+import Pro9 from "../public/pro9.jpg";
+import { Opacity } from "@mui/icons-material";
 
 // Images
 const itemData = [
   {
-    img: hero, // Using the imported 'hero' image here
-    title: "Breakfast",
+    img: Pro1,
+    title: "Pro1",
   },
   {
-    img: hero,
-    title: "Burgers",
+    img: Pro2,
+    title: "Pro2",
   },
   {
-    img: hero,
-    title: "Camera",
+    img: Pro3,
+    title: "Pro3",
   },
   {
-    img: hero,
-    title: "Morning",
+    img: Pro4,
+    title: "Pro4",
   },
   {
-    img: hero,
-    title: "Hats",
+    img: Pro5,
+    title: "Pro5",
   },
   {
-    img: hero,
-    title: "Honey",
+    img: Pro6,
+    title: "Pro6",
   },
   {
-    img: hero,
-    title: "Vegetables",
+    img: Pro7,
+    title: "Pro7",
   },
   {
-    img: hero,
-    title: "Water plant",
+    img: Pro8,
+    title: "Pro8",
+  },
+  {
+    img: Pro9,
+    title: "Pro9",
   },
 ];
 
@@ -60,15 +73,16 @@ export default function ProBattle_Intro() {
       <Container maxWidth="lg">
 
           {/* Bento Grid of Images */}
-          <ImageList sx={{ width: "100%", height: 800, margin: "0 auto", maxWidth: 1200 }} variant="woven" cols={ isMobile ? 2 : 3 }
-          gap={30}>
+          <ImageList sx={{ width: "100%", height: 900, margin: "0 auto", maxWidth: 1200 }} variant="woven" cols={ isMobile ? 2 : 3 } gap={20}>
             {itemData.map((item) => (
               <ImageListItem key={item.title} sx={{ overflow: "hidden", borderRadius: 3 }}>
                 <Image
                   src={item.img.src} // Use the src property of the imported 'hero' image
                   alt={item.title}
+                  fill 
+                  sizes="50%"
                   loading="lazy"
-                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  style={{ objectFit: "cover", width: "100%", height: "100%", opacity: 0.6 }}
                 />
               </ImageListItem>
             ))}
@@ -103,7 +117,7 @@ export default function ProBattle_Intro() {
             <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span> 
             This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
             By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
-            Whether you&#39;re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
+            Whether you<span style={{color: "gray"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
             🚀 <span>Don<span>&#39;</span>t miss your chance to{" "} thrive and make your mark!</span> 💡
           </Typography>
         </Box>
