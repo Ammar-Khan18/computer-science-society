@@ -13,7 +13,6 @@ import Pro6 from "../public/pro6.jpg";
 import Pro7 from "../public/pro7.jpg";
 import Pro8 from "../public/pro8.jpg";
 import Pro9 from "../public/pro9.jpg";
-import { Opacity } from "@mui/icons-material";
 
 // Images
 const itemData = [
