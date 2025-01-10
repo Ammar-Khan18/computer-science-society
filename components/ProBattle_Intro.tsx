@@ -102,7 +102,7 @@ export default function ProBattle_Intro() {
             <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate</span>, <span>collaborate, and excel!</span> 
             This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
             By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
-            Whether you're{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
+            Whether you<span style={{color: "gray"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
             🚀 <span>Don't miss your chance to{" "} thrive and make your mark!</span> 💡
           </Typography>
         </Box>
