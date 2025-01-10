@@ -32,7 +32,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         flexDirection: "column",
         height: "100%",
         borderRadius: 2,
-        boxShadow: "4px 6px #1B1A55",
+        boxShadow: "4px 6px #8D0B41",
         transition: "0.3s",
         overflow: "visible",
       }}
