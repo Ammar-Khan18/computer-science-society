@@ -133,21 +133,6 @@ const ProBattleInfo: React.FC = () => {
         </Box>
 
         <Box sx={{ mt: 10 }}>
-          {/* <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-            <Typography
-              variant="h4"
-              align="center"
-              sx={{
-                color: "#D81B60",
-                fontSize: { xs: "1.7rem", md: "3rem", lg: "3.5rem" },
-                borderBottom: "2px solid",
-                borderColor: "primary.secondary",
-                display: "inline-block",
-              }}
-            >
-              {categories[value].label}
-            </Typography>
-          </Box> */}
           <Grid container spacing={8}>
             {categories[value].data.map((event) => (
               <EventCard event={event} key={event.id} />
