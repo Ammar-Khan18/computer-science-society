@@ -3,7 +3,6 @@ import React from "react";
 import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
 import Image from "next/image";
 import AnimatedBackground from "./animated-background";
-import { object } from "framer-motion/client";
 
 const ProBattleSection: React.FC = () => {
   const theme = useTheme();
