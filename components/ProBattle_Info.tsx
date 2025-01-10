@@ -7,22 +7,13 @@ import {
   Card,
   CardContent,
   Link,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  InputLabel,
-  OutlinedInput,
-  MenuItem,
-  FormControl,
-  Select,
-  SelectChangeEvent,
+  Chip,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import Chip from "@mui/material/Chip";
 import FaceIcon from "@mui/icons-material/Face";
 import { events, newevents, robotics, highschool } from "./constants";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 // EventCard Component
 interface Event {
@@ -82,9 +73,18 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
           {event.details}
         </Typography>
         <Box display="flex" alignItems="center" gap={1} mb={2}>
-          <Chip icon={<FaceIcon />} label={`Members: ${event.members}`} variant="outlined" />
+          <Chip
+            icon={<FaceIcon />}
+            label={`Members: ${event.members}`}
+            variant="outlined"
+          />
         </Box>
-        <Link href={event.link} color="primary" underline="hover" variant="button">
+        <Link
+          href={event.link}
+          color="primary"
+          underline="hover"
+          variant="button"
+        >
           Learn More
         </Link>
       </CardContent>
@@ -93,103 +93,69 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
 );
 
 const ProBattleInfo: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<"events" | "newevents" | "robotics" | "highschool">("events");
+  const [value, setValue] = useState(0);
 
   const categories = [
-    { label: "ProBattle Events", value: "events" },
-    { label: "New Additions", value: "newevents" },
-    { label: "Robotics", value: "robotics" },
-    { label: "High School Categories", value: "highschool" },
+    { label: "ProBattle Events", data: events },
+    { label: "New Additions", data: newevents },
+    { label: "Robotics", data: robotics },
+    { label: "High School Categories", data: highschool },
   ];
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setSelectedCategory(event.target.value as "events" | "newevents" | "robotics" | "highschool");
-    handleClose();
-  };
-
-  const getSelectedEvents = () => {
-    switch (selectedCategory) {
-      case "events":
-        return events;
-      case "newevents":
-        return newevents;
-      case "robotics":
-        return robotics;
-      case "highschool":
-        return highschool;
-      default:
-        return [];
-    }
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
   };
 
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ mt: 4, justifyContent: "center", alignItems: "center", display: "flex" }}>
-        <Button variant="outlined" onClick={handleOpen} color="primary">
-          View Categories
-        </Button>
-      </Box>
-
-      <Dialog
-        disableEscapeKeyDown
-        open={open}
-        onClose={handleClose}
-        PaperProps={{
-          sx: {
-        width: { xs: '80%', sm: '60%', md: '40%' },
-        maxWidth: '400px',
-        borderRadius: 2,
-        boxShadow: 3,
-        p: 2,
-          },
-        }}
-      >
-        <DialogTitle sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
-          Select a Category
-        </DialogTitle>
-        <DialogContent>
-          <FormControl fullWidth variant="outlined" sx={{ mt: 2 }}>
-        <InputLabel id="category-select-label">Category</InputLabel>
-        <Select
-          labelId="category-select-label"
-          value={selectedCategory}
-          onChange={handleChange}
-          input={<OutlinedInput label="Category" />}
+    <div style={{ backgroundColor: "#000", padding: "50px 0" }}>
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mb: 4,
+          }}
         >
-          {categories.map((category) => (
-            <MenuItem key={category.value} value={category.value}>
-          {category.label}
-            </MenuItem>
-          ))}
-        </Select>
-          </FormControl>
-        </DialogContent>
-        <DialogActions sx={{ justifyContent: 'center' }}>
-          <Button onClick={handleClose} color="secondary" variant="outlined">
-        Cancel
-          </Button>
-        </DialogActions>
-      </Dialog>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="secondary"
+            textColor="secondary"
+            variant="fullWidth"
+            aria-label="category tabs"
+            sx={{ width: "100%", maxWidth: 1000 }}
+          >
+            {categories.map((category, index) => (
+              <Tab label={category.label} key={index} sx={{ color: "white", fontSize: { xs: "0.65rem", sm: "1rem", md: "0.9rem" } }} />
+            ))}
+          </Tabs>
+        </Box>
 
-      {selectedCategory && (
-        <Box sx={{ mt: 4 }}>
-          <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <Typography variant="h4" align="center" sx={{ color: '#D81B60', fontSize: { xs: '1.7rem', md: '3rem', lg: '3.5rem' }, mb: 7, borderBottom: '2px solid', borderColor: 'primary.secondary', display: 'inline-block' }}>
-              {categories.find((cat) => cat.value === selectedCategory)?.label}
+        <Box sx={{ mt: 10 }}>
+          {/* <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+            <Typography
+              variant="h4"
+              align="center"
+              sx={{
+                color: "#D81B60",
+                fontSize: { xs: "1.7rem", md: "3rem", lg: "3.5rem" },
+                borderBottom: "2px solid",
+                borderColor: "primary.secondary",
+                display: "inline-block",
+              }}
+            >
+              {categories[value].label}
             </Typography>
-          </Box>
+          </Box> */}
           <Grid container spacing={8}>
-            {getSelectedEvents().map((event) => (
+            {categories[value].data.map((event) => (
               <EventCard event={event} key={event.id} />
             ))}
           </Grid>
         </Box>
-      )}
-    </Container>
+      </Container>
+    </div>
   );
 };
 
