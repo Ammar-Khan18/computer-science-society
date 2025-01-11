@@ -1,6 +1,9 @@
-require('dotenv').config({ path: '.env.local' });
-const fs = require('fs');
-const { google } = require('googleapis');
+import dotenv from 'dotenv';
+import fs from 'fs';
+import { google } from 'googleapis';
+
+dotenv.config({ path: '.env.local' });
+
 
 const SCOPE = ["https://www.googleapis.com/auth/drive"];
 
