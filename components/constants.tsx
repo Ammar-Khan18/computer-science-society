@@ -7,6 +7,10 @@ interface Event {
     details: string;
     members: number;
     link: string;
+    pricingearly: string;
+    pricinglate: string;
+    audience: string;
+    Tier: number;
 }
 
 interface NewEvents {
@@ -15,6 +19,10 @@ interface NewEvents {
     details: string;
     members: number;
     link: string;
+    pricingearly: string;
+    pricinglate: string;
+    audience: string;
+    Tier: number;
 }
 
 const events: Event[] = [
@@ -24,6 +32,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 5,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 2,
@@ -31,6 +43,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 7,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 3,
@@ -38,6 +54,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 3,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 4,
@@ -45,6 +65,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 5,
@@ -52,6 +76,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 6,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 6,
@@ -59,6 +87,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 2,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 7,
@@ -66,6 +98,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 8,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 8,
@@ -73,6 +109,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 9,
@@ -80,6 +120,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 5,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 10,
@@ -87,6 +131,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 3,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 11,
@@ -94,6 +142,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 6,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 12,
@@ -101,6 +153,10 @@ const events: Event[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     }
 ];
 
@@ -111,6 +167,10 @@ const newevents: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 5,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 2,
@@ -118,6 +178,10 @@ const newevents: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 7,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 3,
@@ -125,6 +189,10 @@ const newevents: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 3,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 4,
@@ -132,6 +200,10 @@ const newevents: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
 ];
 
@@ -142,6 +214,10 @@ const robotics: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 5,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 2,
@@ -149,6 +225,10 @@ const robotics: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 7,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 3,
@@ -156,6 +236,10 @@ const robotics: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 3,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 4,
@@ -163,6 +247,10 @@ const robotics: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
 ];
 
@@ -173,6 +261,10 @@ const highschool: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 5,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 2,
@@ -180,6 +272,10 @@ const highschool: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 7,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 3,
@@ -187,6 +283,10 @@ const highschool: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 3,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
     {
         id : 4,
@@ -194,6 +294,10 @@ const highschool: NewEvents[] = [
         details: "Details of the event will be added here as long as the description is not too long.",
         members: 4,
         link: "https://www.google.com",
+        pricingearly: "Rs. 100 (12 Jan - 30 Jan)",
+        pricinglate: "Rs. 150",
+        audience: "University and College Students",
+        Tier: 1,
     },
 ];
 
