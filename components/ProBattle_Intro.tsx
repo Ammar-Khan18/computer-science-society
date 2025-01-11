@@ -4,52 +4,52 @@ import { Box, Container, ImageList, ImageListItem, useTheme, useMediaQuery, Typo
 
 // Importing the image
 import Image from "next/image";
-// import Pro1 from "../public/Pro1.jpg";
-// import Pro2 from "../public/pro2.jpg";
-// import Pro3 from "../public/pro3.jpg";
-// import Pro4 from "../public/pro4.jpg";
-// import Pro5 from "../public/pro5.jpg";
-// import Pro6 from "../public/pro6.jpg";
-// import Pro7 from "../public/pro7.jpg";
-// import Pro8 from "../public/pro8.jpg";
-// import Pro9 from "../public/pro9.jpg";
+import Pro1 from "../public/Pro1.jpg";
+import Pro2 from "../public/pro2.jpg";
+import Pro3 from "../public/pro3.jpg";
+import Pro4 from "../public/pro4.jpg";
+import Pro5 from "../public/pro5.jpg";
+import Pro6 from "../public/pro6.jpg";
+import Pro7 from "../public/pro7.jpg";
+import Pro8 from "../public/pro8.jpg";
+import Pro9 from "../public/pro9.jpg";
 
 // Images
 const itemData = [
   {
-    img: "/Pro1.jpg",
+    img: Pro1,
     title: "Pro1",
   },
   {
-    img: "/Pro2.jpg",
+    img: Pro2,
     title: "Pro2",
   },
   {
-    img: "/Pro3.jpg",
+    img: Pro3,
     title: "Pro3",
   },
   {
-    img: "/Pro4.jpg",
+    img: Pro4,
     title: "Pro4",
   },
   {
-    img: "/Pro5.jpg",
+    img: Pro5,
     title: "Pro5",
   },
   {
-    img: "/Pro6.jpg",
+    img: Pro6,
     title: "Pro6",
   },
   {
-    img: "/Pro7.jpg",
+    img: Pro7,
     title: "Pro7",
   },
   {
-    img: "/Pro8.jpg",
+    img: Pro8,
     title: "Pro8",
   },
   {
-    img: "/Pro9.jpg",
+    img: Pro9,
     title: "Pro9",
   },
 ];
@@ -76,7 +76,7 @@ export default function ProBattle_Intro() {
             {itemData.map((item) => (
               <ImageListItem key={item.title} sx={{ overflow: "hidden", borderRadius: 3 }}>
                 <Image
-                  src={item.img} // Use the src property of the imported 'hero' image
+                  src={item.img.src} // Use the src property of the imported 'hero' image
                   alt={item.title}
                   fill 
                   sizes="100%"
