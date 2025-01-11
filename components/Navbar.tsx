@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <AppBar id="NavBar" position="fixed" sx={{ backgroundColor: 'transparent', color: 'white', boxShadow: 'none' }}>
+      <AppBar id="NavBar" position="fixed" sx={{ background: "linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))", color: 'white', boxShadow: 'none' }}>
         <Toolbar>
           <Box>
             <Image src="/css_transparent.png" alt="Logo" width={50} height={50} />
