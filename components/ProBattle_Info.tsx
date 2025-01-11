@@ -6,11 +6,13 @@ import {
   Container,
   Card,
   CardContent,
-  Link,
   Chip,
+  Stack,
+  Divider,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import FaceIcon from "@mui/icons-material/Face";
+import StarIcon from "@mui/icons-material/Star";
 import { events, newevents, robotics, highschool } from "./constants";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -22,6 +24,10 @@ interface Event {
   details: string;
   members: number;
   link: string;
+  pricingearly: string;
+  pricinglate: string;
+  audience: string;
+  Tier: number;
 }
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => (
@@ -75,18 +81,36 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         <Box display="flex" alignItems="center" gap={1} mb={2}>
           <Chip
             icon={<FaceIcon />}
-            label={`Members: ${event.members}`}
+            label={`Participants: ${event.members}`}
+            variant="outlined"
+          />
+          <Chip
+            icon={<StarIcon />} 
+            label={`Tier: ${event.Tier}`}
             variant="outlined"
           />
         </Box>
-        <Link
-          href={event.link}
-          color="primary"
-          underline="hover"
-          variant="button"
-        >
-          Learn More
-        </Link>
+        <Divider sx={{ my: 2 }} />
+        <Stack spacing={1}>
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            Pricing Information
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            <strong>Early Bird:</strong> {event.pricingearly}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            <strong>Late Registration:</strong> {event.pricinglate}
+          </Typography>
+        </Stack>
+        <Divider sx={{ my: 2 }} />
+        <Stack spacing={1}>
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            Target Audience
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            {event.audience}
+          </Typography>
+        </Stack>
       </CardContent>
     </Card>
   </Grid>
