@@ -11,9 +11,9 @@ import {
   Divider,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import FaceIcon from "@mui/icons-material/Face";
-import StarIcon from "@mui/icons-material/Star";
-import { events, newevents, robotics, highschool } from "./constants";
+import PersonIcon from '@mui/icons-material/Person';
+import GroupsIcon from '@mui/icons-material/Groups';
+import { UniversityEvents, CollegeEvents, MixEvents } from "./constants";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
@@ -22,12 +22,11 @@ interface Event {
   id: number;
   title: string;
   details: string;
-  members: number;
-  link: string;
-  pricingearly: string;
-  pricinglate: string;
-  audience: string;
-  Tier: number;
+  minMember: number;
+  maxMember: number;
+  pricingEarly: number;
+  pricingLate: number;
+  category: "College" | "University" | "University + College";
 }
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => (
@@ -62,7 +61,8 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
       >
         {event.id}
       </Box>
-      <CardContent sx={{ flexGrow: 1 }}>
+
+      <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <Typography
           gutterBottom
           variant="h5"
@@ -78,39 +78,35 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           {event.details}
         </Typography>
+
+        <Box sx={{ flexGrow: 1 }} />
+
         <Box display="flex" alignItems="center" gap={1} mb={2}>
           <Chip
-            icon={<FaceIcon />}
-            label={`Participants: ${event.members}`}
+            icon={<PersonIcon />}
+            label={`Min Members: ${event.minMember}`}
             variant="outlined"
           />
           <Chip
-            icon={<StarIcon />} 
-            label={`Tier: ${event.Tier}`}
+            icon={<GroupsIcon />}
+            label={`Max Members: ${event.maxMember}`}
             variant="outlined"
           />
         </Box>
+
+        <Box sx={{ flexGrow: 0 }} />
+
         <Divider sx={{ my: 2 }} />
+
         <Stack spacing={1}>
           <Typography variant="body1" sx={{ fontWeight: "bold" }}>
             Pricing Information
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            <strong>Early Bird:</strong> {event.pricingearly}
-          </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            <strong>Late Registration:</strong> {event.pricinglate}
+            <strong>Module Fee:</strong> {event.pricingEarly}
           </Typography>
         </Stack>
-        <Divider sx={{ my: 2 }} />
-        <Stack spacing={1}>
-          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-            Target Audience
-          </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {event.audience}
-          </Typography>
-        </Stack>
+
       </CardContent>
     </Card>
   </Grid>
@@ -120,10 +116,9 @@ const ProBattleInfo: React.FC = () => {
   const [value, setValue] = useState(0);
 
   const categories = [
-    { label: "ProBattle Events", data: events },
-    { label: "New Additions", data: newevents },
-    { label: "Robotics", data: robotics },
-    { label: "High School Categories", data: highschool },
+    { label: "University Level", data: UniversityEvents },
+    { label: "College Level", data: CollegeEvents },
+    { label: "University + College", data: MixEvents },
   ];
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
