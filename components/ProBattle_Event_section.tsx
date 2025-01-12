@@ -86,7 +86,7 @@ const ProBattleSection: React.FC = () => {
           }}
         >
           <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
-            January 30, 2023
+            February 15 - 16, 2025
           </Typography>
           <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
             Live 
