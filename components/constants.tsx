@@ -10,6 +10,7 @@ interface Event {
     pricingEarly: number;
     pricingLate: number;
     category: "College" | "University" | "University + College";
+    Tier: "1" | "2" | "General";
 }
 
 // Event Data
@@ -23,6 +24,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category:  "University",
+        Tier: "1",
     },
     {
         id: 2,
@@ -33,6 +35,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "1",
     },
     {
         id: 3,
@@ -43,6 +46,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "1",
     },
     {
         id: 4,
@@ -53,6 +57,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "1",
     },
     {
         id: 5,
@@ -63,6 +68,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "2",
     },
     {
         id: 6,
@@ -73,6 +79,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "2",
     },
     {
         id: 7,
@@ -83,6 +90,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "2",
     },
     {
         id: 8,
@@ -93,6 +101,95 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University",
+        Tier: "2",
+    },
+    {
+        id: 9,
+        title: "UI/UX Design",
+        details: "Creating user-friendly and visually appealing interfaces. Focuses on user research, wireframing, and designing intuitive interactions.",
+        minMember: 1,
+        maxMember: 3,
+        pricingEarly: 1500,
+        pricingLate: 2000,
+        category: "University + College",
+        Tier: "1",
+    },
+    {
+        id: 10,
+        title: "Robotics (Robo Sumo)",
+        details: "A robotics competition where autonomous robots attempt to push opponents out of a circular ring. Tests robot design, stability, and strategic programming.",
+        minMember: 1,
+        maxMember: 3,
+        pricingEarly: 1500,
+        pricingLate: 2000,
+        category: "University + College",
+        Tier: "1",
+    },
+    {
+        id: 11,
+        title: "Robotics (Robo Soccer)",
+        details: "Robots compete in teams to play soccer, requiring precise movement control and coordination. Involves sensors, real-time decision making, and multi-robot cooperation.",
+        minMember: 1,
+        maxMember: 3,
+        pricingEarly: 1500,
+        pricingLate: 2000,
+        category: "University + College",
+        Tier: "1",
+    },
+    {
+        id: 12,
+        title: "Robotics (Line Following Robot)",
+        details: "Autonomous robots that detect and follow a line path using sensors. Tests precise motor control and sensor calibration for smooth navigation.",
+        minMember: 1,
+        maxMember: 3,
+        pricingEarly: 1500,
+        pricingLate: 2000,
+        category: "University + College",
+        Tier: "1",
+    },
+    {
+        id: 13,
+        title: "Tech Tank",
+        details: "A competition format similar to ''Shark Tank'' where participants pitch innovative technical solutions or products. Teams present their ideas and prototypes to judges for evaluation.",
+        minMember: 1,
+        maxMember: 4,
+        pricingEarly: 2500,
+        pricingLate: 3000,
+        category: "University + College",
+        Tier: "General",
+    },
+    {
+        id: 14,
+        title: "BlockChain Trading",
+        details: "Understanding and implementing cryptocurrency trading strategies. Involves blockchain technology, smart contracts, and market analysis.",
+        minMember: 1,
+        maxMember: 3,
+        pricingEarly: 2500,
+        pricingLate: 3000,
+        category: "University + College",
+        Tier: "General",
+    },
+    {
+        id: 15,
+        title: "FIFA",
+        details: "A popular soccer video game where players control virtual teams and compete against each other. Requires skill in gameplay mechanics, strategy, and team management.",
+        minMember: 1,
+        maxMember: 1,
+        pricingEarly: 1000,
+        pricingLate: 1500,
+        category: "University + College",
+        Tier: "General",
+    },
+    {
+        id: 16,
+        title: "Tekken",
+        details: "A fighting game where players compete in one-on-one battles. Requires quick reflexes, strategic thinking, and mastery of character movesets.",
+        minMember: 1,
+        maxMember: 1,
+        pricingEarly: 1000,
+        pricingLate: 1500,
+        category: "University + College",
+        Tier: "General",
     },
 ];
 
@@ -106,6 +203,7 @@ const CollegeEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "College",
+        Tier: "2",
     },
     {
         id: 2,
@@ -116,12 +214,10 @@ const CollegeEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "College",
+        Tier: "2",
     },
-];
-
-const MixEvents: Event[] = [
     {
-        id: 1,
+        id: 3,
         title: "UI/UX Design",
         details: "Creating user-friendly and visually appealing interfaces. Focuses on user research, wireframing, and designing intuitive interactions.",
         minMember: 1,
@@ -129,9 +225,10 @@ const MixEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
+        Tier: "1",
     },
     {
-        id: 2,
+        id: 4,
         title: "Robotics (Robo Sumo)",
         details: "A robotics competition where autonomous robots attempt to push opponents out of a circular ring. Tests robot design, stability, and strategic programming.",
         minMember: 1,
@@ -139,9 +236,10 @@ const MixEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
+        Tier: "1",
     },
     {
-        id: 3,
+        id: 5,
         title: "Robotics (Robo Soccer)",
         details: "Robots compete in teams to play soccer, requiring precise movement control and coordination. Involves sensors, real-time decision making, and multi-robot cooperation.",
         minMember: 1,
@@ -149,9 +247,10 @@ const MixEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
+        Tier: "1",
     },
     {
-        id: 4,
+        id: 6,
         title: "Robotics (Line Following Robot)",
         details: "Autonomous robots that detect and follow a line path using sensors. Tests precise motor control and sensor calibration for smooth navigation.",
         minMember: 1,
@@ -159,9 +258,10 @@ const MixEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
+        Tier: "1",
     },
     {
-        id: 5,
+        id: 7,
         title: "Tech Tank",
         details: "A competition format similar to ''Shark Tank'' where participants pitch innovative technical solutions or products. Teams present their ideas and prototypes to judges for evaluation.",
         minMember: 1,
@@ -169,9 +269,10 @@ const MixEvents: Event[] = [
         pricingEarly: 2500,
         pricingLate: 3000,
         category: "University + College",
+        Tier: "General",
     },
     {
-        id: 6,
+        id: 8,
         title: "BlockChain Trading",
         details: "Understanding and implementing cryptocurrency trading strategies. Involves blockchain technology, smart contracts, and market analysis.",
         minMember: 1,
@@ -179,9 +280,10 @@ const MixEvents: Event[] = [
         pricingEarly: 2500,
         pricingLate: 3000,
         category: "University + College",
+        Tier: "General",
     },
     {
-        id: 7,
+        id: 9,
         title: "FIFA",
         details: "A popular soccer video game where players control virtual teams and compete against each other. Requires skill in gameplay mechanics, strategy, and team management.",
         minMember: 1,
@@ -189,9 +291,10 @@ const MixEvents: Event[] = [
         pricingEarly: 1000,
         pricingLate: 1500,
         category: "University + College",
+        Tier: "General",
     },
     {
-        id: 8,
+        id: 10,
         title: "Tekken",
         details: "A fighting game where players compete in one-on-one battles. Requires quick reflexes, strategic thinking, and mastery of character movesets.",
         minMember: 1,
@@ -199,7 +302,8 @@ const MixEvents: Event[] = [
         pricingEarly: 1000,
         pricingLate: 1500,
         category: "University + College",
+        Tier: "General",
     },
 ];
 
-export { UniversityEvents, CollegeEvents, MixEvents };
+export { UniversityEvents, CollegeEvents };
