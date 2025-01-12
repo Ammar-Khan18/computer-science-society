@@ -13,7 +13,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import PersonIcon from '@mui/icons-material/Person';
 import GroupsIcon from '@mui/icons-material/Groups';
-import { UniversityEvents, CollegeEvents, MixEvents } from "./constants";
+import { UniversityEvents, CollegeEvents } from "./constants";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
@@ -27,6 +27,7 @@ interface Event {
   pricingEarly: number;
   pricingLate: number;
   category: "College" | "University" | "University + College";
+  Tier: "1" | "2" | "General";
 }
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => (
@@ -118,12 +119,15 @@ const ProBattleInfo: React.FC = () => {
   const categories = [
     { label: "University Level", data: UniversityEvents },
     { label: "College Level", data: CollegeEvents },
-    { label: "University + College", data: MixEvents },
   ];
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const getTieredEvents = (events: Event[], tier: string) =>
+    events.filter((event) => event.Tier === tier);
+
 
   return (
     <div style={{ backgroundColor: "#000", padding: "50px 0" }}>
@@ -146,18 +150,39 @@ const ProBattleInfo: React.FC = () => {
             sx={{ width: "100%", maxWidth: 1000 }}
           >
             {categories.map((category, index) => (
-              <Tab label={category.label} key={index} sx={{ color: "white", fontSize: { xs: "0.65rem", sm: "1rem", md: "0.9rem" } }} />
+              <Tab
+                label={category.label}
+                key={index}
+                sx={{ color: "white", fontSize: { xs: "0.65rem", sm: "1rem", md: "0.9rem" } }}
+              />
             ))}
           </Tabs>
         </Box>
 
-        <Box sx={{ mt: 10 }}>
-          <Grid container spacing={8}>
-            {categories[value].data.map((event) => (
-              <EventCard event={event} key={event.id} />
-            ))}
-          </Grid>
-        </Box>
+        {(["1", "2", "General"] as const).map((tier) => {
+          const tieredEvents = getTieredEvents(categories[value].data, tier);
+
+          if (tieredEvents.length === 0) return null;
+
+          return (
+            <Box key={tier} sx={{ mt: tier === "1" ? 0 : 6 }}>
+              <Typography
+                variant="h4"
+                sx={{ color: "white", textAlign: "center", mb: 4 }}
+              >
+                Tier {tier}
+              </Typography>
+              <Grid container spacing={8}>
+                {tieredEvents.map((event, index) => (
+                  <EventCard
+                    event={{ ...event, id: index + 1 }} // Renumber cards
+                    key={index}
+                  />
+                ))}
+              </Grid>
+            </Box>
+          );
+        })}
       </Container>
     </div>
   );
