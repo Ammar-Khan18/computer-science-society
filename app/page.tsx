@@ -23,7 +23,6 @@ export default function Home() {
           zIndex: -2,
         }}
       />
-
       <Hero_section />
       <CodeX_Event_section />
       {/* <Social_section /> */}
