@@ -20,7 +20,6 @@ interface Tier {
   modules: Module[];
 }
 
-interface TieredModulesTableProps {}
 // Table row for a module (memoized)
 const ModuleRow = React.memo(
   ({
@@ -50,7 +49,7 @@ const ModuleRow = React.memo(
 );
 ModuleRow.displayName = "ModuleRow";
 
-const TieredModulesTable: React.FC<TieredModulesTableProps> = () => {
+const TieredModulesTable = () => {
   const selectedModules = useFormState((state: { selectedModules: any; }) => state.selectedModules);
   const setSelectedModule = useFormState((state: { setSelectedModule: any; }) => state.setSelectedModule);
 
