@@ -16,8 +16,49 @@ import { AddCircleOutline, RemoveCircleOutline } from "@mui/icons-material";
 import { useFormState, useRegistrationStore } from "@/zustand/probattle";
 import TieredModulesTable from "./TieredTable";
 import { TieredModules } from "./modules";
+import { purple } from "@mui/material/colors";
+import { inputBaseClasses } from "@mui/material/InputBase";
+import { TextFieldProps } from "@mui/material/TextField";
+import { firestore } from "@/firebase";
 
 const RegistrationForm: React.FC = () => {
+    const InputLabelProps: TextFieldProps["InputLabelProps"] = {
+        shrink: true,
+        sx: {
+            color: "text.primary",
+            transform: "translate(0, 1.5px) scale(0.8)",
+            letterSpacing: 1,
+            "&.Mui-focused:not(.Mui-error)": {
+                color: "text.primary",
+            },
+        },
+    };
+    const InputProps: TextFieldProps["InputProps"] = {
+        disableUnderline: true,
+        sx: {
+            backgroundColor: "grey.200",
+            transition: "0.3s",
+            "label + &": {
+                marginTop: "24px",
+            },
+            [`&.${inputBaseClasses.focused}`]: {
+                backgroundColor: "common.white",
+                boxShadow: `0 0 0 2px ${purple[700]}`,
+            },
+            [`&.${inputBaseClasses.error}`]: {
+                backgroundColor: "#fff0f0",
+                [`&.${inputBaseClasses.focused}`]: {
+                    boxShadow: `0 0 0 2px #ff6b81`,
+                },
+            },
+            [`&.${inputBaseClasses.disabled}`]: {
+                backgroundColor: "grey.50",
+            },
+            [`& .${inputBaseClasses.input}`]: {
+                padding: "1rem",
+            },
+        },
+    };
     const {
         teamName,
         members,
@@ -170,14 +211,21 @@ const RegistrationForm: React.FC = () => {
     return (
         <Box sx={{ maxWidth: "800px", margin: "40px auto", padding: "20px" }}>
             <ListItemText primary={'Probattle 2025 / Team Registration'} secondary={'List all your team members here'} />
-            <Box component="form">
+            <Box onSubmit={(e) => {
+                e.preventDefault();
+                const valid = validateForm();
+                if // evertthing valid and no errors, save form to firebase 
+            }}>
                 <Box sx={{ mt: 3 }}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <TextField
                                 label="Team Name"
-                                variant="outlined"
+                                variant="standard"
+                                margin={"normal"}
                                 required
+                                InputLabelProps={InputLabelProps}
+                                InputProps={InputProps}
                                 fullWidth
                                 value={teamName}
                                 onChange={(e) => {
@@ -204,9 +252,12 @@ const RegistrationForm: React.FC = () => {
                                     <Grid item xs={12} sm={6} key={field}>
                                         <TextField
                                             label={field !== "cnic" ? (field.charAt(0).toUpperCase() + field.slice(1)) : field.toUpperCase()}
-                                            variant="outlined"
                                             fullWidth
+                                            variant="standard"
+                                            margin={"normal"}
                                             required
+                                            InputLabelProps={InputLabelProps}
+                                            InputProps={InputProps}
                                             {...(field === "phone" ? phoneProps : {})}
                                             value={member[field]}
                                             onChange={(e) => {
@@ -260,7 +311,7 @@ const RegistrationForm: React.FC = () => {
                     )}
                 </Box>
             </Box>
-        </Box>
+        </Box >
     );
 };
 

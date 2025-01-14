@@ -5,11 +5,12 @@ const AboutUs: React.FC = () => {
     <Box
       id="about-us-section"
       sx={{
-        width: '100vw', // Extend background to full viewport width
+        width: '100%', // Extend background to full viewport width
         position: 'relative',
-        backgroundImage: 'url(/About_us_bg-30-Oct-2024-12-06-AM-3807.jpg)',
-        backgroundSize: 'cover',
+        backgroundSize: 'cover', backgroundImage: 'url(/About_us_bg-30-Oct-2024-12-06-AM-3807.jpg)',
+
         backgroundPosition: 'center',
+        // backgroundAttachment:'fixed',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center', // Center content vertically if needed
@@ -25,7 +26,7 @@ const AboutUs: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)', // Black overlay with transparency
+          backgroundColor: 'rgba(255,255,255, 0.8)', // Black overlay with transparency
           zIndex: 1,
         },
 
@@ -37,10 +38,11 @@ const AboutUs: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(128, 0, 128, 0.5)', // Purple overlay with transparency
+          // backgroundColor: 'rgb(102, 37, 102)', // Purple overlay with transparency
+          backgroundColor: 'white', // Purple overlay with transparency
           zIndex: 2,
           opacity: 0.5,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          // backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300%25' height='300%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           backgroundSize: 'cover', // Ensures the grain effect covers the whole area
         },
       }}
@@ -55,21 +57,21 @@ const AboutUs: React.FC = () => {
             textAlign: 'left',
             opacity: 0.9,
             backgroundColor: 'rgba(0, 0, 0, 0)', // Transparent background for content Paper
-            color: 'white',
+            color: 'black',
             position: 'relative',
           }}
         >
           <Box textAlign="left" marginBottom={6}>
-            <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'white', lineHeight: 1.2 }}>
-              <span style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>More on us</span>
+            <Typography variant="h1" sx={{ fontSize: { xs: '3rem', sm: '4rem' }, fontWeight: 'bold', color: 'black', lineHeight: 1.2 }}>
+              <span style={{ WebkitTextStroke: '1px black', color: 'transparent' }}>About CSS</span>
             </Typography>
-            <Typography variant="body1" sx={{ color: 'white'}}>
+            <Typography variant="body1" sx={{ color: 'black' }}>
               Learn more about who we are, what we do, and the goals that drive our community forward.
             </Typography>
           </Box>
 
           {/* Who We Are */}
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ mb: 1 }}>
             Who We Are
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1.25rem' }}>
@@ -77,10 +79,10 @@ const AboutUs: React.FC = () => {
           </Typography>
 
           {/* adding a plain line, a divider */}
-          <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} />
+          {/* <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} /> */}
 
           {/* What We Do */}
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ mb: 1 }}>
             What We Do
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1.25rem' }}>
@@ -88,10 +90,10 @@ const AboutUs: React.FC = () => {
           </Typography>
 
           {/* adding a plain line, a divider */}
-          <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} />
+          {/* <Box sx={{ borderBottom: 1, borderColor: 'white', mb: 3 }} /> */}
 
           {/* Our Goals */}
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ mb: 1 }}>
             Our Goals
           </Typography>
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1.25rem' }}>

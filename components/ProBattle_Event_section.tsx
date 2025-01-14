@@ -27,7 +27,7 @@ const ProBattleSection: React.FC = () => {
       </div>
 
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
           display: "flex",
           justifyContent: "center",

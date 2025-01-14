@@ -1,148 +1,163 @@
-import { Box, Typography, IconButton, Divider, Stack } from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import Image from 'next/image';
-import Grid from '@mui/material/Grid2';
-import { Avatar, Link, Chip } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import CallIcon from '@mui/icons-material/Call';
+import { Box, Typography, Grid, Stack, Link, Button } from '@mui/material';
+import AnimatedBackground from './animated-background';
+import AboutUs from './AboutUs_section';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  pathname: string; // Pass the current path as a prop
+}
+
+const Footer: React.FC<FooterProps> = ({ pathname }) => {
   return (
-    <Box
-      sx={{
-        bgcolor: '#ECEBDE',
-        color: 'white',
-        p: 4,
-        mt: 0,
-        textAlign: 'center',
-      }}
-    >
-      <Grid container spacing={2}>
-        
-          <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#000' }}>Connect With Us</Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
-              <IconButton
-                href="https://www.linkedin.com/company/iba-computer-science-society/" // Replace with actual link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ color: '#0077B5', '&:hover': { color: '#005582' } }}
-              >
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton
-                href="https://www.instagram.com/css.iba/" // Replace with actual link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  background: 'linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045)',
-                  color: 'white',
-                  borderRadius: '50%',
-                  '&:hover': { opacity: 0.8 },
-                }}
-              >
-                <InstagramIcon />
-              </IconButton>
-              <IconButton
-                href="https://discord.com/invite/your-discord-channel-link" // Replace with actual link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ color: '#7289DA', '&:hover': { color: '#5865F2' } }}
-              >
-                <Image src="/Discord-Emblem.svg" alt="Discord" width={24} height={24} />
-              </IconButton>
-            </Box>
-          </Grid>
-
-        <Divider
-          orientation="vertical"
-          flexItem
-          sx={{ bgcolor: 'black', display: { xs: 'none', md: 'block' } }}
-        />
-
-        <Divider 
-          orientation='horizontal'
-          flexItem
-          sx={{ bgcolor: 'black', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
-        />
-
-        {/* Contact Us
-        <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#000' }}>Contact Us</Typography>
-
-            <Stack direction="column" spacing={1} sx={{ mt: 1 }}>
-              <Link href="mailto:contact@css.com" sx={{ textDecoration: 'none' }}>
-                <Chip 
-                  icon={<EmailIcon />}
-                  label="contact@css.com"
-                  variant="outlined"
-                  sx={{ bgcolor: '#F3DEBA', color: 'black', fontWeight: 'normal' }}
-                />
-              </Link>
-              
-              <Link href="tel:+1234567890" sx={{ textDecoration: 'none' }}>
-                <Chip 
-                  icon={<CallIcon />}
-                  label="+123 - 456 - 7890"
-                  variant="outlined"
-                  sx={{ bgcolor: '#F3DEBA', color: 'black', fontWeight: 'normal' }}
-                />
-              </Link>
-            </Stack>
-
-        </Grid> */}
-
-        {/* <Divider
-          orientation="vertical"
-          flexItem
-          sx={{ bgcolor: 'black', display: { xs: 'none', md: 'block' } }}
-        />
-
-        <Divider 
-          orientation='horizontal'
-          flexItem
-          sx={{ bgcolor: 'black', display: { xs: 'block', md: 'none' }, width: '100%', mx: 'auto' }}
-        /> */}
-
-
-        {/* Our Society section */}
-        <Grid size={{ xs: 10, sm: 3.5 }} sx={{ mx: 'auto' }}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#000' }}>Our Society</Typography>
-            <Typography variant="body2" sx={{ mt: 1, color: '#000' }}>
-              <span style={{ color: '#D81B60' }}>&copy; {new Date().getFullYear()}</span> Computer Science Society. <span style={{ color: '#D81B60' }}>All rights reserved.</span>
-            </Typography>
-          
-        </Grid>
-      </Grid>
-        
-      
+    <div style={{ position: 'relative' }}>
+      {/* Gradient Background Overlay */}
       <Box
         sx={{
-          mt: 9,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          position: 'absolute',
+          zIndex: 1,
+          top: 0,
+          left: 0,
+          height: '6rem',
+          width: '100%',
+          background: 'linear-gradient(to bottom, black, transparent)',
+        }}
+      />
+      {/* Animated Background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          zIndex: 0,
         }}
       >
-        <Typography variant="body2" sx={{ color: '#000' }}>
-          In Collaboration with{' '}
-          <Link href="https://www.linkedin.com/in/abdullahtariq78/" target="_blank" rel="noopener noreferrer" underline='hover'>
-            Abdullah Tariq
-          </Link>
-          ,{' '}
-          <Link href="https://kabeer.kabeers.network" target="_blank" rel="noopener noreferrer" underline='hover'>
-            Kabeer
-          </Link>
-          , and{' '}
-          <Link href="#" target="_blank" rel="noopener noreferrer" underline='hover'>
-            Ammar
-          </Link>
-        </Typography>
-
+        <AnimatedBackground />
       </Box>
 
-    </Box>
+      {/* Main Footer Content */}
+      <Box
+        sx={{
+          color: '#fff',
+          p: 4,
+          pt: 10,
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
+        {/* Conditional AboutUs Section */}
+        {pathname === '/' && (
+          <Box
+            sx={{
+              color: '#000',
+              borderRadius: '16px',
+              mb: 4,
+              textAlign: 'center',
+            }}
+          >
+            <AboutUs />
+          </Box>
+        )}
+
+        {/* Footer Grid */}
+        <Grid container spacing={4}>
+          {/* Get in Touch */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="subtitle1" sx={{ fontSize: '14px', fontWeight: 500, mb: 1 }}>
+              Get in touch
+            </Typography>
+            <Typography variant="body2">business@pizzapizza.io</Typography>
+            <Typography variant="body2">hello@pizzapizza.io</Typography>
+          </Grid>
+
+          {/* Connect */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="subtitle1" sx={{ fontSize: '14px', fontWeight: 500, mb: 1 }}>
+              Connect
+            </Typography>
+            <Typography variant="body2">
+              <Link href="#" sx={{ color: '#fff', textDecoration: 'none' }}>
+                LinkedIn
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="#" sx={{ color: '#fff', textDecoration: 'none' }}>
+                Instagram
+              </Link>
+            </Typography>
+          </Grid>
+
+          {/* Design Services */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="subtitle1" sx={{ fontSize: '14px', fontWeight: 500, mb: 1 }}>
+              Design Services
+            </Typography>
+            <Typography variant="body2">Pizza Pizza Design Services GmbH</Typography>
+            <Typography variant="body2">Dresdener Str. 22</Typography>
+            <Typography variant="body2">10999 Berlin, Germany</Typography>
+          </Grid>
+
+          {/* Ventures */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="subtitle1" sx={{ fontSize: '14px', fontWeight: 500, mb: 1 }}>
+              Ventures
+            </Typography>
+            <Typography variant="body2">Pizza Pizza Ventures GmbH</Typography>
+            <Typography variant="body2">Dresdener Str. 22</Typography>
+            <Typography variant="body2">10999 Berlin, Germany</Typography>
+          </Grid>
+        </Grid>
+
+        {/* Footer Bottom Section */}
+        <Box
+          sx={{
+            borderTop: '1px solid #333',
+            mt: 4,
+            pt: 2,
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+          }}
+        >
+          <Typography variant="body2" sx={{ color: '#888' }}>
+            Typeface by Dinamo
+          </Typography>
+
+          {/* Footer Links */}
+          <Stack direction="row" spacing={1}>
+            <Link href="#" sx={{ color: '#888', textDecoration: 'none', fontSize: '12px' }}>
+              © 2022
+            </Link>
+            <Link href="#" sx={{ color: '#888', textDecoration: 'none', fontSize: '12px' }}>
+              Data Privacy
+            </Link>
+            <Link href="#" sx={{ color: '#888', textDecoration: 'none', fontSize: '12px' }}>
+              Imprint
+            </Link>
+          </Stack>
+
+          {/* Footer Buttons */}
+          <Stack direction="row" spacing={2}>
+            {['Profile', 'Services', 'Work', 'Contact'].map((label) => (
+              <Button
+                key={label}
+                variant="outlined"
+                sx={{
+                  color: '#fff',
+                  borderColor: '#fff',
+                  borderRadius: '16px',
+                  textTransform: 'none',
+                  fontSize: '14px',
+                  px: 2,
+                  '&:hover': {
+                    backgroundColor: '#fff',
+                    color: '#000',
+                  },
+                }}
+              >
+                {label}
+              </Button>
+            ))}
+          </Stack>
+        </Box>
+      </Box>
+    </div>
   );
 };
 
