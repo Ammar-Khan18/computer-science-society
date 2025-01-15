@@ -295,9 +295,7 @@ export default function HeroSection(): JSX.Element {
                   alignItems: "center",
                 }}
               >
-                Codex is a competitive programming event that challenges you to
-                solve real-world problems using your coding skills. Join us for
-                a thrilling experience!
+                ProBattle 2025 features modules like coding, robotics, and gaming, offering a platform for innovation and collaboration. Participants can explore new technologies and gain insights from industry leaders while showcasing their talents.
               </Typography>
               <Box
                 sx={{
@@ -309,7 +307,7 @@ export default function HeroSection(): JSX.Element {
               >
                 <Button
                   variant="contained"
-                  href="#codex-section"
+                  href="/pro-battle"
                   sx={{
                     backgroundColor: "white",
                     color: "grey.900",
@@ -322,7 +320,7 @@ export default function HeroSection(): JSX.Element {
                 </Button>
                 <Button
                   variant="text"
-                  href="/codex"
+                  href="https://www.instagram.com/p/DExnMBkOKXe/?igsh=bnRqcHMwd3VsNGdw"
                   sx={{
                     color: "white",
                     fontWeight: "bold",
