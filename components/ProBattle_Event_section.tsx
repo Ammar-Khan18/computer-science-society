@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
-import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
+import { Container, Box, useTheme, useMediaQuery, Typography, Button } from "@mui/material";
 import Image from "next/image";
+import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
 import AnimatedBackground from "./animated-background";
+import { BorderColor } from "@mui/icons-material";
 
 const ProBattleSection: React.FC = () => {
   const theme = useTheme();
@@ -27,7 +29,7 @@ const ProBattleSection: React.FC = () => {
       </div>
 
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -157,20 +159,49 @@ const ProBattleSection: React.FC = () => {
                 justifyContent: "center",
                 width: { xs: "100%", sm: "auto" }, // Full width on mobile
                 marginTop: { xs: 2, sm: 0 }, // Add spacing on mobile
+                marginRight: { xs: 0, sm: 4 }, // Add spacing on mobile
               }}
             >
-              <button
-                style={{
-                  padding: "10px 20px",
-                  backgroundColor: "#fff",
-                  color: "#000",
+              <Button
+                variant="contained"
+                // href="/registeration"
+                endIcon={<KeyboardArrowRightSharpIcon />}
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  borderRadius: "5px",
+                  marginLeft: 2,
+                  padding: "12px 30px",
+                  backgroundColor: "#000",
+                  color: "#fff",
                   border: "none",
-                  borderRadius: 5,
-                  cursor: "pointer",
+                  overflow: "hidden",
+                  "::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    zIndex: -1,
+                    borderRadius: "inherit",
+                    padding: "2px", // Border thickness
+                    background: "linear-gradient(90deg, red, orange, green, blue, indigo, violet)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  },
+                  "&:hover": {
+                    "::before": {
+                      background: "white",
+                      transition: "all 0.5s ease",
+                    },
+                  },
                 }}
               >
                 Register
-              </button>
+              </Button>
+
             </Box>
           </Box>
         </Container>
