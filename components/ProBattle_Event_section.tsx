@@ -57,7 +57,7 @@ const ProBattleSection: React.FC = () => {
             }}
           >
             <Image
-              src="/hero-video.jpg" // Replace with the path to your image
+              src="/Banner.png" // Replace with the path to your image
               alt="ProBattle Title"
               fill // Makes the image fill the parent container
               style={{
