@@ -57,7 +57,10 @@ const CodeXSection: React.FC = () => {
           sx={{ maxWidth: 'lg', mx: 'auto', fontWeight: 500 }}
           gutterBottom
         >
-          The ultimate coding challenge for developers of all skill levels. Join us for an exciting event full of innovation, problem-solving, and competition!
+          Codex, an initiative of the IBA Computer Science Society (CSS), is a
+          vibrant tech community with 300+ active members across various
+          platforms, providing opportunities to learn, collaborate, and
+          showcase tech skills.
         </Typography>
 
         <Grid container spacing={4} sx={{ mt: { xs: 5, sm: 8 } }}>
