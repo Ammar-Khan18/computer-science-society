@@ -19,7 +19,6 @@ import { TieredModules } from "./modules";
 import { purple } from "@mui/material/colors";
 import { inputBaseClasses } from "@mui/material/InputBase";
 import { TextFieldProps } from "@mui/material/TextField";
-import { firestore } from "@/firebase";
 
 const RegistrationForm: React.FC = () => {
     const InputLabelProps: TextFieldProps["InputLabelProps"] = {
@@ -109,16 +108,15 @@ const RegistrationForm: React.FC = () => {
         });
     }, [members, selectedModules]);
 
-    const handleAddMember = useCallback(() => {
-        setMembers((prev) => [...prev, { name: "", email: "", contact: "", cnic: "" }]);
-    }, [setMembers]);
+    const handleAddMember = () => {
+        console.log(members)
+        setMembers([...members, { name: "", email: "", contact: "", cnic: "" }]);
+        console.log(members)
+    };
 
-    const handleRemoveMember = useCallback(
-        (index: number) => {
-            setMembers((prev) => prev.filter((_, i) => i !== index));
-        },
-        [setMembers]
-    );
+    const handleRemoveMember = (index: number) => {
+        setMembers(members.filter((_, i) => i !== index));
+    };
 
     const validateModuleSize = useCallback(() => {
         setFormErrors((prevErrors) => {
@@ -143,9 +141,6 @@ const RegistrationForm: React.FC = () => {
         });
     }, [members.length, selectedModules]);
 
-    useEffect(() => {
-        validateModuleSize();
-    }, [validateModuleSize]);
 
     const phoneProps = useMemo(
         () => ({
@@ -189,32 +184,62 @@ const RegistrationForm: React.FC = () => {
             }
         });
 
-        validateModuleSize();
+        const teamSize = members.length;
+
+        for (const [tier, moduleName] of Object.entries(selectedModules)) {
+            const tierData = TieredModules.find((t) => t.name === tier);
+            if (!tierData) {
+                valid = false;
+                continue;
+            }
+
+            const moduleData = tierData.modules.find((m) => m.name === moduleName);
+            if (!moduleData) {
+                valid = false;
+                continue;
+            }
+
+            if (teamSize < moduleData.minMembers || teamSize > moduleData.maxMembers) {
+                errors.selectedModules = `Team size must be between ${moduleData.minMembers} and ${moduleData.maxMembers} for the selected module: ${moduleName}.`;
+                valid = false;
+                break;
+            } else {
+                errors.selectedModules = "";
+            }
+        }
         setFormErrors(errors);
         return valid;
     }, [teamName, selectedModules, members, validateModuleSize]);
 
+    const saveFormData = (async () => {
+        const data = {
+            teamName,
+            selectedModules,
+            members,
+            timestamp: new Date(),
+        };
+        console.log(data);
+        await fetch('/api/probattle/register', { method: "post", body: JSON.stringify(data) });
+    });
     const handleSubmit = useCallback(async () => {
-        if (!validateForm()) return;
 
+        console.log('abc', validateForm(), formErrors);
+        if (!validateForm()) return;
         setLoading(true);
         try {
             setSuccessMessage("Team successfully registered!");
+            saveFormData();
         } catch (error) {
             setErrors({ general: "An error occurred while submitting the form." });
         } finally {
             setLoading(false);
         }
     }, [validateForm, setLoading, setSuccessMessage, setErrors]);
-
-    console.log('data');
     return (
         <Box sx={{ maxWidth: "800px", margin: "40px auto", padding: "20px" }}>
             <ListItemText primary={'Probattle 2025 / Team Registration'} secondary={'List all your team members here'} />
-            <Box onSubmit={(e) => {
+            <form onSubmit={(e) => {
                 e.preventDefault();
-                const valid = validateForm();
-                if // evertthing valid and no errors, save form to firebase 
             }}>
                 <Box sx={{ mt: 3 }}>
                     <Grid container spacing={3}>
@@ -248,7 +273,7 @@ const RegistrationForm: React.FC = () => {
                     <Grid container>
                         {members.map((member, index) => (
                             <Grid container key={index} spacing={2} style={{ marginTop: '2rem' }}>
-                                {["name", "email", "phone", "cnic"].map((field) => (
+                                {["name", "email", "contact", "cnic"].map((field) => (
                                     <Grid item xs={12} sm={6} key={field}>
                                         <TextField
                                             label={field !== "cnic" ? (field.charAt(0).toUpperCase() + field.slice(1)) : field.toUpperCase()}
@@ -258,7 +283,7 @@ const RegistrationForm: React.FC = () => {
                                             required
                                             InputLabelProps={InputLabelProps}
                                             InputProps={InputProps}
-                                            {...(field === "phone" ? phoneProps : {})}
+                                            {...(field === "contact" ? phoneProps : {})}
                                             value={member[field]}
                                             onChange={(e) => {
                                                 const updatedMembers = [...members];
@@ -310,7 +335,7 @@ const RegistrationForm: React.FC = () => {
                         </Box>
                     )}
                 </Box>
-            </Box>
+            </form>
         </Box >
     );
 };
