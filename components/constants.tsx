@@ -18,7 +18,7 @@ const UniversityEvents: Event[] = [
     {
         id: 1,
         title: "Machine Learning",
-        details: "A field focused on creating algorithms that can learn and improve from experience. Involves training models on data to make predictions and decisions, using techniques like neural networks and regression.",
+        details: "Participants will build or refine machine learning models to solve specific tasks, such as classification, regression, or clustering. They will need to demonstrate skills in data preprocessing, model training, and evaluation.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -40,7 +40,7 @@ const UniversityEvents: Event[] = [
     {
         id: 3,
         title: "Natural Language Processing",
-        details: "Technology that enables computers to understand, interpret, and generate human language. Uses algorithms to analyze text, perform translation, sentiment analysis, and create chatbots.",
+        details: "This module involves working on tasks related to text analysis, chatbots, or other NLP applications. Participants will explore techniques such as tokenization, sentiment analysis, and language modeling to solve real-world language processing problems.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -51,7 +51,7 @@ const UniversityEvents: Event[] = [
     {
         id: 4,
         title: "Business Intelligence",
-        details: "Analyzing business data to make informed decisions. Uses data visualization, reporting tools, and analytics to derive meaningful insights.",
+        details: "Participants will analyze datasets to derive actionable insights using BI tools. They will work on data visualization, report generation, and predictive analytics, aiming to make data-driven decisions that can impact businesses positively.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -62,7 +62,7 @@ const UniversityEvents: Event[] = [
     {
         id: 5,
         title: "Competitive Programming (Code)",
-        details: "Problem-solving challenges where participants write efficient code to solve algorithmic puzzles. Tests speed, accuracy, and optimization skills under time constraints.",
+        details: "Problem-solving challenges where participants write efficient code to solve algorithmic puzzles. Tests speed, accuracy, and optimization skills under time constraints. Participants will solve algorithmic problems using programming languages like C++, Java, or Python.",
         minMember: 1,
         maxMember: 2,
         pricingEarly: 1500,
@@ -73,7 +73,7 @@ const UniversityEvents: Event[] = [
     {
         id: 6,
         title: "Speed Debugging (Code)",
-        details: "The Science Fair is a high school science competition that is held annually in the spring. It is a great opportunity for students to showcase their skills in science and engineering.",
+        details: "Participants will be given code with bugs and are required to debug and correct it using traditional coding environments. They must quickly identify issues in syntax, logic, or runtime to ensure proper functionality.",
         minMember: 1,
         maxMember: 2,
         pricingEarly: 1500,
@@ -84,7 +84,7 @@ const UniversityEvents: Event[] = [
     {
         id: 7,
         title: "Query Quest (Database)",
-        details: "Creating efficient and organized data storage systems. Involves designing schemas, relationships, and optimizing queries for data management.",
+        details: "Participants will be tasked with creating efficient and innovative database schemas. They will focus on optimizing data storage, retrieval, and ensuring the design adheres to best practices like normalization, indexing, and scalability.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -94,8 +94,8 @@ const UniversityEvents: Event[] = [
     },
     {
         id: 8,
-        title: "Cyber Security",
-        details: "Protecting systems and networks from digital attacks. Includes penetration testing, vulnerability assessment, and implementing security measures.",
+        title: "Cyber Security - Captute the Flag",
+        details: "Participants will write scripts, exploit code, and use programming skills to solve challenges, find vulnerabilities, and capture flags in a simulated cybersecurity environment.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -106,7 +106,7 @@ const UniversityEvents: Event[] = [
     {
         id: 9,
         title: "UI/UX Design",
-        details: "Creating user-friendly and visually appealing interfaces. Focuses on user research, wireframing, and designing intuitive interactions.",
+        details: "This module challenges participants to design engaging, intuitive, and user-friendly interfaces. They will need to demonstrate an understanding of user experience principles, visual design aesthetics, and usability best practices.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -116,8 +116,8 @@ const UniversityEvents: Event[] = [
     },
     {
         id: 10,
-        title: "Robotics (Robo Sumo)",
-        details: "A robotics competition where autonomous robots attempt to push opponents out of a circular ring. Tests robot design, stability, and strategic programming.",
+        title: "Robotics (Lightweight Robo War)",
+        details: "Participants will design, build, and program lightweight robots to compete in a battle arena. The objective is to disable or push the opponent’s robot out of the designated area. This module tests mechanical design, durability, programming for strategic combat, and control mechanisms.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -128,7 +128,7 @@ const UniversityEvents: Event[] = [
     {
         id: 11,
         title: "Robotics (Robo Soccer)",
-        details: "Robots compete in teams to play soccer, requiring precise movement control and coordination. Involves sensors, real-time decision making, and multi-robot cooperation.",
+        details: "In Robo Soccer, participants will create and program robots to play a game of soccer. Teams will need to design robots capable of maneuvering, passing, and shooting the ball into the opponent's goal. The module emphasizes coordination, precision, and tactical programming to simulate real soccer gameplay.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -139,7 +139,7 @@ const UniversityEvents: Event[] = [
     {
         id: 12,
         title: "Robotics (Line Following Robot)",
-        details: "Autonomous robots that detect and follow a line path using sensors. Tests precise motor control and sensor calibration for smooth navigation.",
+        details: "Participants will build and program robots to navigate a course by following a designated line. The challenge is to optimize the robot's sensors and control algorithms for speed and accuracy. This module focuses on sensor integration, path-following algorithms, and efficient programming to complete the course in the shortest time possible.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -150,7 +150,7 @@ const UniversityEvents: Event[] = [
     {
         id: 13,
         title: "Tech Tank",
-        details: "A competition format similar to ''Shark Tank'' where participants pitch innovative technical solutions or products. Teams present their ideas and prototypes to judges for evaluation.",
+        details: "Participants will pitch innovative tech solutions to real-world problems in a competitive environment, akin to a startup pitch. Teams will present their ideas to a panel of judges, focusing on the technical feasibility, market potential, and overall impact of their solutions. This module emphasizes creativity, business acumen, and presentation skills.",
         minMember: 1,
         maxMember: 4,
         pricingEarly: 2500,
@@ -161,7 +161,7 @@ const UniversityEvents: Event[] = [
     {
         id: 14,
         title: "BlockChain Trading",
-        details: "Understanding and implementing cryptocurrency trading strategies. Involves blockchain technology, smart contracts, and market analysis.",
+        details: "In this module, participants will engage in real-time mock stock trading, simulating the dynamic environment of the stock market. They will analyze live data, develop and execute trading strategies, and respond to market fluctuations. The focus will be on understanding market trends, practicing risk management, and leveraging financial analytics to make informed trading decisions.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 2500,
@@ -172,7 +172,7 @@ const UniversityEvents: Event[] = [
     {
         id: 15,
         title: "FIFA",
-        details: "A popular soccer video game where players control virtual teams and compete against each other. Requires skill in gameplay mechanics, strategy, and team management.",
+        details: "Participants will compete in a FIFA video game tournament, showcasing their skills in virtual soccer. Players will need to demonstrate tactical gameplay, quick decision-making, and mastery of the game mechanics to outplay their opponents and advance through the rounds.",
         minMember: 1,
         maxMember: 1,
         pricingEarly: 1000,
@@ -183,7 +183,7 @@ const UniversityEvents: Event[] = [
     {
         id: 16,
         title: "Tekken",
-        details: "A fighting game where players compete in one-on-one battles. Requires quick reflexes, strategic thinking, and mastery of character movesets.",
+        details: "In this Tekken module, participants will engage in intense one-on-one battles in the popular fighting game. Players must utilize character-specific moves, combos, and strategies to defeat their opponents. The tournament emphasizes reflexes, strategy, and deep knowledge of the game’s mechanics to claim victory.",
         minMember: 1,
         maxMember: 1,
         pricingEarly: 1000,
@@ -197,7 +197,7 @@ const CollegeEvents: Event[] = [
     {
         id: 1,
         title: "Competitive Programming (No Code)",
-        details: "Writing algorithms in plain English or simplified notation before actual coding. Helps in planning program logic and structure without worrying about syntax.",
+        details: "Participants will solve logical and algorithmic puzzles using flowcharts, pseudocode, or drag-and-drop programming interfaces. The focus is on conceptual problem-solving without writing actual code.",
         minMember: 1,
         maxMember: 2,
         pricingEarly: 1500,
@@ -208,7 +208,7 @@ const CollegeEvents: Event[] = [
     {
         id: 2,
         title: "Speed Debugging (No Code)",
-        details: "The Math Competition is a high school math competition that is held annually in the fall. It is a great opportunity for students to showcase their skills in math and engineering.",
+        details: "Participants will debug logic flows or identify errors in visual programming or GUI-based applications. They will focus on understanding the workflow and fixing logical issues without direct coding.",
         minMember: 1,
         maxMember: 2,
         pricingEarly: 1500,
@@ -229,7 +229,7 @@ const CollegeEvents: Event[] = [
     },
     {
         id: 4,
-        title: "Robotics (Robo Sumo)",
+        title: "Robotics (Lightweight Robo War)",
         details: "A robotics competition where autonomous robots attempt to push opponents out of a circular ring. Tests robot design, stability, and strategic programming.",
         minMember: 1,
         maxMember: 3,
@@ -252,7 +252,7 @@ const CollegeEvents: Event[] = [
     {
         id: 6,
         title: "Robotics (Line Following Robot)",
-        details: "Autonomous robots that detect and follow a line path using sensors. Tests precise motor control and sensor calibration for smooth navigation.",
+        details: "Participants will build and program robots to navigate a course by following a designated line. The challenge is to optimize the robot's sensors and control algorithms for speed and accuracy. This module focuses on sensor integration, path-following algorithms, and efficient programming to complete the course in the shortest time possible.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
@@ -263,7 +263,7 @@ const CollegeEvents: Event[] = [
     {
         id: 7,
         title: "Tech Tank",
-        details: "A competition format similar to ''Shark Tank'' where participants pitch innovative technical solutions or products. Teams present their ideas and prototypes to judges for evaluation.",
+        details: "Participants will pitch innovative tech solutions to real-world problems in a competitive environment, akin to a startup pitch. Teams will present their ideas to a panel of judges, focusing on the technical feasibility, market potential, and overall impact of their solutions. This module emphasizes creativity, business acumen, and presentation skills.",
         minMember: 1,
         maxMember: 4,
         pricingEarly: 2500,
@@ -274,7 +274,7 @@ const CollegeEvents: Event[] = [
     {
         id: 8,
         title: "BlockChain Trading",
-        details: "Understanding and implementing cryptocurrency trading strategies. Involves blockchain technology, smart contracts, and market analysis.",
+        details: "In this module, participants will engage in real-time mock stock trading, simulating the dynamic environment of the stock market. They will analyze live data, develop and execute trading strategies, and respond to market fluctuations. The focus will be on understanding market trends, practicing risk management, and leveraging financial analytics to make informed trading decisions.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 2500,
@@ -285,7 +285,7 @@ const CollegeEvents: Event[] = [
     {
         id: 9,
         title: "FIFA",
-        details: "A popular soccer video game where players control virtual teams and compete against each other. Requires skill in gameplay mechanics, strategy, and team management.",
+        details: "Participants will compete in a FIFA video game tournament, showcasing their skills in virtual soccer. Players will need to demonstrate tactical gameplay, quick decision-making, and mastery of the game mechanics to outplay their opponents and advance through the rounds.",
         minMember: 1,
         maxMember: 1,
         pricingEarly: 1000,
@@ -296,7 +296,7 @@ const CollegeEvents: Event[] = [
     {
         id: 10,
         title: "Tekken",
-        details: "A fighting game where players compete in one-on-one battles. Requires quick reflexes, strategic thinking, and mastery of character movesets.",
+        details: "In this Tekken module, participants will engage in intense one-on-one battles in the popular fighting game. Players must utilize character-specific moves, combos, and strategies to defeat their opponents. The tournament emphasizes reflexes, strategy, and deep knowledge of the game’s mechanics to claim victory.",
         minMember: 1,
         maxMember: 1,
         pricingEarly: 1000,
