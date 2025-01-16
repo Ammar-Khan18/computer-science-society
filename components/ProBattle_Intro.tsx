@@ -122,7 +122,7 @@ export default function ProBattle_Intro() {
             <ul style={{ listStyleType: "disc", paddingLeft: 20, lineHeight: 1 }}>
               <li><b>Expert-Led Workshops & Seminars:</b> Gain insights and hands-on experience from workshops and seminars conducted by seasoned experts in various tech domains.</li>
               <li><b>18 Technical Modules:</b> Dive deep into a wide range of technical topics, including Machine Learning, Competitive Programming, Robotics, and much more. Each module is designed to enhance your knowledge and skills in cutting-edge technologies.</li>
-              <li><b>Networking Sessions:</b> Build valuable connections during our dedicated networking sessions, including a special "Networking Corner" where you can interact with peers, mentors, and industry professionals.</li>
+              <li><b>Networking Sessions:</b> Build valuable connections during our dedicated networking sessions, including a special &quot;Networking Corner&quot; where you can interact with peers, mentors, and industry professionals.</li>
             </ul>
 
             <Typography variant="h5" sx={{ fontWeight: "bold", color: "#fff", marginTop: 2 }}>Why Participate?</Typography>
