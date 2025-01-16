@@ -100,16 +100,43 @@ export default function ProBattle_Intro() {
               color: "#D9DFC6", // Base color for the text
               marginTop: 5,
               maxWidth: 1160,
-              fontSize: { xs: "1.3rem", sm: "1.8rem", md: "2.2rem" },
+              fontSize: { xs: "1.1rem", sm: "1.6rem", md: "1.8rem" },
               "& span": { color: "#fff" }, // White color for keywords and highlighted text
             }}
           >
-            <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span>{" "}
-            This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
-            By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
-            Whether you<span style={{color: "#D9DFC6"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
-            🚀 <span>Don<span>&#39;</span>t miss your chance to{" "} thrive and make your mark!</span> 💡
+            🌟 Welcome to <span>ProBattle 2025</span>, the <span>ultimate tech showdown</span> organized by the <span>IBA Computer Science Society!</span> <br /> <br />
+            Prepare 💡 yourself for an exhilarating competition where innovation meets skill, and ideas come to life. 
+            Gain insights and hands-on experience and dive deep into a wide range of technical topics including <span>Machine Learning, Competitive Programming, Robotics</span>, and much more.
+            <span>Build</span> valuable connections during our dedicated networking sessions.
           </Typography>
+          <Box
+            sx={{
+              textAlign: "left",
+              marginTop: 3,
+              maxWidth: 1160,
+              color: "#D9DFC6", // Base color for bullets
+              fontSize: { xs: "1.1rem", sm: "1.6rem", md: "1.8rem" },
+            }}
+          >
+            <Typography variant="h5" sx={{ fontWeight: "bold", color: "#fff" }}>Event Highlights:</Typography>
+            <ul style={{ listStyleType: "disc", paddingLeft: 20, lineHeight: 1 }}>
+              <li><b>Expert-Led Workshops & Seminars:</b> Gain insights and hands-on experience from workshops and seminars conducted by seasoned experts in various tech domains.</li>
+              <li><b>18 Technical Modules:</b> Dive deep into a wide range of technical topics, including Machine Learning, Competitive Programming, Robotics, and much more. Each module is designed to enhance your knowledge and skills in cutting-edge technologies.</li>
+              <li><b>Networking Sessions:</b> Build valuable connections during our dedicated networking sessions, including a special "Networking Corner" where you can interact with peers, mentors, and industry professionals.</li>
+            </ul>
+
+            <Typography variant="h5" sx={{ fontWeight: "bold", color: "#fff", marginTop: 2 }}>Why Participate?</Typography>
+            <ul style={{ listStyleType: "disc", paddingLeft: 20, lineHeight: 1 }}>
+              <li><b>Exciting Prizes:</b> Win cash rewards, exclusive tech merchandise, and more.</li>
+              <li><b>Networking Opportunities:</b> Connect with industry leaders, peers, and potential employers.</li>
+              <li><b>Skill Development:</b> Hone your skills through practical, hands-on challenges.</li>
+              <li><b>Recognition:</b> Stand out by showcasing your talent and innovation.</li>
+            </ul>
+            
+            <Typography variant="h5" sx={{ fontWeight: "bold", color: "#fff", marginTop: 2 }}>
+              Get ready to battle it out and emerge as a champion of ProBattle25!
+            </Typography>
+          </Box>
         </Box>
 
         {/* Feature Section of small boxes with text */}
