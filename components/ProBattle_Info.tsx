@@ -199,6 +199,42 @@ const RegistrationSteps = () => {
             </Collapse>
           </React.Fragment>
         ))}
+
+                <Divider />
+
+        {/* Participation Options */}
+        <ListSubheader
+          component="div"
+          sx={{
+            backgroundColor: "gray",
+            color: "black",
+            textAlign: "center",
+            fontSize: "1rem",
+            fontWeight: "bold",
+          }}
+        >
+          Participation Options
+        </ListSubheader>
+        <List component="div" disablePadding>
+          <ListItemButton>
+              <ListItemIcon>
+                <PersonIcon color="primary" />
+              </ListItemIcon>
+            <ListItemText primary="Attendee Registration"
+              secondary="Register as an individual to engage in learning and networking."
+            />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton>
+              <ListItemIcon>
+                <GroupsIcon color="primary" />
+              </ListItemIcon>
+            <ListItemText primary="Team Registration" 
+              secondary="Register as a team with your friends to participate in the modules." 
+            />   
+          </ListItemButton>
+        </List>
+        
       </List>
 
       {/* Register Button */}
