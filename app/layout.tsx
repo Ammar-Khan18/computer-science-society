@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Making temporary the pro battle page the main page
-import Page from "@/app/page";
+import Page from "@/app/pro-battle/page";
 
 export const metadata: Metadata = {
   title: "IBA Computer Science Society",
@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <script src="https://unpkg.com/react-scan/dist/auto.global.js" async />
       <body className="page">
-        <Navbar />
+        {/* <Navbar /> */}
         {/* {children} */}
         <Page />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
