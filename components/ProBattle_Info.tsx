@@ -187,12 +187,12 @@ const RegistrationSteps = () => {
               <ListItemIcon>
                 <CheckCircleIcon color="success" />
               </ListItemIcon>
-              <ListItemText primary={step.title} />
+              <ListItemText primary={step.title} sx={{color: "black"}} />
               {openStep === index ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <Collapse in={openStep === index} timeout="auto" unmountOnExit>
               <Box sx={{ pl: 6, pb: 2 }}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="black">
                   {step.details}
                 </Typography>
               </Box>
