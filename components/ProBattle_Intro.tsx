@@ -4,15 +4,6 @@ import { Box, Container, ImageList, ImageListItem, useTheme, useMediaQuery, Typo
 
 // Importing the image
 import Image from "next/image";
-// import Pro1 from "../public/Pro1.jpg";
-// import Pro2 from "../public/pro2.jpg";
-// import Pro3 from "../public/pro3.jpg";
-// import Pro4 from "../public/pro4.jpg";
-// import Pro5 from "../public/pro5.jpg";
-// import Pro6 from "../public/pro6.jpg";
-// import Pro7 from "../public/pro7.jpg";
-// import Pro8 from "../public/pro8.jpg";
-// import Pro9 from "../public/pro9.jpg";
 
 // Images
 const itemData = [
@@ -109,11 +100,11 @@ export default function ProBattle_Intro() {
               color: "#D9DFC6", // Base color for the text
               marginTop: 5,
               maxWidth: 1160,
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+              fontSize: { xs: "1.3rem", sm: "1.8rem", md: "2.2rem" },
               "& span": { color: "#fff" }, // White color for keywords and highlighted text
             }}
           >
-            <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span> 
+            <span>🌟 Welcome to ProBattle 2025 – your ultimate platform to{" "} innovate,</span> <span>collaborate, and excel!</span>{" "}
             This event is meticulously crafted to challenge your skills, immerse you in cutting-edge technologies, and provide invaluable{" "} insights from industry leaders. 
             By fostering a{" "} dynamic and collaborative environment, ProBattle 2025 encourages the exchange of ideas,{" "} creativity, and innovation. 
             Whether you<span style={{color: "#D9DFC6"}}>&#39;</span>re{" "} testing your abilities, exploring the{" "} latest advancements, or networking with{" "} like-minded individuals, this is where{" "} talent meets opportunity. 
