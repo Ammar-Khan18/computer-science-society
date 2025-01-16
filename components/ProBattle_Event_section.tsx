@@ -57,6 +57,7 @@ const ProBattleSection: React.FC = () => {
             <Image
               src="/Banner.png" // Replace with the path to your image
               alt="ProBattle Title"
+              priority
               fill // Makes the image fill the parent container
               style={{
                 transition: "transform 0.5s ease-in-out",
