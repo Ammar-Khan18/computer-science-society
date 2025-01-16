@@ -9,6 +9,7 @@ import {
   Chip,
   Stack,
   Divider,
+  Button,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import PersonIcon from '@mui/icons-material/Person';
@@ -16,6 +17,11 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { UniversityEvents, CollegeEvents } from "./constants";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import { List, ListSubheader, ListItemButton, ListItemText, Collapse, ListItemIcon } from "@mui/material";
+import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 // EventCard Component
 interface Event {
@@ -113,6 +119,112 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
   </Grid>
 );
 
+const RegistrationSteps = () => {
+  const [openStep, setOpenStep] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenStep(openStep === index ? null : index);
+  };
+
+  const steps = [
+    {
+      title: "Step 1: Choose Institute Level",
+      details: "Select your Insitute Level. You can participate in University Level or College Level.",
+    },
+    {
+      title: "Step 2: Choose Modules",
+      details: "Choose your modules. you may participate in one module from each tier.",
+    },
+    {
+      title: "Step 3: Get Ready",
+      details: "Get ready for the battle.",
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      gap: 4,
+      mb: 6,
+      }}
+    >
+
+      {/* Steps List */}
+      <List
+        sx={{
+          width: "100%",
+          maxWidth: 400,
+          bgcolor: "background.paper",
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        }}
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        subheader={
+          <ListSubheader
+            component="div"
+            id="nested-list-subheader"
+            sx={{
+              backgroundColor: "gray",
+              color: "black",
+              textAlign: "center",
+              fontSize: "1.1rem",
+              fontWeight: "semibold",
+              lineHeight: "2.5",
+            }}
+          >
+            Steps for Registration
+          </ListSubheader>
+        }
+      >
+        {steps.map((step, index) => (
+          <React.Fragment key={index}>
+            <ListItemButton onClick={() => handleToggle(index)}>
+              <ListItemIcon>
+                <CheckCircleIcon color="success" />
+              </ListItemIcon>
+              <ListItemText primary={step.title} />
+              {openStep === index ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={openStep === index} timeout="auto" unmountOnExit>
+              <Box sx={{ pl: 6, pb: 2 }}>
+                <Typography variant="body2" color="text.secondary">
+                  {step.details}
+                </Typography>
+              </Box>
+            </Collapse>
+          </React.Fragment>
+        ))}
+      </List>
+
+      {/* Register Button */}
+      <Button
+        variant="contained"
+        // href="/register" // Add href to navigate to registration page
+        endIcon={<KeyboardArrowRightSharpIcon />}
+        sx={{
+          borderRadius: "5px",
+          padding: "12px 30px",
+          backgroundColor: "#000",
+          color: "#fff",
+          border: "2px solid #fff",
+          "&:hover": {
+            border: "2px solid #000",
+            fontSize: "0.9rem",
+            transition: "0.5s ease-in-out",
+          },
+        }}
+      >
+        Register
+      </Button>
+
+    </Box>
+  );
+};
+
 const ProBattleInfo: React.FC = () => {
   const [value, setValue] = useState(0);
 
@@ -128,10 +240,11 @@ const ProBattleInfo: React.FC = () => {
   const getTieredEvents = (events: Event[], tier: string) =>
     events.filter((event) => event.Tier === tier);
 
-
   return (
     <div style={{ backgroundColor: "#000", padding: "50px 0" }}>
       <Container maxWidth="lg">
+
+        <RegistrationSteps />
         <Box
           sx={{
             display: "flex",
