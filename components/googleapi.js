@@ -11,7 +11,7 @@ async function authorize() {
     const jwtClient = new google.auth.JWT(
         process.env.NEXT_PUBLIC_GOOGLEAPIS_CLIENT_EMAIL,
         null,
-        process.env.NEXT_PUBLIC_GOOGLEAPIS_PRIVATE_KEY,
+        process.env.GOOGLEAPIS_PRIVATE_KEY,
         SCOPE
     )
     await jwtClient.authorize();

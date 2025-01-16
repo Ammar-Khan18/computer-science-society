@@ -1,31 +1,33 @@
-import AboutUs_section from "@/components/AboutUs_section";
-import CodeX_Event_section from "@/components/CodeX_Event_section";
-import Hero_section from "@/components/Hero_section";
-import ProBattle_Event_section from "@/components/ProBattle_Event_section";
+import React from 'react';
+import {
+  Box
+} from '@mui/material';
+import ProBattle_Event_section from '@/components/ProBattle_Event_section';
+import ProBattle_Info from '@/components/ProBattle_Info';
+import ProBattle_Register from '@/components/ProBattle_Register';
+import ProBattle_Intro from '@/components/ProBattle_Intro';
 
-import { Box } from "@mui/material";
-
-export default function Home() {
+const ProBattle: React.FC = () => {
   return (
-    <>
-      {/* Background Image */}
-      <Box
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          background: 'black',
-          height: '100vh',
-          // background: 'rgb(2,0,36) linear-gradient(to bottom, black 5%, rgba(2,0,36,1) 0%, rgba(121,9,118,1) 35%, rgba(255,0,114,1) 100%)',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          zIndex: -2,
-        }}
-      />
-      <Hero_section />
-      <CodeX_Event_section />
-      {/* <Social_section /> */}
-    </>
+    <Box sx={{ position: 'relative', minHeight: '100vh', backgroundColor: 'black' }}>
+
+      {/* Main Content */}
+      <Box sx={{ position: 'relative', zIndex: 1 }}>
+        {/* Event Section */}
+        <ProBattle_Event_section />
+
+        {/* Intro Section */}
+        <ProBattle_Intro />
+
+        {/* Info Section */}
+        <ProBattle_Info />
+
+        {/* Register Section */}
+        <ProBattle_Register />
+      </Box>
+
+    </Box>
   );
-}
+};
+
+export default ProBattle;

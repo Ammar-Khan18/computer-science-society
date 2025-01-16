@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Making temporary the pro battle page the main page
-import Page from "@/app/pro-battle/page";
+import Page from "@/app/page";
 
 export const metadata: Metadata = {
   title: "IBA Computer Science Society",

@@ -22,7 +22,7 @@ apiRoute.use(upload.single('file'));
  */
 async function authorize() {
   const clientEmail = process.env.NEXT_PUBLIC_GOOGLEAPIS_CLIENT_EMAIL;
-  const privateKey = process.env.NEXT_PUBLIC_GOOGLEAPIS_PRIVATE_KEY?.replace(/\\n/g, '\n');
+  const privateKey = process.env.GOOGLEAPIS_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
   if (!clientEmail || !privateKey) {
     throw new Error('Missing Google API credentials in environment variables.');

@@ -204,7 +204,7 @@ const RegistrationSteps = () => {
       {/* Register Button */}
       <Button
         variant="contained"
-        // href="/register" // Add href to navigate to registration page
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfehhlMhJX52jWSTI2L_Dsw2DvRZB2ukF0bphOSpLlYMEOdVw/viewform?usp=header" component="a" target="_blank"
         endIcon={<KeyboardArrowRightSharpIcon />}
         sx={{
           borderRadius: "5px",

@@ -11,8 +11,8 @@ export default async function register(data) {
         // Initialize the Google Sheet
         const doc = new GoogleSpreadsheet('YOUR_SHEET_ID');
         await doc.useServiceAccountAuth({
-            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+            client_email: process.env.NEXT_PUBLIC_GOOGLEAPIS_CLIENT_EMAIL,
+            private_key: process.env.GOOGLEAPIS_PRIVATE_KEY.replace(/\\n/g, '\n'),
         });
         await doc.loadInfo();
 
