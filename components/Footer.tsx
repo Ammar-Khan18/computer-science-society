@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ pathname }) => {
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', overflow:'hidden' }}>
       {/* Gradient Background Overlay */}
       <Box
         sx={{
