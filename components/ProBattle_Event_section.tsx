@@ -27,7 +27,7 @@ const ProBattleSection: React.FC = () => {
       </div>
 
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -76,13 +76,13 @@ const ProBattleSection: React.FC = () => {
         {/* Text */}
         <Box
           sx={{
-            width: "100%",
+            width: { xs: "100%", md: 1200 },
             display: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "space-between",
             textAlign: "center",
-            paddingTop: 2,
+            paddingTop: 1,
           }}
         >
           <Typography variant="h5" color="#fff" sx={{ flex: "1 1 auto", minWidth: "33%" }}>
