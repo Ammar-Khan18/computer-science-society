@@ -221,7 +221,7 @@ const RegistrationSteps = () => {
                 <PersonIcon color="primary" />
               </ListItemIcon>
             <ListItemText primary="Register as an individual to engage in learning and networking."
-            />
+            sx={{color: "black"}} />
           </ListItemButton>
           <Divider />
           <ListItemButton>
@@ -229,7 +229,7 @@ const RegistrationSteps = () => {
                 <GroupsIcon color="primary" />
               </ListItemIcon>
             <ListItemText primary="Register as a team with your friends to participate in the modules." 
-            />   
+            sx={{color: "black"}} /> 
           </ListItemButton>
         </List>
         
