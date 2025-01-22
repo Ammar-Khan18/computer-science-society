@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { Container, Box, useTheme, useMediaQuery, Typography } from "@mui/material";
+import { Container, Box, useTheme, useMediaQuery, Typography, Button } from "@mui/material";
 import Image from "next/image";
+import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
 import AnimatedBackground from "./animated-background";
 
 const ProBattleSection: React.FC = () => {
@@ -125,6 +126,87 @@ const ProBattleSection: React.FC = () => {
             />
           </Box>
         </Box>
+
+        {/* Text and a button on the right */}
+        <Container maxWidth="md">
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" }, // Column on mobile, row on larger screens
+              flexWrap: "wrap",
+              justifyContent: { xs: "center", sm: "space-between" }, // Center on mobile, space-between on larger screens
+              textAlign: { xs: "center", sm: "left" }, // Center-align text on mobile
+              alignItems: "center", // Align items in the center
+              gap: 2, // Add spacing between items
+            }}
+          >
+            <Typography
+              variant="h5"
+              color="#fff"
+              sx={{
+                fontSize: { xs: "1rem", sm: "1.5rem" }, // Smaller font size on mobile
+                lineHeight: { xs: 1.5, sm: 1.8 }, // Adjust line height for better readability
+                maxWidth: { xs: "90%", sm: "70%" }, // Restrict width for text on mobile
+              }}
+            >
+              Our biggest event of the year is here!<br />
+              Register now to participate in the ProBattle event.
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                width: { xs: "100%", sm: "auto" }, // Full width on mobile
+                marginTop: { xs: 2, sm: 0 }, // Add spacing on mobile
+                marginRight: { xs: 0, sm: 4 }, // Add spacing on mobile
+              }}
+            >
+              <Button
+                variant="contained"
+                size="large"
+                // href="/registeration"
+                endIcon={<KeyboardArrowRightSharpIcon />}
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  borderRadius: "5px",
+                  marginLeft: 2,
+                  padding: "20px 35px",
+                  backgroundColor: "#000",
+                  color: "#fff",
+                  fontWeight: "bold",
+                  fontSize: "1.2rem",
+                  border: "none",
+                  overflow: "hidden",
+                  "::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    zIndex: -1,
+                    borderRadius: "inherit",
+                    padding: "2px", // Border thickness
+                    background: "linear-gradient(90deg, #09A599, blue, #B52B65)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  },
+                  "&:hover": {
+                    "::before": {
+                      background: "white",
+                      transition: "all 0.5s ease",
+                    },
+                  },
+                }}
+              >
+                Register
+              </Button>
+            </Box>
+          </Box>
+        </Container>
 
       </Container>
     </div>
