@@ -128,7 +128,7 @@ const ProBattleSection: React.FC = () => {
         </Box>
 
         {/* Text and a button on the right */}
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Box
             sx={{
               width: "100%",
