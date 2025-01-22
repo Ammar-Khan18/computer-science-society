@@ -165,7 +165,7 @@ const ProBattleSection: React.FC = () => {
               <Button
                 variant="contained"
                 size="large"
-                // href="/registeration"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfehhlMhJX52jWSTI2L_Dsw2DvRZB2ukF0bphOSpLlYMEOdVw/viewform"
                 endIcon={<KeyboardArrowRightSharpIcon />}
                 sx={{
                   position: "relative",
