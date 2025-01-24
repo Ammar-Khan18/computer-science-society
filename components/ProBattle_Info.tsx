@@ -188,7 +188,7 @@ const RegistrationSteps = () => {
                 <CheckCircleIcon color="success" />
               </ListItemIcon>
               <ListItemText primary={step.title} sx={{color: "black"}} />
-              {openStep === index ? <ExpandLess /> : <ExpandMore />}
+              {openStep === index ? <ExpandLess color="inherit" /> : <ExpandMore color="inherit" />}
             </ListItemButton>
             <Collapse in={openStep === index} timeout="auto" unmountOnExit>
               <Box sx={{ pl: 6, pb: 2 }}>
