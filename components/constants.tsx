@@ -28,8 +28,8 @@ const UniversityEvents: Event[] = [
     },
     {
         id: 2,
-        title: "App Development",
-        details: "The process of creating software applications for mobile and web platforms. Encompasses frontend and backend development, user interface design, and deployment across different operating systems.",
+        title: "Web Development",
+        details: "The process of creating web applications responsive for all device sizes. Encompasses frontend and backend development, user interface design, and deployment strategies.",
         minMember: 1,
         maxMember: 3,
         pricingEarly: 1500,
