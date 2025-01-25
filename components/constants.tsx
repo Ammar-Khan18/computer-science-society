@@ -94,7 +94,7 @@ const UniversityEvents: Event[] = [
     },
     {
         id: 8,
-        title: "Cyber Security - Captute the Flag",
+        title: "Cyber Security - Capture the Flag",
         details: "Participants will write scripts, exploit code, and use programming skills to solve challenges, find vulnerabilities, and capture flags in a simulated cybersecurity environment.",
         minMember: 1,
         maxMember: 3,
