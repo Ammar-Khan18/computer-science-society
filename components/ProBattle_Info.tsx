@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   Chip,
+  Link,
   Stack,
   Divider,
   Button,
@@ -34,6 +35,7 @@ interface Event {
   pricingLate: number;
   category: "College" | "University" | "University + College";
   Tier: "1" | "2" | "General";
+  rulebook?: string;
 }
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => (
@@ -115,6 +117,12 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
           </Typography>
         </Stack>
 
+        {event.rulebook && <Divider sx={{ my: 2 }} />}
+
+        {event.rulebook && <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          View the <Link href={event.rulebook} underline="hover" target="_blank">Rulebook</Link> for more details.
+        </Typography>}
+
       </CardContent>
     </Card>
   </Grid>
@@ -173,7 +181,7 @@ const RegistrationSteps = () => {
               color: "black",
               textAlign: "center",
               fontSize: "1.1rem",
-              fontWeight: "semibold",
+              fontWeight: "bold",
               lineHeight: "2.5",
             }}
           >
@@ -190,6 +198,7 @@ const RegistrationSteps = () => {
               <ListItemText primary={step.title} sx={{color: "black"}} />
               {openStep === index ? <ExpandLess color="inherit" /> : <ExpandMore color="inherit" />}
             </ListItemButton>
+  
             <Collapse in={openStep === index} timeout="auto" unmountOnExit>
               <Box sx={{ pl: 6, pb: 2 }}>
                 <Typography variant="body2" color="black">
@@ -197,10 +206,12 @@ const RegistrationSteps = () => {
                 </Typography>
               </Box>
             </Collapse>
+
+            {index < steps.length - 1 && <Divider />}
           </React.Fragment>
         ))}
 
-                <Divider />
+        <Divider />
 
         {/* Participation Options */}
         <ListSubheader
@@ -229,16 +240,16 @@ const RegistrationSteps = () => {
                 <GroupsIcon color="primary" />
               </ListItemIcon>
             <ListItemText primary="Register as a team with your friends to participate in the modules." 
-            sx={{color: "black"}} /> 
+            sx={{color: "black"}} />   
           </ListItemButton>
         </List>
-        
+
       </List>
 
       {/* Register Button */}
       <Button
         variant="contained"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfehhlMhJX52jWSTI2L_Dsw2DvRZB2ukF0bphOSpLlYMEOdVw/viewform?usp=header" component="a" target="_blank"
+        // href="/register" // Add href to navigate to registration page
         endIcon={<KeyboardArrowRightSharpIcon />}
         sx={{
           borderRadius: "5px",
