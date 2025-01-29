@@ -11,6 +11,7 @@ interface Event {
     pricingLate: number;
     category: "College" | "University" | "University + College";
     Tier: "1" | "2" | "General";
+    rulebook?: string;
 }
 
 // Event Data
@@ -25,6 +26,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category:  "University",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 2,
@@ -36,6 +38,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 3,
@@ -47,6 +50,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 4,
@@ -58,6 +62,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 5,
@@ -69,6 +74,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 6,
@@ -80,6 +86,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 7,
@@ -91,6 +98,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 8,
@@ -102,6 +110,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 9,
@@ -113,6 +122,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University + College",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 10,
@@ -124,6 +134,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1b1Oo6_iaNXvSlat3JtG5rH2RzApZvB-7/view?usp=drive_link",
     },
     {
         id: 11,
@@ -135,6 +146,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1ANFtNmHuZaAdw4WZP8yubSiPExyyVIpq/view?usp=drive_link",
     },
     {
         id: 12,
@@ -146,6 +158,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1jN5B5i7EQuro5UFZYHxz6upQu6MiHt5u/view?usp=drive_link",
     },
     {
         id: 13,
@@ -157,6 +170,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 14,
@@ -168,6 +182,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 15,
@@ -179,6 +194,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 1500,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 16,
@@ -190,6 +206,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 1500,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
 ];
 
@@ -204,6 +221,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 2000,
         category: "College",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 2,
@@ -215,6 +233,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 2000,
         category: "College",
         Tier: "2",
+        rulebook: "#",
     },
     {
         id: 3,
@@ -226,6 +245,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 2000,
         category: "University + College",
         Tier: "1",
+        rulebook: "#",
     },
     {
         id: 4,
@@ -237,6 +257,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1b1Oo6_iaNXvSlat3JtG5rH2RzApZvB-7/view?usp=drive_link",
     },
     {
         id: 5,
@@ -248,6 +269,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1ANFtNmHuZaAdw4WZP8yubSiPExyyVIpq/view?usp=drive_link",
     },
     {
         id: 6,
@@ -259,6 +281,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
+        rulebook: "https://drive.google.com/file/d/1jN5B5i7EQuro5UFZYHxz6upQu6MiHt5u/view?usp=drive_link",
     },
     {
         id: 7,
@@ -270,6 +293,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 8,
@@ -281,6 +305,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 9,
@@ -292,6 +317,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 1500,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
     {
         id: 10,
@@ -303,6 +329,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 1500,
         category: "University + College",
         Tier: "General",
+        rulebook: "#",
     },
 ];
 
