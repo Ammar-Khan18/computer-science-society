@@ -134,7 +134,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1b1Oo6_iaNXvSlat3JtG5rH2RzApZvB-7/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1KRsPCC15dx_guwDp9tmNl_R4qZNbRBmt/view?usp=drive_link",
     },
     {
         id: 11,
@@ -146,7 +146,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1ANFtNmHuZaAdw4WZP8yubSiPExyyVIpq/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1I0X4BL2lHz3NxINtHhB5d6mwccA_O3Ef/view?usp=drive_link",
     },
     {
         id: 12,
@@ -158,7 +158,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1jN5B5i7EQuro5UFZYHxz6upQu6MiHt5u/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1Zl40Kc7JuekfXtF9kFat5r0_jgFwZJQ7/view?usp=drive_link",
     },
     {
         id: 13,
@@ -257,7 +257,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1b1Oo6_iaNXvSlat3JtG5rH2RzApZvB-7/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1KRsPCC15dx_guwDp9tmNl_R4qZNbRBmt/view?usp=drive_link",
     },
     {
         id: 5,
@@ -269,7 +269,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1ANFtNmHuZaAdw4WZP8yubSiPExyyVIpq/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1I0X4BL2lHz3NxINtHhB5d6mwccA_O3Ef/view?usp=drive_link",
     },
     {
         id: 6,
@@ -281,7 +281,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1jN5B5i7EQuro5UFZYHxz6upQu6MiHt5u/view?usp=drive_link",
+        rulebook: "https://drive.google.com/file/d/1Zl40Kc7JuekfXtF9kFat5r0_jgFwZJQ7/view?usp=drive_link",
     },
     {
         id: 7,
