@@ -34,7 +34,7 @@ interface Event {
   pricingEarly: number;
   pricingLate: number;
   category: "College" | "University" | "University + College";
-  Tier: "1" | "2" | "General";
+  Tier: "1" | "2" | "3";
   rulebook?: string;
 }
 
@@ -318,7 +318,7 @@ const ProBattleInfo: React.FC = () => {
           </Tabs>
         </Box>
 
-        {(["1", "2", "General"] as const).map((tier) => {
+        {(["1", "2", "3"] as const).map((tier) => {
           const tieredEvents = getTieredEvents(categories[value].data, tier);
 
           if (tieredEvents.length === 0) return null;
@@ -329,7 +329,7 @@ const ProBattleInfo: React.FC = () => {
                 variant="h4"
                 sx={{ color: "white", textAlign: "center", mb: 4 }}
               >
-                Tier {tier}
+                Group {tier}
               </Typography>
               <Grid container spacing={8}>
                 {tieredEvents.map((event, index) => (
