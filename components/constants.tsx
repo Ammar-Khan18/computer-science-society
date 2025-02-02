@@ -121,7 +121,7 @@ const UniversityEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
-        Tier: "1",
+        Tier: "3",
         rulebook: "#",
     },
     {
@@ -244,7 +244,7 @@ const CollegeEvents: Event[] = [
         pricingEarly: 1500,
         pricingLate: 2000,
         category: "University + College",
-        Tier: "1",
+        Tier: "3",
         rulebook: "#",
     },
     {
