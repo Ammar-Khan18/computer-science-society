@@ -110,7 +110,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
-        rulebook: "#",
+        rulebook: "https://drive.google.com/file/d/1cuoMsaW2CVIxOsyBrT9r7yOSB8WrVsso/view?usp=sharing",
     },
     {
         id: 9,
