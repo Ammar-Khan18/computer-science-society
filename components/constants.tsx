@@ -12,6 +12,7 @@ interface Event {
     category: "College" | "University" | "University + College";
     Tier: "1" | "2" | "3";
     rulebook?: string;
+    status: "Open" | "Filled";
 }
 
 // Event Data
@@ -27,6 +28,7 @@ const UniversityEvents: Event[] = [
         category:  "University",
         Tier: "1",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 2,
@@ -39,6 +41,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "1",
         rulebook: "https://drive.google.com/file/d/1hFLHBYPufoBnUttpUQun_dHHA6fHhWXO/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 3,
@@ -51,6 +54,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "1",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 4,
@@ -62,7 +66,8 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "1",
-        rulebook: "https://drive.google.com/file/d/1PQ12eIxP93DdvD9TOXVzcK1eb9cNPRIP/view?usp=sharing11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+        rulebook: "https://drive.google.com/file/d/1PQ12eIxP93DdvD9TOXVzcK1eb9cNPRIP/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 5,
@@ -75,6 +80,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "2",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 6,
@@ -87,6 +93,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 7,
@@ -98,7 +105,8 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "2",
-        rulebook: "https://drive.google.com/file/d/1xnNYNRSR3B6cL9LqcQLHyF8CjpR8nFhl/view?usp=sharing",
+        rulebook: "https://drive.google.com/file/d/1yQL3xE70cVjaHAHYHsYDjKEUvDAyriKM/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 8,
@@ -111,6 +119,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "2",
         rulebook: "https://drive.google.com/file/d/1cuoMsaW2CVIxOsyBrT9r7yOSB8WrVsso/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 9,
@@ -123,6 +132,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 10,
@@ -135,6 +145,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1KRsPCC15dx_guwDp9tmNl_R4qZNbRBmt/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 11,
@@ -147,6 +158,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1I0X4BL2lHz3NxINtHhB5d6mwccA_O3Ef/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 12,
@@ -159,6 +171,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1Zl40Kc7JuekfXtF9kFat5r0_jgFwZJQ7/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 13,
@@ -171,6 +184,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1CmXEKxiVC7SlIG8lb1HBEmqBHyqpYKgf/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 14,
@@ -183,6 +197,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Filled",
     },
     {
         id: 15,
@@ -195,6 +210,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 16,
@@ -207,6 +223,7 @@ const UniversityEvents: Event[] = [
         category: "University + College",
         Tier: "2",
         rulebook: "#",
+        status: "Filled",
     },
 ];
 
@@ -222,6 +239,7 @@ const CollegeEvents: Event[] = [
         category: "College",
         Tier: "2",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 2,
@@ -234,6 +252,7 @@ const CollegeEvents: Event[] = [
         category: "College",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 3,
@@ -246,6 +265,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 4,
@@ -258,6 +278,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1KRsPCC15dx_guwDp9tmNl_R4qZNbRBmt/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 5,
@@ -270,6 +291,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1I0X4BL2lHz3NxINtHhB5d6mwccA_O3Ef/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 6,
@@ -282,6 +304,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1Zl40Kc7JuekfXtF9kFat5r0_jgFwZJQ7/view?usp=drive_link",
+        status: "Open",
     },
     {
         id: 7,
@@ -294,6 +317,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "https://drive.google.com/file/d/1CmXEKxiVC7SlIG8lb1HBEmqBHyqpYKgf/view?usp=sharing",
+        status: "Open",
     },
     {
         id: 8,
@@ -306,6 +330,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Filled",
     },
     {
         id: 9,
@@ -318,6 +343,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "3",
         rulebook: "#",
+        status: "Open",
     },
     {
         id: 10,
@@ -330,6 +356,7 @@ const CollegeEvents: Event[] = [
         category: "University + College",
         Tier: "2",
         rulebook: "#",
+        status: "Filled",
     },
 ];
 
