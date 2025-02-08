@@ -36,6 +36,7 @@ interface Event {
   category: "College" | "University" | "University + College";
   Tier: "1" | "2" | "3";
   rulebook?: string;
+  status: "Open" | "Filled";
 }
 
 const EventCard: React.FC<{ event: Event }> = ({ event }) => (
@@ -122,6 +123,10 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         {event.rulebook && <Typography variant="body2" sx={{ color: "text.secondary" }}>
           View the <Link href={event.rulebook} underline="hover" target="_blank">Rulebook</Link> for more details.
         </Typography>}
+
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            <strong>Status:</strong> <span style={{ color: "blue" }}>{event.status}</span>
+        </Typography>
 
       </CardContent>
     </Card>
