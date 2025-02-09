@@ -131,7 +131,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University + College",
         Tier: "3",
-        rulebook: "#",
+        rulebook: "https://drive.google.com/file/d/1gg_5CVYDQ3L9AIpnVbSZEiAk3RfTQClx/view?usp=sharing",
         status: "Open",
     },
     {
@@ -264,7 +264,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 2000,
         category: "University + College",
         Tier: "3",
-        rulebook: "#",
+        rulebook: "https://drive.google.com/file/d/1gg_5CVYDQ3L9AIpnVbSZEiAk3RfTQClx/view?usp=sharing",
         status: "Open",
     },
     {
