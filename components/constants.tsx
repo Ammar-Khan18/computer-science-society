@@ -53,7 +53,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 2000,
         category: "University",
         Tier: "1",
-        rulebook: "#",
+        rulebook: "https://github.com/YahyaAhmedKhan/nlp-guide",
         status: "Open",
     },
     {
