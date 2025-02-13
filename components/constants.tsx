@@ -41,7 +41,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "1",
         rulebook: "https://drive.google.com/file/d/1hFLHBYPufoBnUttpUQun_dHHA6fHhWXO/view?usp=sharing",
-        status: "Open",
+        status: "Filled",
     },
     {
         id: 3,
