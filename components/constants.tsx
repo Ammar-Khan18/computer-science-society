@@ -80,7 +80,7 @@ const UniversityEvents: Event[] = [
         category: "University",
         Tier: "2",
         rulebook: "#",
-        status: "Open",
+        status: "Filled",
     },
     {
         id: 6,
