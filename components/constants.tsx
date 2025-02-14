@@ -183,7 +183,7 @@ const UniversityEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "3",
-        rulebook: "https://drive.google.com/file/d/1CmXEKxiVC7SlIG8lb1HBEmqBHyqpYKgf/view?usp=sharing",
+        rulebook: "https://docs.google.com/document/d/1Z7wQq1Bpviw_ycM9Ayq2UcT9SowZKET-/edit?usp=sharing&ouid=107570660791762691660&rtpof=true&sd=true",
         status: "Open",
     },
     {
@@ -316,7 +316,7 @@ const CollegeEvents: Event[] = [
         pricingLate: 3000,
         category: "University + College",
         Tier: "3",
-        rulebook: "https://drive.google.com/file/d/1CmXEKxiVC7SlIG8lb1HBEmqBHyqpYKgf/view?usp=sharing",
+        rulebook: "https://docs.google.com/document/d/1Z7wQq1Bpviw_ycM9Ayq2UcT9SowZKET-/edit?usp=sharing&ouid=107570660791762691660&rtpof=true&sd=true",
         status: "Open",
     },
     {
