@@ -3,9 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Making temporary the pro battle page the main page
-import Page from "@/app/page";
-
 export const metadata: Metadata = {
   title: "IBA Computer Science Society",
   description: "Computer Science Society",
@@ -23,7 +20,6 @@ export default function RootLayout({
       <body className="page">
         <Navbar />
         {children}
-        <Page />
         <Footer />
       </body>
     </html>
