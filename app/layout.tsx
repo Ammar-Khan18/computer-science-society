@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
       <body className="page">
-        {/* <Navbar /> */}
-        {/* {children} */}
+        <Navbar />
+        {children}
         <Page />
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
