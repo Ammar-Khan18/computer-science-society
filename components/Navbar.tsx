@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { href: "/", label: "Home", icon: <HomeIcon /> },
-    // { href: "/codex", label: "Codex", icon: <CodeIcon /> },
+    { href: "/codex", label: "Codex", icon: <CodeIcon /> },
     { href: "/pro-battle", label: "Pro Battle", icon: <SportsEsportsIcon /> },
-    // { href: "/forms", label: "Forms", icon: <DescriptionIcon /> },
+    { href: "/forms", label: "Forms", icon: <DescriptionIcon /> },
   ];
 
   // Styled chip similar to the original StyledBreadcrumb
