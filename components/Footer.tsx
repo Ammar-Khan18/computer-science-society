@@ -35,7 +35,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="font-text colour-bg w-full border-t border-border">
+    <footer className="font-text colour-bg w-full">
       <div className="max-w-6xl md:mx-auto px-4 py-16 flex flex-col md:flex-row items-start md:items-stretch justify-between ml-3 gap-8">
 
         {/* Quick Links */}
