@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Arvo, Varela_Round } from "next/font/google";
-import { Bitcount_Grid_Double } from "next/font/google";
+import { Indie_Flower, News_Cycle, Special_Elite } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const bitcountPropDouble = Bitcount_Grid_Double({
+
+const specialElite = Special_Elite({
   variable: "--font-title",
   subsets: ["latin"],
   weight: ["400"],
 });
 
-const arvo = Arvo({
-  variable: "--font-heading",
+const newsCycle = News_Cycle({
+  variable: "--font-text",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400"],
 });
 
-const varelaRound = Varela_Round({
-  variable: "--font-text",
+const indieFlower = Indie_Flower({
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -37,9 +37,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`
-          ${bitcountPropDouble.variable} 
-          ${arvo.variable} 
-          ${varelaRound.variable} 
+          ${specialElite.variable}
+          ${newsCycle.variable}
+          ${indieFlower.variable}
           antialiased
         `}
       >
