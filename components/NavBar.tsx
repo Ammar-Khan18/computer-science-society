@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
           <Link
             key={link.title}
             href={link.href}
-            className={`text-lg font-text px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+            className={`text-xl font-heading font-medium px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
             onMouseOver={() => handleMouseOver(index)}
             onMouseOut={handleMouseOut}
           >
@@ -51,13 +51,13 @@ const NavBar: React.FC = () => {
         </Link>
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>
-            <button className="text-lg font-heading px-4 py-2 rounded-lg colour-text border-animation" aria-label="Open menu">
+            <button className="text-lg font-heading px-2 py-1 rounded-lg colour-text" aria-label="Open menu">
               <Menu />
             </button>
           </DrawerTrigger>
           <DrawerContent className="colour-bg">
             <div className="relative flex items-center px-4 pt-4 h-12">
-              <DrawerTitle className="absolute left-0 right-0 mx-auto text-center font-heading text-xl colour-text pointer-events-none">Menu</DrawerTitle>
+              <DrawerTitle className="absolute left-0 right-0 mx-auto text-center font-text text-xl colour-text pointer-events-none">Menu</DrawerTitle>
               <div className="flex-1 flex justify-end">
                 <DrawerClose asChild>
                   <button className="text-2xl colour-text" aria-label="Close menu">
@@ -71,7 +71,7 @@ const NavBar: React.FC = () => {
                 <React.Fragment key={link.title}>
                   <Link
                     href={link.href}
-                    className={`w-full text-center text-lg font-text px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+                    className={`w-full text-center text-lg font-heading px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
                     onClick={() => { setActiveLink(index); setDrawerOpen(false); }}
                     onMouseOver={() => handleMouseOver(index)}
                     onMouseOut={handleMouseOut}
