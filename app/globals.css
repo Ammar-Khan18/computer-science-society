@@ -1,6 +1,31 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer components {
+  .border-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  .border-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #D53F8C;
+    transition: all 0.3s;
+  }
+  .border-animation:hover::after {
+    left: 0;
+    width: 100%;
+  }
+  .dim {
+    opacity: 0.5 !important;
+    transition: opacity 0.3s;
+  }
+}
+
 /* Custom font and color utility classes for Tailwind */
 @layer utilities {
   .font-title {
@@ -29,6 +54,7 @@
     color: var(--colour-accent);
   }
 }
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
