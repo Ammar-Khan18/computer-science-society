@@ -5,6 +5,62 @@ export default function Home() {
       <p className="font-text colour-secondary">
         A community for computer science enthusiasts at IBA.
       </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p><p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
+      <p className="font-text colour-secondary">
+        A community for computer science enthusiasts at IBA.
+      </p>
     </div>
   );
 }
