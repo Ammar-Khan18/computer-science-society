@@ -47,8 +47,14 @@
   .colour-primary {
     color: var(--colour-primary);
   }
+  .colour-box-primary {
+    background-color: var(--colour-box-primary);
+  }
   .colour-secondary {
     color: var(--colour-secondary);
+  }
+  .colour-box-secondary {
+    background-color: var(--colour-box-secondary);
   }
   .colour-accent {
     color: var(--colour-accent);
@@ -135,7 +141,9 @@
     --colour-text: #dddad0;
     --colour-bg: #110119;
     --colour-primary: #797972;
+    --colour-box-primary: #797972;
     --colour-secondary: #dddbff;
+    --colour-box-secondary: #dddbff;
     --colour-accent: #f8f3ce;
 }
 
