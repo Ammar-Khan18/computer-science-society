@@ -189,3 +189,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* This will affect the scrollbar globally */
+::-webkit-scrollbar {
+    width: 6px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #110119; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dddbff; /* color of the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dddbff; /* color of the scroll thumb on hover */
+}
