@@ -4,7 +4,7 @@ import { HomeCarousel } from "@/components/Home/Carousel";
 
 const Home: React.FC = () => {
   return (
-    <div className="font-title colour-bg min-h-screen">
+    <div className="colour-bg min-h-screen">
       <HomeCarousel />
     </div>
   );
