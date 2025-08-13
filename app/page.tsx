@@ -1,66 +1,13 @@
-export default function Home() {
+
+import * as React from "react";
+import { HomeCarousel } from "@/components/Home/Carousel";
+
+const Home: React.FC = () => {
   return (
-    <div className="font-title colour-bg">
-      <h1 className="font-heading colour-primary">Welcome to IBA Computer Science Society</h1>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p><p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
-      <p className="font-text colour-secondary">
-        A community for computer science enthusiasts at IBA.
-      </p>
+    <div className="font-title colour-bg min-h-screen">
+      <HomeCarousel />
     </div>
   );
-}
+};
+
+export default Home;
