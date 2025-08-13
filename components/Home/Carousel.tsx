@@ -8,8 +8,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import Image from "next/image"
 
 const images = [
   "/Home/Home1.jpg",
@@ -33,14 +35,15 @@ export function HomeCarousel() {
   }, []);
 
   return (
-    <Carousel className="w-full max-w-2xl mx-auto" orientation={isMobile ? "vertical" : "horizontal"} opts={{ align: "start", loop: true }}
-        plugins={[
-            Autoplay({
-                delay: 3000,
-            }),
-        ]}
+    <Carousel
+      className="w-full max-w-2xl mx-auto"
+      orientation={isMobile ? "vertical" : "horizontal"}
+      opts={{ align: "start", loop: true }}
+      plugins={[
+        Autoplay({ delay: 3000 }),
+      ]}
     >
-      <CarouselContent className={`flex-nowrap ${isMobile ? `flex-col h-[350px]` : ""}`}>
+      <CarouselContent className={`flex-nowrap ${isMobile ? "flex-col h-[350px]" : ""}`}>
         {images.map((src, index) => (
           <CarouselItem key={index} className="flex-shrink-0 w-full">
             <div className="p-2">
@@ -49,10 +52,13 @@ export function HomeCarousel() {
                   className="flex items-center justify-center p-0 overflow-hidden"
                   style={{ height: "350px" }}
                 >
-                  <img
+                  <Image
                     src={src}
                     alt={`Home ${index + 1}`}
+                    width={isMobile ? 350 : 600}
+                    height={350}
                     className="object-cover rounded-lg border-2 border-[#dddbff] w-80 h-50 md:w-full md:h-full"
+                    priority={index === 0}
                   />
                 </div>
               </div>
