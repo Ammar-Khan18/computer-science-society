@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Indie_Flower, News_Cycle, Special_Elite } from "next/font/google";
+import { Delius, News_Cycle, Special_Elite } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -17,7 +17,7 @@ const newsCycle = News_Cycle({
   weight: ["400"],
 });
 
-const indieFlower = Indie_Flower({
+const delius = Delius({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400"],
@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`
           ${specialElite.variable}
           ${newsCycle.variable}
-          ${indieFlower.variable}
+          ${delius.variable}
           antialiased
         `}
       >
