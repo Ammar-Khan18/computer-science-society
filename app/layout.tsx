@@ -36,8 +36,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`
-          ${bartkey.variable}
           ${quicksans.variable}
+          ${bartkey.variable}
           ${lemonMilk.variable}
           antialiased
         `}
