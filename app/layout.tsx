@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Delius, News_Cycle, Special_Elite } from "next/font/google";
+import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 
-const specialElite = Special_Elite({
+const bartkey = localFont({
+  src: "./Fonts/BARTKEY.ttf",
   variable: "--font-title",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
 });
 
-const newsCycle = News_Cycle({
-  variable: "--font-text",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const delius = Delius({
+const brokenHome = localFont({
+  src: "./Fonts/Broken Home Regular.otf",
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
+});
+
+const lemonMilk = localFont({
+  src: "./Fonts/LEMONMILK-Light.otf",
+  variable: "--font-text",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -37,9 +37,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`
-          ${specialElite.variable}
-          ${newsCycle.variable}
-          ${delius.variable}
+          ${bartkey.variable}
+          ${brokenHome.variable}
+          ${lemonMilk.variable}
           antialiased
         `}
       >
