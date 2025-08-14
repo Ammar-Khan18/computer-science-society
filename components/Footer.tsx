@@ -40,10 +40,10 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex-1 flex flex-col items-start">
-            <h3 className="font-heading text-2xl font-bold mb-2 colour-accent">Quick Links</h3>
+            <h3 className="font-heading text-2xl mb-2 colour-accent">Quick Links</h3>
             <div className="flex flex-col gap-2">
               {navLinks.map(link => (
-                <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-base">
+                <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[14px] text-base">
                   {link.title}
                 </Link>
               ))}
@@ -52,17 +52,17 @@ export default function Footer() {
 
         {/* Contact Us */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl font-bold mb-2 colour-accent">Contact Us</h3>
+          <h3 className="font-heading text-2xl mb-2 colour-accent">Contact Us</h3>
           <div className="flex flex-col gap-2 w-full">
             {contacts.map(({ name, role, email }) => (
               <span
                 key={email}
-                className="colour-text text-base flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
+                className="colour-text text-base text-[14px] flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
               >
                 <span>{name}, {role},</span>
                 <Link
                   href={`mailto:${email}`}
-                  className="text-sm colour-secondary hover:underline hover:text-pink-500 transition-colors md:ml-2"
+                  className="text-sm colour-secondary text-[14px] hover:underline hover:text-pink-500 transition-colors md:ml-2"
                 >
                   {email}
                 </Link>
@@ -73,10 +73,10 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl font-bold mb-4 colour-accent">Socials</h3>
+          <h3 className="font-heading text-2xl mb-4 colour-accent">Socials</h3>
           <div className="flex flex-row gap-6 mb-4">
             {socials.map(({ icon: Icon, href, label }) => (
-              <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group">
+              <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[14px]">
                 <Icon size={28} className="colour-text" />
               </Link>
             ))}
