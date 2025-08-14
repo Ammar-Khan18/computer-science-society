@@ -4,15 +4,14 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-
-const bartkey = localFont({
-  src: "./Fonts/BARTKEY.ttf",
+const quicksans = localFont({
+  src: "./Fonts/quicksans-accurate-icg-solid.ttf",
   variable: "--font-title",
   display: "swap",
 });
 
-const brokenHome = localFont({
-  src: "./Fonts/Broken Home Regular.otf",
+const bartkey = localFont({
+  src: "./Fonts/BARTKEY.ttf",
   variable: "--font-heading",
   display: "swap",
 });
@@ -38,7 +37,7 @@ export default function RootLayout({
       <body
         className={`
           ${bartkey.variable}
-          ${brokenHome.variable}
+          ${quicksans.variable}
           ${lemonMilk.variable}
           antialiased
         `}
