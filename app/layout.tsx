@@ -25,6 +25,16 @@ const lemonMilk = localFont({
 export const metadata: Metadata = {
   title: "IBA Computer Science Society",
   description: "A community for computer science enthusiasts at IBA.",
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`
           ${quicksans.variable}
