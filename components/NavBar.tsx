@@ -40,7 +40,7 @@ const NavBar: React.FC = () => {
           </Link>
         ))}
         <Link href="/">
-          <img src="/favicon.ico" alt="favicon" className="w-10 h-10 ml-4 rounded-full border-2 border-pink-300 shadow" />
+          <img src="/icon.png" alt="icon" className="w-15 h-15 ml-4 rounded-full border-2 border-pink-300 shadow" />
         </Link>
       </div>
 
