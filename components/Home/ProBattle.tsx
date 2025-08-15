@@ -27,7 +27,7 @@ const ProBattle: React.FC = () => (
       </p>
       
       <Button asChild variant="default" className="mt-4 ml-4 md:ml-0 md:mt-4 font-text text-sm colour-box-secondry colour-text flex items-center gap-2">
-        <Link className="hover:underline flex items-center gap-2" href="/Probattle">
+        <Link className="hover:underline flex items-center gap-2" href="/ProBattle">
           Discover More
           <ArrowRight className="w-4 h-4" />
         </Link>
@@ -40,3 +40,4 @@ const ProBattle: React.FC = () => (
 );
 
 export default ProBattle;
+
