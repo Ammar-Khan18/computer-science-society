@@ -1,12 +1,21 @@
 
 import * as React from "react";
 import { HomeCarousel } from "@/components/Home/Carousel";
+import TitleSection from "@/components/Home/TitleSection";
+import DescriptionSection from "@/components/Home/DescriptionSection";
+import CodeX from "@/components/Home/CodeX";
+import ProBattle from "@/components/Home/ProBattle";
+import DevelopersSection from "@/components/Home/DevelopersSection";
 
 const Home: React.FC = () => {
   return (
     <div className="colour-bg min-h-screen">
-      <h1 className="text-center font-title text-4xl md:text-8xl p-4 colour-accent mb-8">IBA <br /> Computer Science Society</h1>
+      <TitleSection />
       <HomeCarousel />
+      <DescriptionSection />
+      <CodeX />
+      <ProBattle />
+      <DevelopersSection />
     </div>
   );
 };
