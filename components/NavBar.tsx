@@ -16,7 +16,7 @@ const navLinks = [
 
 
 const NavBar: React.FC = () => {
-  const [activeLink, setActiveLink] = React.useState<number | null>(0);
+  const [activeLink, setActiveLink] = React.useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleMouseOver = (index: number) => setActiveLink(index);
