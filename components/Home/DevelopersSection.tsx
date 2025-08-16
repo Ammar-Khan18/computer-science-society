@@ -4,7 +4,7 @@ import Image from "next/image";
 const developers = [
   { name: "Abdullah Tariq", img: "/Home/Abdullah.jpg" },
   { name: "Nawail Khan", img: "/Home/Nawail.jpg" },
-  { name: "Ammar Khan", img: "/Home/Ammar.jpg" },
+  // { name: "Ammar Khan", img: "/Home/Ammar.jpg" },
 ];
 
 const DevelopersSection: React.FC = () => (
