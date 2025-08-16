@@ -13,4 +13,4 @@ const DisplayLottie = ({ animationData }: DisplayLottieProps) => {
   );
 }
 
-export default DisplayLottie
+export default DisplayLottie;
