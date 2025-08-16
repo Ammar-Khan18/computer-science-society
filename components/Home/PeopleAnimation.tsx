@@ -1,13 +1,13 @@
 import React from 'react';
 import DisplayLottie from '../Lottie/DisplayLottie';
-import Welcome from '../../public/Home/Welcome.json';
+import People from '../../public/Home/People.json';
 
-const WelcomeAnimation: React.FC = () => {
+const PeopleAnimation: React.FC = () => {
     return (
         <div className='flex justify-center items-center bg-transparent'> 
-            <DisplayLottie animationData={Welcome} />
+            <DisplayLottie animationData={People} />
         </div>
     );
 }
 
-export default WelcomeAnimation;
+export default PeopleAnimation;
