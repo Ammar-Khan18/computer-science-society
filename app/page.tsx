@@ -11,11 +11,20 @@ import TeamSection from "@/components/Home/TeamSection";
 import WelcomeScreen from "@/components/Home/WelcomeScreen";
 
 const Home: React.FC = () => {
-  const [showWelcome, setShowWelcome] = React.useState(true);
+  const [showWelcome, setShowWelcome] = React.useState(false);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setShowWelcome(false), 2000);
-    return () => clearTimeout(timer);
+    if (typeof window !== "undefined") {
+      const hasShown = sessionStorage.getItem("homeWelcomeShown");
+      if (!hasShown) {
+        setShowWelcome(true);
+        const timer = setTimeout(() => {
+          setShowWelcome(false);
+          sessionStorage.setItem("homeWelcomeShown", "true");
+        }, 2000);
+        return () => clearTimeout(timer);
+      }
+    }
   }, []);
 
   return (
