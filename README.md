@@ -18,6 +18,8 @@ css/
 │   ├── Codex/
 │   ├── Forms/
 │   ├── Home/
+│   ├── Lottie
+│   │   └── DisplayLottie.tsx
 │   ├── ProBattle/
 │   ├── Footer.tsx
 │   ├── NavBar.tsx
@@ -31,6 +33,8 @@ css/
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
+├── types/
+│   └── react-lottie.d.ts
 ├── components.json
 ├── eslint.config.mjs
 ├── next-env.d.ts
