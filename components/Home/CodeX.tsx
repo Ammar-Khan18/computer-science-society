@@ -45,7 +45,7 @@ const CodeX: React.FC = () => (
       
     </div>
     <div className="flex-1 flex justify-center items-center order-2 md:mt-6">
-      <Image src="/Home/Home2.jpg" alt="Events" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-78 h-48 md:w-110 md:h-80 object-cover" />
+      <Image src="/Home/Codex2.png" alt="Events" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-78 h-48 md:w-110 md:h-80 object-cover" />
     </div>
   </section>
 );
