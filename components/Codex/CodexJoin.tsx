@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 
-const whatsappLink = "https://chat.whatsapp.com/your-group-link";
+const whatsappLink = "https://chat.whatsapp.com/LM8BwRVyqha33PXq1JJfmU?mode=ac_t";
 
 const CodexJoin: React.FC = () => (
   <section className="flex flex-col items-center my-30 py-10 px-4 md:px-12">
