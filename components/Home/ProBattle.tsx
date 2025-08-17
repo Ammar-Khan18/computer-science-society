@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ProBattle: React.FC = () => (
   <section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 md:ml-20 gap-8 mt-20">
@@ -26,12 +27,17 @@ const ProBattle: React.FC = () => (
         Join a supportive network of peers and mentors who are dedicated to helping each other succeed. Our society is the perfect place to learn, share, and grow together in the world of computer science.
       </p>
       
-      <Button asChild variant="default" className="mt-4 ml-4 md:ml-0 md:mt-4 font-text text-sm colour-box-secondry colour-text flex items-center gap-2">
-        <Link className="hover:underline flex items-center gap-2" href="/ProBattle">
-          Discover More
-          <ArrowRight className="w-4 h-4" />
-        </Link>
-      </Button>
+      <motion.button 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Button asChild variant="default" className="mt-4 ml-4 md:ml-0 md:mt-4 font-text text-sm colour-box-secondry colour-text flex items-center gap-2">
+          <Link className="hover:underline flex items-center gap-2" href="/ProBattle">
+            Discover More
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </Button>
+      </motion.button>
     </div>
     <div className="flex-1 flex justify-center items-center order-2 md:mt-6">
       <Image src="/Home/Home3.jpg" alt="Society" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-78 h-48 md:w-110 md:h-80 object-cover" />
@@ -40,4 +46,3 @@ const ProBattle: React.FC = () => (
 );
 
 export default ProBattle;
-
