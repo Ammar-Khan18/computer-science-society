@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import { Drawer, DrawerTrigger, DrawerContent, DrawerClose, DrawerTitle } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
           </Link>
         ))}
         <Link href="/">
-          <img src="/icon.png" alt="icon" className="w-20 h-20 ml-4 border-pink-300 shadow" />
+          <Image src="/icon.png" alt="icon" width={80} height={80} className="w-20 h-20 ml-4 border-pink-300 shadow" />
         </Link>
       </div>
 
