@@ -22,9 +22,13 @@ const CodeX: React.FC = () => (
         </span>
       </h2>
       <p className="font-text text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
-        From coding competitions to guest lectures, our society offers a wide range of activities that help members grow their skills, build connections, and stay updated with the latest trends in technology.
-        From coding competitions to guest lectures, our society offers a wide range of activities that help members grow their skills, build connections, and stay updated with the latest trends in technology.
-        From coding competitions to guest lectures, our society offers a wide range of activities that help members grow their skills, build connections, and stay updated with the latest trends in technology.
+        CODEX, an initiative of the IBA Computer Science Society (CSS), is a dynamic tech-driven community bringing together over 300 active members across multiple platforms. 
+        It serves as a hub for students to <span className="text-amber-500">learn, collaborate, and showcase their talents</span> in the ever-evolving world of technology.
+      </p>
+
+      <p className="font-text mt-2 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+        From <span className="text-amber-500">coding competitions and hackathons to guest lectures and interactive workshops</span>, CODEX provides countless opportunities for growth. 
+        By fostering connections and promoting innovation, the community helps its members enhance their technical expertise, build meaningful networks, and stay at the forefront of emerging tech trends.
       </p>
 
       <motion.button 
