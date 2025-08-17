@@ -20,8 +20,8 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
     <h2 className="font-heading text-3xl md:text-5xl colour-text mb-10 text-center">Past Sessions & Events</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {events.length === 0 ? (
-        Array.from({ length: 2 }).map((_, i) => (
-          <div className="flex flex-col space-y-3">
+        Array.from({ length: 2 }).map((_, index) => (
+          <div key={index} className="flex flex-col space-y-3">
             <Skeleton className="h-[150px] w-full mx-auto" />
             <Skeleton className="h-[50px] w-full mx-auto" />
           </div>
