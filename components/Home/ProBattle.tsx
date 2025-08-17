@@ -22,9 +22,13 @@ const ProBattle: React.FC = () => (
         </span>
       </h2>
       <p className="font-text text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
-        Join a supportive network of peers and mentors who are dedicated to helping each other succeed. Our society is the perfect place to learn, share, and grow together in the world of computer science.
-        Join a supportive network of peers and mentors who are dedicated to helping each other succeed. Our society is the perfect place to learn, share, and grow together in the world of computer science.
-        Join a supportive network of peers and mentors who are dedicated to helping each other succeed. Our society is the perfect place to learn, share, and grow together in the world of computer science.
+        At the IBA Computer Science Society (CSS), we believe in the power of collaboration. Our community brings together peers and mentors who are dedicated to helping each other succeed. 
+        It&apos;s the perfect place to <span className="text-amber-500">learn, share, and grow</span> in the world of computer science.
+      </p>
+
+      <p className="font-text mt-2 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+        <span className="text-amber-500">ProBattle 2024</span> stands as one of our flagship events, meticulously designed to provide participants with opportunities to <span className="text-amber-500">test their skills, explore cutting-edge technologies, and gain insights from industry leaders.</span>
+        By fostering a collaborative environment, ProBattle inspires creativity, encourages the exchange of ideas, and ensures a platform where participants can truly thrive.
       </p>
       
       <motion.button 
