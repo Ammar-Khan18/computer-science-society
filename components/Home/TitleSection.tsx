@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const WelcomeAnimation = dynamic(() => import("@/components/Home/welcomeAnimation"), { ssr: false });
 
 const TitleSection: React.FC = () => (
-    <section className="relative flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
+    <section className="relative flex flex-col md:min-h-screen md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
         
         {/* Lottie animation top left on desktop */}
         <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
