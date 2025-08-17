@@ -7,8 +7,8 @@ interface FormItemProps {
   form: Form;
 }
 
-const statusColor: Record<FormStatus, "destructive" | "default" | "outline" | "secondary"> = {
-  Open: "default",
+const statusColor: Record<FormStatus, "destructive" | "secondary" | "outline" | "secondary"> = {
+  Open: "secondary",
   Closed: "destructive",
 };
 
