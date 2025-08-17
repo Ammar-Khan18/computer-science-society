@@ -13,9 +13,9 @@ interface Data {
 }
 
 const events: Events[] = [
-  { name: "Intro to Python", detail: "A beginner-friendly session on Python basics.", link: "https://example.com/python-session" },
-  { name: "Hackathon 2025", detail: "Annual coding competition with exciting prizes.", link: "https://example.com/hackathon" },
-  { name: "Web Dev Bootcamp", detail: "Learn modern web development from scratch.", link: "" },
+//   { name: "Intro to Python", detail: "A beginner-friendly session on Python basics.", link: "https://example.com/python-session" },
+//   { name: "Hackathon 2025", detail: "Annual coding competition with exciting prizes.", link: "https://example.com/hackathon" },
+//   { name: "Web Dev Bootcamp", detail: "Learn modern web development from scratch.", link: "" },
 ];
 
 const data: Data[] = [
