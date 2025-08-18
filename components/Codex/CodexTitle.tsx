@@ -14,10 +14,11 @@ const CodexTitle: React.FC = () => (
 
     {/* Wave Animation */}
     <div className="absolute inset-0 -bottom-80 md:bottom-20 flex items-center justify-center z-10 pointer-events-none select-none">
-        <div className="w-[120vw] h-[80vh] opacity-60">
-            <WaveAnimation />
-        </div>
+      <div className="w-[120vw] md:w-[120vw] lg:w-[140vw] xl:w-[160vw] 2xl:w-[180vw] h-[80vh] opacity-60">
+        <WaveAnimation />
+      </div>
     </div>
+
   </section>
 );
 
