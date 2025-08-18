@@ -18,16 +18,15 @@ interface CodexEventsProps {
 const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
   <section className="py-8 pb-40 px-4 md:px-12">
     <h2 className="font-heading text-3xl md:text-5xl colour-text mb-10 text-center">Past Sessions & Events</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {events.length === 0 ? (
-        Array.from({ length: 2 }).map((_, index) => (
-          <div key={index} className="flex flex-col space-y-3">
-            <Skeleton className="h-[150px] w-full mx-auto" />
-            <Skeleton className="h-[50px] w-full mx-auto" />
-          </div>
-        ))
-      ) : (
-        events.map((event) => (
+    {events.length === 0 ? (
+      <div className="flex h-[200px] w-full items-center justify-center">
+        <div className="flex h-[200px] w-[350px] items-center justify-center rounded-md border border-dashed text-sm">
+          <p className="font-text colour-text">No events till now</p>
+        </div>
+      </div>
+    ) : (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {events.map((event) => (
           <Card key={event.name} className="flex flex-col p-6 rounded-xl shadow-md colour-box-secondary">
             <h3 className="font-heading text-xl text-black mb-2">{event.name}</h3>
             <p className="font-text text-sm text-black mb-2">{event.detail}</p>
@@ -37,9 +36,9 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
               </Link>
             )}
           </Card>
-        ))
-      )}
-    </div>
+        ))}
+      </div>
+    )}
   </section>
 );
 
