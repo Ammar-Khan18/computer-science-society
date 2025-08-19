@@ -21,7 +21,7 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
     {events.length === 0 ? (
       <div className="flex h-[200px] w-full items-center justify-center">
         <div className="flex h-[200px] w-[350px] items-center justify-center rounded-md border border-dashed text-sm">
-          <p className="font-text colour-text">No events till now</p>
+          <p className="font-text colour-text">No events for now</p>
         </div>
       </div>
     ) : (
