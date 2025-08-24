@@ -26,7 +26,7 @@ const CodeX: React.FC = () => (
         It serves as a hub for students to <span className="text-amber-500">learn, collaborate, and showcase their talents</span> in the ever-evolving world of technology.
       </p>
 
-      <p className="font-text mt-2 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text mt-4 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
         From <span className="text-amber-500">coding competitions and hackathons to guest lectures and interactive workshops</span>, CODEX provides countless opportunities for growth. 
         By fostering connections and promoting innovation, the community helps its members enhance their technical expertise, build meaningful networks, and stay at the forefront of emerging tech trends.
       </p>
@@ -51,3 +51,4 @@ const CodeX: React.FC = () => (
 );
 
 export default CodeX;
+
