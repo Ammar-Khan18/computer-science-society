@@ -12,6 +12,6 @@ export const forms: Form[] = [
     title: "Orientation Registration Form",
     description: "This form is for the management team positions, circulated during O `Gala 2025.",
     link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
-    status: "Open",
+    status: "Closed",
   },
 ];
