@@ -30,7 +30,7 @@ const DescriptionSection: React.FC = () => (
         Since its establishment in 2013, CSS has been dedicated to fostering a strong foundation in computing, equipping students with essential technical skills, and nurturing a vibrant community of tech enthusiasts, coders, and innovators.
       </p>
 
-      <p className="font-text mt-2 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text mt-4 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
         Through flagship events like <span className="text-amber-500">ProBattle</span>, one of Pakistan&apos;s largest competitive programming contests, as well as hands-on workshops, hackathons, and networking sessions, CSS creates opportunities for students to learn, collaborate, and grow. 
         Driven by innovation and a passion for technology, the society continues to empower its members and expand its impact within and beyond IBA.
       </p>
@@ -51,3 +51,4 @@ const DescriptionSection: React.FC = () => (
 );
 
 export default DescriptionSection;
+
