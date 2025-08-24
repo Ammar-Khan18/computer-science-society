@@ -9,9 +9,15 @@ export interface Form {
 
 export const forms: Form[] = [
   // {
-  //   title: "Orientation Registration Form",
-  //   description: "This form is for the management team positions, circulated during O `Gala 2025.",
+  //   title: "Management Team Application Form",
+  //   description: "This form is for the management team positions.",
   //   link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
   //   status: "Closed",
   // },
+  // {
+  //   title: "Executive Council Application Form",
+  //   description: "This form is for the executive council positions.",
+  //   link: "https://forms.gle/bd6tte7whexgpqXC8",
+  //   status: "Closed",
+  // }
 ];
