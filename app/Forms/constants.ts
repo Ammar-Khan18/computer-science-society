@@ -1,4 +1,4 @@
-export type FormStatus = "Open" | "Closed";
+export type FormStatus = "Open" | "Closed" | "Coming Soon";
 
 export interface Form {
   title: string;
@@ -12,7 +12,7 @@ export const forms: Form[] = [
     title: "MT Application Form",
     description: "This form is for the management team positions.",
     link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
-    status: "Closed",
+    status: "Coming Soon",
   },
   {
     title: "EC Application Form",
