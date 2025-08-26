@@ -15,8 +15,11 @@ export const FormList: React.FC<FormListProps> = ({ forms }) => (
         </div>
       </div>
     ) : (
-      forms.map((form, idx) => (
-        <FormItem key={form.title} form={form} />
+      forms
+        .slice()
+        .sort((a, b) => (a.status === "Closed" ? 1 : -1))
+        .map(form => (
+          <FormItem key={form.title} form={form} />
       ))
     )}
   </div>
