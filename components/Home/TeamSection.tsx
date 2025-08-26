@@ -39,13 +39,6 @@ const TeamSection: React.FC = () => (
             <AvatarFallback>NK</AvatarFallback>
           </Avatar>
         </Link>
-
-        <Link href="https://www.linkedin.com/in/ammarbinaamirkhan/" target="_blank" rel="noopener noreferrer">
-          <Avatar className="ring-2 ring-amber-600">
-            <AvatarImage alt="Ammar Khan" />
-            <AvatarFallback>AK</AvatarFallback>
-          </Avatar>
-        </Link>
       </div>
       
     </div>
