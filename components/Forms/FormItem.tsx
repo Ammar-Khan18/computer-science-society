@@ -2,6 +2,7 @@ import React from "react";
 import { Form, FormStatus } from "@/app/Forms/constants";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface FormItemProps {
   form: Form;
@@ -21,8 +22,14 @@ export const FormItem: React.FC<FormItemProps> = ({ form }) => (
       </div>
       <span className="font-text text-[10px] md:text-[12px] text-white text-base">{form.description}</span>
     </div>
-    <Button asChild variant="default" className="mt-4 ml-0 md:ml-1 md:mt-0 font-text colour-text">
-      <a href={form.link} target="_blank" rel="noopener noreferrer">Open Form</a>
-    </Button>
+    {form.status === "Closed" ? (
+      <Button variant="default" className="mt-4 ml-0 md:ml-1 md:mt-0 font-text colour-text" disabled>
+        Open Form
+      </Button>
+    ) : (
+      <Button asChild variant="default" className="mt-4 ml-0 md:ml-1 md:mt-0 font-text colour-text">
+        <Link href={form.link} target="_blank" rel="noopener noreferrer">Open Form</Link>
+      </Button>
+    )}
   </div>
 );
