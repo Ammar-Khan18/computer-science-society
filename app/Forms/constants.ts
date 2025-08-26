@@ -8,16 +8,16 @@ export interface Form {
 }
 
 export const forms: Form[] = [
-  // {
-  //   title: "Management Team Application Form",
-  //   description: "This form is for the management team positions.",
-  //   link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
-  //   status: "Closed",
-  // },
-  // {
-  //   title: "Executive Council Application Form",
-  //   description: "This form is for the executive council positions.",
-  //   link: "https://forms.gle/bd6tte7whexgpqXC8",
-  //   status: "Closed",
-  // }
+  {
+    title: "MT Application Form",
+    description: "This form is for the management team positions.",
+    link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
+    status: "Closed",
+  },
+  {
+    title: "EC Application Form",
+    description: "This form is for the executive council positions.",
+    link: "https://forms.gle/bd6tte7whexgpqXC8",
+    status: "Open",
+  }
 ];
