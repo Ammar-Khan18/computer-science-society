@@ -1,6 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const socials = [
   { icon: FaFacebook, href: "https://www.facebook.com/share/16zYAU4tV3/", label: "Facebook" },
@@ -37,9 +38,9 @@ const DescriptionSection: React.FC = () => (
 
       <div className="flex space-x-4 mt-4 mx-4 md:mx-0">
         {socials.map(({ icon: Icon, href, label }) => (
-          <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-[var(--colour-text)] hover:text-[var(--colour-accent)] transition-colors">
+          <Link key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-[var(--colour-text)] hover:text-[var(--colour-accent)] transition-colors">
             <Icon className="w-6 h-6" />
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -51,4 +52,3 @@ const DescriptionSection: React.FC = () => (
 );
 
 export default DescriptionSection;
-
