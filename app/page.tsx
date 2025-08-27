@@ -10,35 +10,31 @@ import TeamSection from "@/components/Home/TeamSection";
 import WelcomeScreen from "@/components/Home/WelcomeScreen";
 
 const Home: React.FC = () => {
-  const [showWelcome, setShowWelcome] = React.useState(false);
+  // const [showWelcome, setShowWelcome] = React.useState(false);
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hasShown = sessionStorage.getItem("homeWelcomeShown");
-      if (!hasShown) {
-        setShowWelcome(true);
-        const timer = setTimeout(() => {
-          setShowWelcome(false);
-          sessionStorage.setItem("homeWelcomeShown", "true");
-        }, 2000);
-        return () => clearTimeout(timer);
-      }
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const hasShown = sessionStorage.getItem("homeWelcomeShown");
+  //     if (!hasShown) {
+  //       setShowWelcome(true);
+  //       const timer = setTimeout(() => {
+  //         setShowWelcome(false);
+  //         sessionStorage.setItem("homeWelcomeShown", "true");
+  //       }, 2000);
+  //       return () => clearTimeout(timer);
+  //     }
+  //   }
+  // }, []);
 
   return (
     <div className="colour-bg min-h-screen">
-      <WelcomeScreen show={showWelcome} onFinish={() => setShowWelcome(false)} />
-      {!showWelcome && (
-        <>
-          <TitleSection />
-          <HomeCarousel />
-          <DescriptionSection />
-          <CodeX />
-          <ProBattle />
-          <TeamSection />
-        </>
-      )}
+      {/* <WelcomeScreen show={showWelcome} onFinish={() => setShowWelcome(false)} /> */}
+        <TitleSection />
+        <HomeCarousel />
+        <DescriptionSection />
+        <CodeX />
+        <ProBattle />
+        <TeamSection />
     </div>
   );
 };
