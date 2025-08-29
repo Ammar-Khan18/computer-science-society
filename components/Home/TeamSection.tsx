@@ -22,27 +22,6 @@ const TeamSection: React.FC = () => (
       ))}
     </div>
 
-    <div className="flex flex-col items-center mt-10">
-      <span className="font-text text-lg colour-text mb-4">Developed by</span>
-
-      <div className="*:data-[slot=avatar]:ring-amber-600 flex -space-x-1 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:backdrop-grayscale-100">
-        <Link href="https://www.linkedin.com/in/abdullahtariq78/" target="_blank" rel="noopener noreferrer">
-          <Avatar className="ring-2 ring-amber-600">
-            <AvatarImage alt="Abdullah" />
-            <AvatarFallback>AT</AvatarFallback>
-          </Avatar>
-        </Link>
-        
-        <Link href="https://www.linkedin.com/in/nawail-khan/" target="_blank" rel="noopener noreferrer">
-          <Avatar className="ring-2 ring-amber-600">
-            <AvatarImage alt="Nawail Khan" />
-            <AvatarFallback>NK</AvatarFallback>
-          </Avatar>
-        </Link>
-      </div>
-      
-    </div>
-
   </section>
 );
 
