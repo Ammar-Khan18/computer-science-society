@@ -7,7 +7,8 @@ import DescriptionSection from "@/components/Home/DescriptionSection";
 import CodeX from "@/components/Home/CodeX";
 import ProBattle from "@/components/Home/ProBattle";
 import TeamSection from "@/components/Home/TeamSection";
-import WelcomeScreen from "@/components/Home/WelcomeScreen";
+import FAQ from "@/components/Home/FAQ";
+// import WelcomeScreen from "@/components/Home/WelcomeScreen";
 
 const Home: React.FC = () => {
   // const [showWelcome, setShowWelcome] = React.useState(false);
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
         <CodeX />
         <ProBattle />
         <TeamSection />
+        <FAQ />
     </div>
   );
 };
