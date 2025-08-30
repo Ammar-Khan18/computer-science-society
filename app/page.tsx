@@ -7,7 +7,7 @@ import DescriptionSection from "@/components/Home/DescriptionSection";
 import CodeX from "@/components/Home/CodeX";
 import ProBattle from "@/components/Home/ProBattle";
 import TeamSection from "@/components/Home/TeamSection";
-import FAQ from "@/components/Home/FAQ";
+import { FAQ } from "@/components/Home/FAQ";
 // import WelcomeScreen from "@/components/Home/WelcomeScreen";
 
 const Home: React.FC = () => {
