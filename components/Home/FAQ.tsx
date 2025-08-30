@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import faqs from "@/app/constants"
+import faqs from "@/app/constants";
 
 const FAQ: React.FC = () => (
   <section className="py-16">
@@ -33,3 +33,4 @@ const FAQ: React.FC = () => (
 );
 
 export { FAQ };
+
