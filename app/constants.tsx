@@ -38,4 +38,4 @@ const faqs: FAQ[] = [
   },
 ];
 
-export default faqs;
+export { faqs };
