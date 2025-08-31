@@ -14,7 +14,7 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
     <>
         <h1 className="font-heading text-3xl md:text-5xl colour-text mb-4 text-center">What We Offer</h1>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 px-4 md:px-0 max-w-3xl mx-auto justify-center">
-            {data.map((item, idx) => {
+            {data.map((item) => {
 
                 // Extract bg color from icon's className
                 const iconBgClass = React.isValidElement(item.icon) && typeof (item.icon.props as { className?: string }).className === "string"
@@ -45,3 +45,4 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
 );
 
 export default CodexBentoGrid;
+
