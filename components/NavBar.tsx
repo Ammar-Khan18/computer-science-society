@@ -45,7 +45,7 @@ const NavBar: React.FC = () => {
       {/* Mobile Nav */}
       <div className="flex md:hidden justify-between items-center w-full px-4">
         <Link href="/">
-          <img src="/icon.png" alt="icon" className="w-15 h-15 border-pink-300 shadow" />
+          <Image src="/icon.png" alt="icon" width={60} height={60} className="w-15 h-15 border-pink-300 shadow" />
         </Link>
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>
