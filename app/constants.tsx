@@ -32,7 +32,7 @@ const faqs: FAQ[] = [
     question: "How can I participate in events?",
     answer: (
       <>
-        You can participate by registering through our <span className="font-bold text-blue-500">official forms</span> shared on our website's form page and social media. Stay tuned for <span className="font-bold text-amber-500">announcements</span>!
+        You can participate by registering through our <span className="font-bold text-blue-500">official forms</span> shared on our website&apos;s form page and social media. Stay tuned for <span className="font-bold text-amber-500">announcements</span>!
       </>
     ),
   },
