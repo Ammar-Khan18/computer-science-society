@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const WaveAnimation = dynamic(() => import("@/components/Codex/WaveAnimation"), { ssr: false });
@@ -24,3 +23,4 @@ const CodexTitle: React.FC = () => (
 );
 
 export default CodexTitle;
+
