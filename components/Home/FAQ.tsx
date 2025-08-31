@@ -12,8 +12,8 @@ const FAQ: React.FC = () => (
         <div className="mx-4 md:mx-0 flex flex-col justify-start md:max-w-[70%]">
           <h2 className="font-heading colour-text text-3xl md:text-4xl mb-4">Frequently asked questions</h2>
           <p className="mb-8 text-lg colour-text">
-            Can&apos;t find the answer you&apos;re looking for? Reach out to our{" "}
-            <Link href="mailto:ComputerSciencesSociety@khi.iba.edu.pk" className="text-amber-500 font-medium hover:underline">team</Link>.
+            Can&apos;t find the answer you&apos;re looking for? Reach out to our team{" "}
+            <Link href="mailto:ComputerSciencesSociety@khi.iba.edu.pk" className="text-amber-500 font-medium hover:underline">ComputerSciencesSociety@khi.iba.edu.pk</Link>
           </p>
         </div>
 
