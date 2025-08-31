@@ -5,7 +5,7 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "What positions can we join?",
+    question: "Which positions can we join?",
     answer: (
       <>
         You can join as <span className="font-bold text-amber-500">Management Team (MT)</span> member (for freshmen), or as <span className="font-bold text-blue-500">Host Team (HT)</span> member (for sophomores), or as an <span className="font-bold text-purple-500">Executive (EC)</span> member (for either sophomore or junior).
@@ -39,3 +39,4 @@ const faqs: FAQ[] = [
 ];
 
 export { faqs };
+
