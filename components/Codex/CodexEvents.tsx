@@ -2,7 +2,6 @@ import * as React from "react";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface Events {
   name: string;
@@ -43,3 +42,4 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
 );
 
 export default CodexEvents;
+
