@@ -18,7 +18,8 @@ export const forms: Form[] = [
     title: "EC Application Form",
     description: "This form is for the executive council positions.",
     link: "https://forms.gle/bd6tte7whexgpqXC8",
-    status: "Open",
+    status: "Closed",
   }
 ];
+
 
