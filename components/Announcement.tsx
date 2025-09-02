@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Forms for EC&apos;s and MT&apos;s are now open!
+          Forms for HT&apos;s and MT&apos;s are now open!
         </p>
         <Link
           href="/Forms"
@@ -70,3 +70,4 @@ const AnnouncementBar: React.FC = () => {
 };
 
 export default AnnouncementBar;
+
