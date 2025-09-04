@@ -1,4 +1,8 @@
-export default function ProBattle() {
+'use client';
+
+import * as React from "react";
+
+const ProBattle: React.FC = () => {
   return (
     <main className="grid min-h-screen place-items-center colour-bg px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
@@ -20,4 +24,6 @@ export default function ProBattle() {
       </div>
     </main>
   );
-}
+};
+
+export default ProBattle;
