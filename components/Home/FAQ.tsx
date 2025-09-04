@@ -1,35 +1,48 @@
+
 import * as React from "react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import { Plus, Minus } from "lucide-react";
 import { faqs } from "@/app/constants";
 
-const FAQ: React.FC = () => (
-  <section className="py-16">
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+const FAQ: React.FC = () => {
+  const [openIdx, setOpenIdx] = React.useState<number | null>(null);
 
-        {/* Left column: heading and subheading */}
-        <div className="mx-4 md:mx-0 flex flex-col justify-start md:max-w-[70%]">
-          <h2 className="font-heading colour-text text-3xl md:text-4xl mb-4">Frequently asked questions</h2>
-          <p className="mb-8 text-lg colour-text">
-            Can&apos;t find the answer you&apos;re looking for? Reach out to our team{" "}
-            <Link href="mailto:ComputerSciencesSociety@khi.iba.edu.pk" className="text-amber-500 font-medium hover:underline">ComputerSciencesSociety@khi.iba.edu.pk</Link>
-          </p>
-        </div>
-
-        {/* Right column: questions and answers */}
-        <div className="flex flex-col gap-6 mx-4 md:mx-0">
+  const handleToggle = (idx: number) => {
+    setOpenIdx(openIdx === idx ? null : idx);
+  };
+  
+  return (
+    <section className="py-16">
+      <div className="max-w-4xl mx-auto px-6 md:px-4">
+        <h2 className="font-heading colour-text text-4xl md:text-5xl mb-4">Frequently asked questions</h2>
+        <p className="mb-8 font-text text-sm md:text-md colour-text">
+          Can&apos;t find the answer you&apos;re looking for? Reach out to our team{" "}
+          <Link href="mailto:ComputerSciencesSociety@khi.iba.edu.pk" className="text-amber-500 font-medium hover:underline">ComputerSciencesSociety@khi.iba.edu.pk</Link>
+        </p>
+        <div className="flex flex-col gap-4">
           {faqs.map((faq, idx) => (
             <div key={idx}>
-              <h3 className="font-heading text-xl colour-accent mb-2">{faq.question}</h3>
-              <p className="colour-text leading-relaxed">{faq.answer}</p>
-              <Separator className="my-3" />
+              <button
+                className="w-full flex items-center justify-between pr-4 gap-1 py-4 focus:outline-none"
+                onClick={() => handleToggle(idx)}
+                aria-expanded={openIdx === idx}
+              >
+                <span className="font-text text-md md:text-lg colour-accent text-left">{faq.question}</span>
+                <span className="transition-all duration-200">
+                  {openIdx === idx ? <Minus className="w-5 h-5 text-amber-500" /> : <Plus className="w-5 h-5 text-amber-500" />}
+                </span>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 pr-4 ${openIdx === idx ? 'max-h-50 py-2' : 'max-h-0 py-0'}`} aria-hidden={openIdx !== idx}>
+                <p className="colour-text leading-relaxed">{faq.answer}</p>
+              </div>
+              <Separator className={`my-1 ${idx < faqs.length - 1 ? '' : 'hidden'}`} />
             </div>
           ))}
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default FAQ;
