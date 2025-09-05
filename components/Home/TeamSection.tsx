@@ -1,25 +1,59 @@
-import * as React from "react";
+
+
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const members = [
-    { name: "Zainab Irfan", position: "CEO", img: "/Home/Zainab.jpg" },
-    { name: "Abdullah Tariq", position: "COO", img: "/Home/Abdullah.jpg" },
-    { name: "Bisma Kasbati", position: "CFO", img: "/Home/Bisma.jpg" },
+  {
+    name: "Zainab Irfan",
+    position: "CEO",
+    img: "/Home/Zainab.jpg",
+    linkedin: "#",
+    instagram: "https://www.instagram.com/zainabirfan4?igsh=NXIxYTZkcGNhdWc3",
+  },
+  {
+    name: "Abdullah Tariq",
+    position: "COO",
+    img: "/Home/Abdullah.jpg",
+    linkedin: "https://www.linkedin.com/in/abdullahtariq78/",
+    instagram: "https://www.instagram.com/abdullahtariq62?igsh=OWp0bG4yb2xpb2lm",
+  },
+  {
+    name: "Bisma Kasbati",
+    position: "CFO",
+    img: "/Home/Bisma.jpg",
+    linkedin: "https://www.linkedin.com/in/bisma-asif-998293220/",
+    instagram: "https://www.instagram.com/bismakasbati?igsh=b3lyeXZwemVycW1o",
+  },
 ];
 
 const TeamSection: React.FC = () => (
-  <section className="py-12 px-4 md:px-12 mt-30 min-h-[500px]">
-    <h2 className="font-heading text-3xl md:text-4xl colour-text mb-10 text-center">Meet The Team</h2>
-    <div className="flex flex-wrap justify-center gap-20 md:mt-15">
+  <section className="py-12 px-4 md:px-12 mt-30 min-h-[600px] colour-bg mb-20">
+    <div className="justify-center items-center mb-30">
+      <h2 className="font-heading text-4xl md:text-5xl colour-text mb-6 text-center">Meet our team</h2>
+      <p className="text-center font-text md:text-lg text-[#bfc8e6] max-w-3xl mb-10 mx-auto">We&apos;re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our members.</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-45 place-items-center max-w-4xl mx-auto">
       {members.map((dev) => (
-        <div key={dev.name} className="flex flex-col items-center">
-          <Image src={dev.img} alt={dev.name} width={120} height={120} className="rounded-full border-4 border-[#dddbff] w-32 h-32 md:w-40 md:h-40 object-cover mb-2" />
-          <span className="font-text text-lg colour-text text-center">{dev.name}</span>
-          <span className="font-text text-sm colour-text text-center">{dev.position}</span>
+        <div key={dev.name} className="flex flex-col items-center bg-[#1a2236] rounded-2xl py-10 px-4 shadow-lg w-[300px] md:w-[320px] h-[420px] md:h-[420px]">
+          <div className="w-50 h-50 rounded-full overflow-hidden mb-6 flex items-center justify-center">
+            <Image src={dev.img} alt={dev.name} width={160} height={160} className="object-cover w-full h-full rounded-full" />
+          </div>
+          <span className="font-heading text-lg md:text-xl text-white text-center mb-1">{dev.name}</span>
+          <span className="font-text text-sm text-[#bfc8e6] text-center mb-4">{dev.position}</span>
+          <div className="flex gap-4 mt-2">
+            <Link href={dev.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#bfc8e6] hover:text-[#fff]">
+              <FaInstagram className="w-7 h-7" />
+            </Link>
+            <Link href={dev.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#bfc8e6] hover:text-[#fff]">
+              <FaLinkedin className="w-7 h-7" />
+            </Link>
+          </div>
         </div>
       ))}
     </div>
-
   </section>
 );
 
