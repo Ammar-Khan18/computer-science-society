@@ -35,7 +35,7 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
                         style={{ boxShadow: `8px 8px 0 0 var(--tw-shadow-color)` }}
                     >
                         <div className="mb-3 md:mb-4">{item.icon}</div>
-                        <h2 className="font-heading text-xl md:text-2xl text-black mb-1 md:mb-2 text-center">{item.title}</h2>
+                        <h2 className="font-heading font-semibold text-xl md:text-2xl text-black mb-1 md:mb-2 text-center">{item.title}</h2>
                         <p className="font-text text-xs md:text-sm colour-text text-center mx-4">{item.desc}</p>
                     </div>
                 );
@@ -45,4 +45,3 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
 );
 
 export default CodexBentoGrid;
-
