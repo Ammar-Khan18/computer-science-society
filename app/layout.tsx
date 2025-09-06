@@ -11,8 +11,8 @@ const quicksans = localFont({
   display: "swap",
 });
 
-const bartkey = localFont({
-  src: "./Fonts/BARTKEY.ttf",
+const premint = localFont({
+  src: "./Fonts/premint-Regular.otf",
   variable: "--font-heading",
   display: "swap",
 });
@@ -48,7 +48,7 @@ export default function RootLayout({
       <body
         className={`
           ${quicksans.variable}
-          ${bartkey.variable}
+          ${premint.variable}
           ${lemonMilk.variable}
           antialiased
         `}
