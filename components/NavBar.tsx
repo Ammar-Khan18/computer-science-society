@@ -24,13 +24,14 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className="font-text colour-bg py-4 w-full shadow-md">
+
       {/* Desktop Nav */}
       <div className="hidden md:flex justify-end items-center gap-6 w-full pr-10">
         {navLinks.map((link, index) => (
           <Link
             key={link.title}
             href={link.href}
-            className={`text-xl font-heading font-medium px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+            className={`text-xl font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
             onMouseOver={() => handleMouseOver(index)}
             onMouseOut={handleMouseOut}
           >
@@ -69,7 +70,7 @@ const NavBar: React.FC = () => {
                 <React.Fragment key={link.title}>
                   <Link
                     href={link.href}
-                    className={`w-full text-center text-lg font-heading px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+                    className={`w-full text-center text-lg font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
                     onClick={() => { setActiveLink(index); setDrawerOpen(false); }}
                     onMouseOver={() => handleMouseOver(index)}
                     onMouseOut={handleMouseOut}
