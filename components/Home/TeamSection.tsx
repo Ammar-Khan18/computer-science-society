@@ -10,7 +10,7 @@ const members = [
     name: "Zainab Irfan",
     position: "CEO",
     img: "/Home/Zainab.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/zainab-irfan-ansari-2065b2377/",
     instagram: "https://www.instagram.com/zainabirfan4?igsh=NXIxYTZkcGNhdWc3",
   },
   {
@@ -21,7 +21,7 @@ const members = [
     instagram: "https://www.instagram.com/abdullahtariq62?igsh=OWp0bG4yb2xpb2lm",
   },
   {
-    name: "Bisma Kasbati",
+    name: "Bisma Asif",
     position: "CFO",
     img: "/Home/Bisma.jpg",
     linkedin: "https://www.linkedin.com/in/bisma-asif-998293220/",
