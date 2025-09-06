@@ -28,13 +28,13 @@ const FAQ: React.FC = () => {
                 onClick={() => handleToggle(idx)}
                 aria-expanded={openIdx === idx}
               >
-                <span className="font-text text-md md:text-lg colour-accent text-left">{faq.question}</span>
+                <span className="font-heading text-lg md:text-xl colour-accent text-left">{faq.question}</span>
                 <span className="transition-all duration-200">
                   {openIdx === idx ? <Minus className="w-5 h-5 text-amber-500" /> : <Plus className="w-5 h-5 text-amber-500" />}
                 </span>
               </button>
               <div className={`overflow-hidden transition-all duration-300 pr-4 ${openIdx === idx ? 'max-h-50 py-2' : 'max-h-0 py-0'}`} aria-hidden={openIdx !== idx}>
-                <p className="colour-text leading-relaxed">{faq.answer}</p>
+                <p className="font-text text-xs md:text-sm colour-text leading-relaxed">{faq.answer}</p>
               </div>
               <Separator className={`my-1 ${idx < faqs.length - 1 ? '' : 'hidden'}`} />
             </div>
