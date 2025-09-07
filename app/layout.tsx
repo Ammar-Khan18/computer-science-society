@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import AnnouncementBar from "@/components/Announcement";
 import "./globals.css";
 
-const quicksans = localFont({
-  src: "./Fonts/quicksans-accurate-icg-solid.ttf",
+const movatif = localFont({
+  src: "./Fonts/Movatif W00 Light.ttf",
   variable: "--font-title",
   display: "swap",
 });
@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`
-          ${quicksans.variable}
+          ${movatif.variable}
           ${premint.variable}
           ${lemonMilk.variable}
           antialiased
