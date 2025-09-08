@@ -1,13 +1,13 @@
 import React from 'react';
 import DisplayLottie from '../Lottie/DisplayLottie';
-import Wave from '../../public/Codex/wave.json';
+import Background from '../../public/Codex/TitleBG.json';
 
-const WaveAnimation: React.FC = () => {
+const BackgroundAnimation: React.FC = () => {
     return (
         <div className='flex justify-center items-center bg-transparent'> 
-            <DisplayLottie animationData={Wave} />
+            <DisplayLottie animationData={Background} />
         </div>
     );
 }
 
-export default WaveAnimation;
+export default BackgroundAnimation;
