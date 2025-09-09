@@ -21,12 +21,12 @@ const CodeX: React.FC = () => (
           />
         </span>
       </h2>
-      <p className="font-text text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text text-[15px] md:text-[17px] colour-text text-justify tracking-tight mx-4 md:mx-0">
         CODEX, an initiative of the IBA Computer Science Society (CSS), is a dynamic tech-driven community bringing together over 300 active members across multiple platforms. 
         It serves as a hub for students to <span className="text-amber-500">learn, collaborate, and showcase their talents</span> in the ever-evolving world of technology.
       </p>
 
-      <p className="font-text mt-4 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text mt-4 text-[15px] md:text-[17px] colour-text text-justify tracking-tight mx-4 md:mx-0">
         From <span className="text-amber-500">coding competitions and hackathons to guest lectures and interactive workshops</span>, CODEX provides countless opportunities for growth. 
         By fostering connections and promoting innovation, the community helps its members enhance their technical expertise, build meaningful networks, and stay at the forefront of emerging tech trends.
       </p>
@@ -45,10 +45,9 @@ const CodeX: React.FC = () => (
       
     </div>
     <div className="flex-1 flex justify-center items-center order-2 md:mt-6">
-      <Image src="/Home/Codex2.png" alt="Events" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-78 h-48 md:w-110 md:h-80 object-cover" />
+      <Image src="/Home/Codex2.png" alt="Events" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-84 h-48 md:w-110 md:h-80 object-cover" />
     </div>
   </section>
 );
 
 export default CodeX;
-
