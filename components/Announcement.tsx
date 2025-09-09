@@ -40,7 +40,7 @@ const AnnouncementBar: React.FC = () => {
 
       {/* Announcement content */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p className="text-sm text-gray-900">
+        <p className="text-md text-gray-900 font-text">
           <strong className="font-semibold">IBA CSS Announcement</strong>
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
@@ -70,4 +70,3 @@ const AnnouncementBar: React.FC = () => {
 };
 
 export default AnnouncementBar;
-
