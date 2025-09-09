@@ -43,7 +43,7 @@ export default function Footer() {
             <h3 className="font-heading text-2xl mb-2 colour-accent">Quick Links</h3>
             <div className="flex flex-col gap-2">
               {navLinks.map(link => (
-                <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[14px] text-base">
+                <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[17px] text-base">
                   {link.title}
                 </Link>
               ))}
@@ -57,12 +57,12 @@ export default function Footer() {
             {contacts.map(({ name, role, email }) => (
               <span
                 key={email}
-                className="colour-text text-base text-[14px] flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
+                className="colour-text text-base text-[17px] flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2 w-full"
               >
                 <span>{name}, {role},</span>
                 <Link
                   href={`mailto:${email}`}
-                  className="text-sm colour-secondary text-[14px] hover:underline hover:text-pink-500 transition-colors md:ml-2"
+                  className="text-sm colour-secondary text-[17px] hover:underline hover:text-pink-500 transition-colors md:ml-2"
                 >
                   {email}
                 </Link>
@@ -76,12 +76,12 @@ export default function Footer() {
           <h3 className="font-heading text-2xl mb-4 colour-accent">Socials</h3>
           <div className="flex flex-row gap-6 mb-4">
             {socials.map(({ icon: Icon, href, label }) => (
-              <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[14px]">
+              <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[17px]">
                 <Icon size={28} className="colour-text" />
               </Link>
             ))}
           </div>
-          <span className="colour-secondary text-base">IBA, Karachi</span>
+          <span className="colour-secondary text-[17px]">IBA, Karachi</span>
         </div>
 
       </div>
