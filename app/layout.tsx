@@ -18,7 +18,7 @@ const premint = localFont({
 });
 
 const lemonMilk = localFont({
-  src: "./Fonts/LEMONMILK-Light.otf",
+  src: "./Fonts/Weissenhof_Grotesk.ttf",
   variable: "--font-text",
   display: "swap",
 });
