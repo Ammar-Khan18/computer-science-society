@@ -42,7 +42,7 @@ const TeamSection: React.FC = () => (
             <Image src={dev.img} alt={dev.name} width={160} height={160} className="object-cover w-full h-full rounded-full" />
           </div>
           <span className="font-heading text-lg md:text-xl text-white text-center mb-1">{dev.name}</span>
-          <span className="font-text text-sm text-[#bfc8e6] text-center mb-4">{dev.position}</span>
+          <span className="font-text text-md text-[#bfc8e6] text-center mb-4">{dev.position}</span>
           <div className="flex gap-4 mt-2">
             <Link href={dev.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#bfc8e6] hover:text-[#fff]">
               <FaInstagram className="w-7 h-7" />
