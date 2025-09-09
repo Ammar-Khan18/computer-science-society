@@ -22,7 +22,7 @@ const CodexJoin: React.FC = () => (
 
     <div className="flex items-center justify-center">
         <div className="flex-grow h-px bg-white" />
-        <span className="px-4 font-text text-sm md:text-md colour-text">
+        <span className="px-4 font-text text-md md:text-lg colour-text">
           Or
         </span>
         <div className="flex-grow h-px bg-white" />
@@ -30,7 +30,7 @@ const CodexJoin: React.FC = () => (
 
     <div className="flex flex-col items-center">
       <Image src="/Codex/WhatsApp.png" alt="WhatsApp" width={250} height={250} className="object-contain pb-2" />
-      <span className="font-text text-sm md:text-md colour-text">Scan QR code</span>
+      <span className="font-text text-md md:text-lg colour-text">Scan QR code</span>
     </div>
 
   </section>
