@@ -20,17 +20,17 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
     {events.length === 0 ? (
       <div className="flex h-[200px] w-full items-center justify-center">
         <div className="flex h-[200px] w-[350px] items-center justify-center rounded-md border border-dashed text-sm">
-          <p className="font-text colour-text">No events for now</p>
+          <p className="font-text text-2xl colour-text">No events for now</p>
         </div>
       </div>
     ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {events.map((event) => (
           <Card key={event.name} className="flex flex-col p-6 rounded-xl shadow-md colour-box-secondary">
-            <h3 className="font-heading text-xl text-black mb-2">{event.name}</h3>
-            <p className="font-text text-sm text-black mb-2">{event.detail}</p>
+            <h3 className="font-heading font-bold text-xl text-black mb-2">{event.name}</h3>
+            <p className="font-text text-md text-black mb-2">{event.detail}</p>
             {event.link && (
-              <Link href={event.link} target="_blank" rel="noopener noreferrer" className="flex font-heading items-center gap-1 text-sm colour-primary hover:underline">
+              <Link href={event.link} target="_blank" rel="noopener noreferrer" className="flex font-heading font-bold items-center gap-1 text-md colour-primary hover:underline">
                 View Details <ExternalLink className="w-4 h-4" />
               </Link>
             )}
@@ -42,4 +42,3 @@ const CodexEvents: React.FC<CodexEventsProps> = ({ events }) => (
 );
 
 export default CodexEvents;
-
