@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const ProBattle: React.FC = () => (
   <section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 md:ml-20 gap-8 mt-20">
     <div className="flex-1 order-1">
-      <h2 className="font-heading text-3xl md:text-4xl colour-text mb-10 mx-4 md:mx-0">
+      <h2 className="font-heading text-3xl md:text-4xl colour-text mb-6 mx-4 md:mx-0">
         ProBattle `26
         <span className="pointer-events-none select-none inline-block align-middle mr-2 mt-2" style={{ verticalAlign: "middle" }}>
           <Image
@@ -21,12 +21,12 @@ const ProBattle: React.FC = () => (
           />
         </span>
       </h2>
-      <p className="font-text text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text text-[15px] md:text-[17px] colour-text text-justify tracking-tight mx-4 md:mx-0">
         At the IBA Computer Science Society (CSS), we believe in the power of collaboration. Our community brings together peers and mentors who are dedicated to helping each other succeed. 
         It&apos;s the perfect place to <span className="text-amber-500">learn, share, and grow</span> in the world of computer science.
       </p>
 
-      <p className="font-text mt-4 text-sm md:text-md colour-text text-justify tracking-tight mx-4 md:mx-0">
+      <p className="font-text mt-4 text-[15px] md:text-[17px] colour-text text-justify tracking-tight mx-4 md:mx-0">
         <span className="text-amber-500">ProBattle 2024</span> stands as one of our flagship events, meticulously designed to provide participants with opportunities to <span className="text-amber-500">test their skills, explore cutting-edge technologies, and gain insights from industry leaders.</span>
         By fostering a collaborative environment, ProBattle inspires creativity, encourages the exchange of ideas, and ensures a platform where participants can truly thrive.
       </p>
@@ -44,10 +44,9 @@ const ProBattle: React.FC = () => (
       </motion.button>
     </div>
     <div className="flex-1 flex justify-center items-center order-2 md:mt-6">
-      <Image src="/Home/ProBattle.jpg" alt="Society" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-78 h-48 md:w-110 md:h-80 object-cover" />
+      <Image src="/Home/ProBattle.jpg" alt="Society" width={320} height={320} className="rounded-xl border-2 border-[var(--colour-secondary)] w-84 h-48 md:w-110 md:h-80 object-cover" />
     </div>
   </section>
 );
 
 export default ProBattle;
-
