@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const CodeX: React.FC = () => (
   <section className="flex flex-col md:flex-row-reverse items-center justify-between py-12 px-4 md:mr-40 gap-8 mt-20">
     <div className="flex-1 order-1">
-      <h2 className="font-heading text-3xl md:text-4xl colour-text mb-10 mx-4 md:mx-0">
+      <h2 className="font-heading text-3xl md:text-4xl colour-text mb-6 mx-4 md:mx-0">
         CodeX `25
         <span className="pointer-events-none select-none inline-block align-middle mr-2 mt-2" style={{ verticalAlign: "middle" }}>
           <Image
