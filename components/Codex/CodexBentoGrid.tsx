@@ -36,7 +36,7 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
                     >
                         <div className="mb-3 md:mb-4">{item.icon}</div>
                         <h2 className="font-heading font-semibold text-xl md:text-2xl text-black mb-1 md:mb-2 text-center">{item.title}</h2>
-                        <p className="font-text text-xs md:text-sm colour-text text-center mx-4">{item.desc}</p>
+                        <p className="font-text text-sm md:text-[17px] colour-accent text-center mx-4">{item.desc}</p>
                     </div>
                 );
             })}
