@@ -27,7 +27,7 @@ const CodexTitle: React.FC = () => (
 
     {/* Main Content */}
     <h1 className="font-title text-5xl md:text-7xl colour-text mt-8 mb-10 md:mb-14 text-center relative z-10">What is <br /> <span className="text-7xl md:text-9xl">CodeX?</span></h1>
-    <p className="font-text text-sm md:text-lg colour-accent text-justify md:text-center tracking-wider mx-4 md:mx-0 max-w-2xl relative z-10">Codex is the flagship initiative of the IBA Computer Science Society, designed to foster learning, collaboration, and innovation among students passionate about coding and technology.</p>
+    <p className="font-text text-sm md:text-lg colour-accent text-center tracking-wider mx-4 md:mx-0 max-w-2xl relative z-10">Codex is the flagship initiative of the IBA Computer Science Society, designed to foster learning, collaboration, and innovation among students passionate about coding and technology.</p>
   
   </div>
 );
