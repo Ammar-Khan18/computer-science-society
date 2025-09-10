@@ -15,6 +15,10 @@ const TitleSection: React.FC = () => {
 
     return (
         <section className="relative flex md:min-h-screen flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
+            
+            {/* Background pattern */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:40px_40px]" />
+            
             {/* Lottie animation top left on desktop */}
             <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
                 <WelcomeAnimation />
