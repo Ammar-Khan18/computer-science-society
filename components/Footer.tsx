@@ -40,19 +40,19 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex-1 flex flex-col items-start">
-            <h3 className="font-heading text-2xl mb-2 colour-accent">Quick Links</h3>
-            <div className="flex flex-col gap-2">
-              {navLinks.map(link => (
-                <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[17px] text-base">
-                  {link.title}
-                </Link>
-              ))}
-            </div>
+          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Quick Links</h3>
+          <div className="flex flex-col gap-2">
+            {navLinks.map(link => (
+              <Link key={link.title} href={link.href} className="colour-text hover:colour-primary transition-colors text-[17px] text-base">
+                {link.title}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Contact Us */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl mb-2 colour-accent">Contact Us</h3>
+          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Contact Us</h3>
           <div className="flex flex-col gap-2 w-full">
             {contacts.map(({ name, role, email }) => (
               <span
@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex-1 flex flex-col items-start">
-          <h3 className="font-heading text-2xl mb-4 colour-accent">Socials</h3>
+          <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Socials</h3>
           <div className="flex flex-row gap-6 mb-4">
             {socials.map(({ icon: Icon, href, label }) => (
               <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[17px]">
