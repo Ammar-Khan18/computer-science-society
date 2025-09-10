@@ -21,7 +21,7 @@ const dialogVariants = {
     transition: {
       bounce: 0.4,
       duration: 0.5,
-      staggerChildren: 0.30 
+      staggerChildren: 0.20 
     }
   },
   exit: { y: "-100%", opacity: 0, transition: { duration: 0.3 } },
