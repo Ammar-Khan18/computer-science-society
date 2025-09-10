@@ -3,9 +3,8 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Drawer, DrawerTrigger, DrawerContent, DrawerClose, DrawerTitle } from "@/components/ui/drawer";
-import { Separator } from "@/components/ui/separator";
-import { X, Menu} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Menu } from "lucide-react";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -14,17 +13,41 @@ const navLinks = [
   { title: "Forms", href: "/Forms" },
 ];
 
+const dialogVariants = {
+  hidden: { y: "-100%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      bounce: 0.4,
+      duration: 0.5,
+      staggerChildren: 0.30 
+    }
+  },
+  exit: { y: "-100%", opacity: 0, transition: { duration: 0.3 } },
+};
+
+const linkVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      stiffness: 300,
+      duration: 0.4
+    }
+  },
+};
 
 const NavBar: React.FC = () => {
   const [activeLink, setActiveLink] = React.useState<number | null>(null);
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
 
   const handleMouseOver = (index: number) => setActiveLink(index);
   const handleMouseOut = () => setActiveLink(null);
 
   return (
     <nav className="font-text colour-bg py-4 w-full shadow-md">
-
       {/* Desktop Nav */}
       <div className="hidden md:flex justify-end items-center gap-6 w-full pr-10">
         {navLinks.map((link, index) => (
@@ -43,48 +66,51 @@ const NavBar: React.FC = () => {
         </Link>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav - Dialog */}
       <div className="flex md:hidden justify-between items-center w-full px-4">
         <Link href="/">
           <Image src="/icon.png" alt="icon" width={60} height={60} className="w-15 h-15 border-pink-300 shadow" />
         </Link>
-        <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
-          <DrawerTrigger asChild>
-            <button className="text-lg font-heading px-2 py-1 rounded-lg colour-text" aria-label="Open menu">
-              <Menu />
-            </button>
-          </DrawerTrigger>
-          <DrawerContent className="colour-bg">
-            <div className="relative flex items-center px-4 pt-4 h-12">
-              <DrawerTitle className="absolute left-0 right-0 mx-auto text-center font-text text-xl colour-text pointer-events-none">Menu</DrawerTitle>
-              <div className="flex-1 flex justify-end">
-                <DrawerClose asChild>
-                  <button className="text-2xl colour-text" aria-label="Close menu">
-                    <X />
-                  </button>
-                </DrawerClose>
+
+        <button className="text-lg font-heading px-2 py-1 rounded-lg colour-text" aria-label="Open menu" onClick={() => setDialogOpen(true)}>
+          <Menu />
+        </button>
+        <AnimatePresence>
+          {dialogOpen && (
+            <motion.div
+              className="fixed left-1/2 top-3 -translate-x-1/2 w-[90vw] max-w-[400px] p-6 h-[50vh] colour-box-primary shadow-lg z-50 rounded-xl flex flex-col items-center justify-center"
+              variants={dialogVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              style={{ boxSizing: 'border-box' }}
+            >
+              <button className="absolute top-4 right-4 text-2xl colour-text" aria-label="Close menu" onClick={() => setDialogOpen(false)}>
+                <X />
+              </button>
+              <div className="flex flex-col items-center justify-center gap-0 mt-8 w-full">
+                {navLinks.map((link, index) => (
+                  <React.Fragment key={link.title}>
+                    <motion.div variants={linkVariants} className="w-full flex items-center justify-center">
+                      <Link
+                        href={link.href}
+                        className={`w-full text-center text-xl font-heading font-bold px-8 py-5 rounded-lg colour-accent transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+                        onClick={() => { setActiveLink(index); setDialogOpen(false); }}
+                        onMouseOver={() => handleMouseOver(index)}
+                        onMouseOut={handleMouseOut}
+                      >
+                        {link.title}
+                      </Link>
+                    </motion.div>
+                    {index < navLinks.length - 1 && (
+                      <div className="w-3/4 mx-auto my-1 border-b border-[#ffffff33]" />
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
-            </div>
-            <div className="flex flex-col items-center gap-0 py-8 px-4">
-              {navLinks.map((link, index) => (
-                <React.Fragment key={link.title}>
-                  <Link
-                    href={link.href}
-                    className={`w-full text-center text-lg font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
-                    onClick={() => { setActiveLink(index); setDrawerOpen(false); }}
-                    onMouseOver={() => handleMouseOver(index)}
-                    onMouseOut={handleMouseOut}
-                  >
-                    {link.title}
-                  </Link>
-                  {index < navLinks.length - 1 && (
-                    <Separator className="my-2" />
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </DrawerContent>
-        </Drawer>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
