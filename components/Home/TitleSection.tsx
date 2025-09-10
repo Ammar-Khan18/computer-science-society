@@ -14,7 +14,7 @@ const TitleSection: React.FC = () => {
     const y = useTransform(scrollY, [0, 200], [0, 60]);
 
     return (
-        <section className="relative flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
+        <section className="relative flex md:min-h-screen flex-col md:flex-row items-center justify-between py-12 px-4 md:px-12 gap-8 overflow-visible">
             {/* Lottie animation top left on desktop */}
             <div className="absolute z-20 -top-16 -left-24 md:-top-16 md:-left-0 w-40 h-40 md:w-70 md:h-70 pointer-events-none select-none hidden md:block">
                 <WelcomeAnimation />
@@ -25,7 +25,7 @@ const TitleSection: React.FC = () => {
                 <WelcomeAnimation />
             </div>
 
-            <div className="flex-1 flex flex-col items-center md:items-start">
+            <div className="z-21 flex-1 flex flex-col items-center md:items-start -translate-y-10">
                 <motion.h1
                     style={{ opacity, y, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                     className="z-21 font-title text-5xl text-center md:text-left md:text-8xl mb-4 md:ml-12 bg-gradient-to-r from-[var(--colour-text)] via-[var(--colour-accent)] to-[var(--colour-text)] bg-clip-text text-transparent"
@@ -40,7 +40,7 @@ const TitleSection: React.FC = () => {
                 </motion.p>
             </div>
 
-            <div className="hidden md:flex flex-1 justify-center items-center">
+            <div className="hidden md:flex flex-1 justify-center items-center -translate-y-10">
                 <Image
                     src="/icon.png"
                     alt="CSS Logo"
