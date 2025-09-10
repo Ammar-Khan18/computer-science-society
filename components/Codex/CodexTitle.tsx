@@ -7,7 +7,10 @@ const BackgroundAnimation = dynamic(() => import("@/components/Codex/BackgroundA
 
 const CodexTitle: React.FC = () => (
   <div className="relative flex flex-col h-140 md:min-h-screen items-center py-10 px-4 md:px-12 overflow-hidden">
-
+    
+    {/* Background pattern */}
+    <div className="z-0 absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[length:40px_40px]" />
+            
     {/* Wave Animation - behind all content */}
     <div className="
       absolute
@@ -20,7 +23,7 @@ const CodexTitle: React.FC = () => (
       lg:w-[120vw] lg:h-[80vh]
       xl:w-[140vw] xl:h-[80vh]
       2xl:w-[160vw] 2xl:h-[80vh]
-      z-0 pointer-events-none select-none opacity-35
+      z-1 pointer-events-none select-none opacity-35
     ">
       <BackgroundAnimation />
     </div>
