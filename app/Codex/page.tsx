@@ -2,6 +2,7 @@ import CodexTitle from "@/components/Codex/CodexTitle";
 import CodexBentoGrid from "@/components/Codex/CodexBentoGrid";
 import CodexJoin from "@/components/Codex/CodexJoin";
 import CodexEvents from "@/components/Codex/CodexEvents";
+import Resources from "@/components/Codex/Resources";
 import { data, events } from "@/app/Codex/constants";
 
 export default function Codex() {
@@ -10,6 +11,7 @@ export default function Codex() {
       <CodexTitle />
       <CodexBentoGrid data={data} />
       <CodexJoin />
+      <Resources />
       <CodexEvents events={events} />
     </div>
   );
