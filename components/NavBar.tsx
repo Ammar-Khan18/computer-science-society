@@ -78,7 +78,7 @@ const NavBar: React.FC = () => {
         <AnimatePresence>
           {dialogOpen && (
             <motion.div
-              className="fixed left-1/2 top-3 -translate-x-1/2 w-[90vw] max-w-[400px] p-6 h-[50vh] colour-box-primary shadow-lg z-50 rounded-xl flex flex-col items-center justify-center"
+              className="fixed left-1/2 top-3 -translate-x-1/2 w-[90vw] max-w-[400px] p-6 h-[50vh] bg-[#1a2236] shadow-lg z-50 rounded-xl flex flex-col items-center justify-center"
               variants={dialogVariants}
               initial="hidden"
               animate="visible"
@@ -96,8 +96,6 @@ const NavBar: React.FC = () => {
                         href={link.href}
                         className={`w-full text-center text-xl font-heading font-bold px-8 py-5 rounded-lg colour-accent transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
                         onClick={() => { setActiveLink(index); setDialogOpen(false); }}
-                        onMouseOver={() => handleMouseOver(index)}
-                        onMouseOut={handleMouseOut}
                       >
                         {link.title}
                       </Link>
