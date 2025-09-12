@@ -12,6 +12,17 @@ interface Data {
     desc: string;
 }
 
+interface Resource {
+  id: number;
+  title: string;
+  href: string;
+  description: string;
+  author: {
+    name: string;
+    imageUrl: string;
+  };
+}
+
 const events: Events[] = [
 //   { name: "Intro to Python", detail: "A beginner-friendly session on Python basics.", link: "https://example.com/python-session" },
 //   { name: "Hackathon 2025", detail: "Annual coding competition with exciting prizes.", link: "https://example.com/hackathon" },
@@ -57,4 +68,29 @@ const data: Data[] = [
     },
 ];
 
-export { data, events };
+const resources: Resource[] = [
+    {
+        id: 1,
+        title: 'Graph Visualization Tool',
+        href: 'https://graphvizs.vercel.app/',
+        description:
+            'A graph visualization tool to create, edit, and visualize graphs easily. This can also be used to run algorithms on graphs such as DFS, BFS, Dijkstra, etc. Ideal for students and professionals looking to understand graph theory concepts interactively.',
+        author: {
+            name: 'Abdullah Tariq',
+            imageUrl: '/Home/Abdullah.jpg',
+        },
+    },
+    {
+        id: 2,
+        title: 'Memory Visualizer',
+        href: 'https://humblepenguinn.github.io/mv/',
+        description:
+            'Realtime memory visualizer for C++ built for beginners. It helps users understand how memory allocation works in C++ programs by providing a graphical representation of stack and heap memory, making debugging and learning easier.',
+        author: {
+            name: 'Shaharyar Ahmed',
+            imageUrl: '',
+        },
+    }
+];
+
+export { data, events, resources };
