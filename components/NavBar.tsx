@@ -48,22 +48,28 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className="font-text colour-bg py-4 w-full shadow-md">
+
       {/* Desktop Nav */}
-      <div className="hidden md:flex justify-end items-center gap-6 w-full pr-10">
-        {navLinks.map((link, index) => (
-          <Link
-            key={link.title}
-            href={link.href}
-            className={`text-xl font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
-            onMouseOver={() => handleMouseOver(index)}
-            onMouseOut={handleMouseOut}
-          >
-            {link.title}
+      <div className="hidden md:flex items-center w-full px-10 relative">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2">
+          <Link href="/">
+            <Image src="/icon.png" alt="icon" width={80} height={80} className="align-left w-20 h-20 ml-4 shadow" />
           </Link>
-        ))}
-        <Link href="/">
-          <Image src="/icon.png" alt="icon" width={80} height={80} className="w-20 h-20 ml-4 border-pink-300 shadow" />
-        </Link>
+        </div>
+
+        <div className="mx-auto flex gap-4 lg:gap-6 justify-center items-center">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.title}
+              href={link.href}
+              className={`text-xl font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+              onMouseOver={() => handleMouseOver(index)}
+              onMouseOut={handleMouseOut}
+            >
+              {link.title}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Mobile Nav - Dialog */}
@@ -110,6 +116,7 @@ const NavBar: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
+
     </nav>
   );
 };
