@@ -25,11 +25,11 @@ export default function Resources() {
                 <h3 className="mt-3 text-lg/6 font-semibold font-heading text-gray-900 group-hover:text-gray-600">
                   {resource.title}
                 </h3>
-                <p className="mt-5 line-clamp-4 text-sm/6 text-gray-600 font-text">{resource.description}</p>
+                <p className="mt-5 line-clamp-5 md:line-clamp-4 text-sm/6 text-gray-600 font-text text-justify">{resource.description}</p>
                 <Link href={resource.href} className="font-text mt-4 inline-block text-blue-600 font-medium hover:underline">Visit Resource</Link>
               </div>
 
-              <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
+              <div className="relative mt-4 flex items-center gap-x-4 justify-self-end">
                 {resource.author.imageUrl ? (
                   <Image alt="" src={resource.author.imageUrl} width={40} height={40} className="size-10 rounded-full bg-gray-50" />
                 ) : (
