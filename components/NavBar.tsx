@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
   const handleMouseOut = () => setActiveLink(null);
 
   return (
-    <nav className="font-text colour-bg py-4 w-full shadow-md">
+    <nav className="font-text colour-bg py-4 pb-6 w-full shadow-md">
 
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center w-full px-10 relative">
@@ -57,18 +57,20 @@ const NavBar: React.FC = () => {
           </Link>
         </div>
 
-        <div className="mx-auto flex gap-4 lg:gap-6 justify-center items-center">
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              className={`text-xl font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
-              onMouseOver={() => handleMouseOver(index)}
-              onMouseOut={handleMouseOut}
-            >
-              {link.title}
-            </Link>
-          ))}
+        <div className="flex justify-end items-center w-full">
+          <div className="flex gap-4 lg:gap-6">
+            {navLinks.map((link, index) => (
+              <Link
+                key={link.title}
+                href={link.href}
+                className={`text-xl font-heading font-semibold px-6 py-3 rounded-lg border-animation colour-text transition-none ${activeLink !== null && activeLink !== index ? 'dim' : ''}`}
+                onMouseOver={() => handleMouseOver(index)}
+                onMouseOut={handleMouseOut}
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
