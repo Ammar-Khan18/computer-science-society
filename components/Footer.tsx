@@ -28,9 +28,9 @@ const contacts = [
 ];
 
 const socials = [
-  { icon: FaFacebook, href: "https://www.facebook.com/share/16zYAU4tV3/", label: "Facebook" },
-  { icon: FaLinkedin, href: "https://www.linkedin.com/company/iba-computer-science-society/", label: "LinkedIn" },
-  { icon: FaInstagram, href: "https://www.instagram.com/css.iba", label: "Instagram" },
+  { icon: FaFacebook, href: "https://www.facebook.com/share/16zYAU4tV3/", label: "Facebook", css: "hover:text-blue-500" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/company/iba-computer-science-society/", label: "LinkedIn", css: "hover:text-blue-600" },
+  { icon: FaInstagram, href: "https://www.instagram.com/css.iba", label: "Instagram", css: "hover:text-pink-600" },
 ];
 
 export default function Footer() {
@@ -75,9 +75,9 @@ export default function Footer() {
         <div className="flex-1 flex flex-col items-start">
           <h3 className="font-heading text-2xl mb-6 colour-accent relative pb-3 after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-16">Socials</h3>
           <div className="flex flex-row gap-6 mb-4">
-            {socials.map(({ icon: Icon, href, label }) => (
+            {socials.map(({ icon: Icon, href, label, css }) => (
               <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="group text-[17px]">
-                <Icon size={28} className="colour-text" />
+                <Icon size={28} className={`colour-text ${css}`} />
               </Link>
             ))}
           </div>
