@@ -7,6 +7,7 @@ import { GrBug } from "react-icons/gr";
 import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -103,12 +104,31 @@ export default function Footer() {
                 <TfiInfoAlt className="w-6 h-6 text-[var(--colour-secondary)]" />
               </Button>
             </HoverCardTrigger>
+
             <HoverCardContent className="w-72 colour-box-secondary md:mr-3 mr-2">
-              <div className="flex items-center gap-3 mb-2">
-                <GrBug className="w-6 h-6 text-[var(--colour-primary)]" />
-                <span className="font-semibold text-base">Found some error or mistake?</span>
+              <div className="flex items-start gap-4">
+                <Avatar className="bg-muted">
+                  <AvatarFallback>
+                    <GrBug className="w-5 h-5 text-[var(--colour-primary)]" />
+                  </AvatarFallback>
+                </Avatar>
+
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold">Found an error or mistake?</h4>
+                  <p className="text-sm text-muted-foreground leading-snug">
+                    Help us improve! If you spot an issue, please{" "}
+                    <Link
+                      href="https://github.com/Ammar-Khan18/computer-science-society/issues"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      report it on GitHub
+                    </Link>{" "}
+                    or reach out to the team.
+                  </p>
+                </div>
               </div>
-              <p className="text-sm ml-2 mb-2">Help us improve! If you spot any issue, please <Link href="https://github.com/Ammar-Khan18/computer-science-society/issues" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">report it on GitHub</Link> or reach out to the team.</p>
             </HoverCardContent>
           </HoverCard>
         </div>
