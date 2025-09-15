@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Forms for HT&apos;s and MT&apos;s are now open!
+          MT&apos;s and HT&apos;s interviews are happening in OBS Courtyard!
         </p>
         <Link
           href="/Forms"
