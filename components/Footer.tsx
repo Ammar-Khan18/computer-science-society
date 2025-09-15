@@ -1,6 +1,12 @@
 
+import * as React from "react";
 import Link from "next/link";
-import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { TfiInfoAlt } from "react-icons/tfi";
+import { GrBug } from "react-icons/gr";
+import { Button } from "@/components/ui/button";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
   { title: "Home", href: "/" },
@@ -84,6 +90,28 @@ export default function Footer() {
           <span className="colour-secondary text-[17px]">IBA, Karachi</span>
         </div>
 
+      </div>
+
+      <Separator className="border-t border-[#110119]" />
+
+      <div className="w-full flex items-center justify-between">
+        <p className="colour-secondary text-[15px] md:ml-2 text-center py-4">&copy; 2024 IBA Computer Science Society. All rights reserved.</p>
+        <div className="pr-4">
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" size="icon" className="hover:bg-transparent">
+                <TfiInfoAlt className="w-6 h-6 text-[var(--colour-secondary)]" />
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-72 colour-box-secondary md:mr-3 mr-2">
+              <div className="flex items-center gap-3 mb-2">
+                <GrBug className="w-6 h-6 text-[var(--colour-primary)]" />
+                <span className="font-semibold text-base">Found some error or mistake?</span>
+              </div>
+              <p className="text-sm ml-2 mb-2">Help us improve! If you spot any issue, please <Link href="https://github.com/Ammar-Khan18/computer-science-society/issues" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">report it on GitHub</Link> or reach out to the team.</p>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
       </div>
     </footer>
   );
