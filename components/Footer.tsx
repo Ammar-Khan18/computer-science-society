@@ -1,3 +1,4 @@
+'use client';
 
 import * as React from "react";
 import Link from "next/link";
@@ -41,6 +42,21 @@ const socials = [
 ];
 
 export default function Footer() {
+  const [open, setOpen] = React.useState(false);
+
+  // Close on outside click (for mobile UX)
+  React.useEffect(() => {
+    if (!open) return;
+
+    const handler = (e: MouseEvent) => {
+      if (!(e.target instanceof HTMLElement)) return;
+      if (!e.target.closest("[data-hovercard-root]")) setOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
   return (
     <footer className="font-text w-full border-t border-[#110119] bg-black">
       <div className="max-w-6xl md:mx-auto px-4 py-16 flex flex-col md:flex-row items-start md:items-stretch justify-between ml-3 gap-8 md:gap-20">
@@ -97,14 +113,19 @@ export default function Footer() {
 
       <div className="w-full flex items-center justify-between">
         <p className="colour-secondary text-[15px] md:ml-2 text-center py-4">&copy; 2024 IBA Computer Science Society. All rights reserved.</p>
-        <div className="pr-4">
-          <HoverCard>
+        <div className="pr-4"data-hovercard-root>
+          <HoverCard open={open} onOpenChange={setOpen}>
             <HoverCardTrigger asChild>
-              <Button variant="ghost" size="icon" className="hover:bg-transparent">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-transparent"
+                aria-label="Info"
+                onClick={() => setOpen((v) => !v)}
+              >
                 <TfiInfoAlt className="w-6 h-6 text-[var(--colour-secondary)]" />
               </Button>
             </HoverCardTrigger>
-
             <HoverCardContent className="w-72 colour-box-secondary md:mr-3 mr-2">
               <div className="flex items-start gap-4">
                 <Avatar className="bg-muted">
@@ -112,7 +133,6 @@ export default function Footer() {
                     <GrBug className="w-5 h-5 text-[var(--colour-primary)]" />
                   </AvatarFallback>
                 </Avatar>
-
                 <div className="space-y-2">
                   <h4 className="text-sm font-semibold">Found an error or mistake?</h4>
                   <p className="text-sm text-muted-foreground leading-snug">
