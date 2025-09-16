@@ -1,18 +1,64 @@
+'use client';
+
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
 import { resources } from "@/app/Codex/constants";
+import { motion } from "framer-motion";
+import * as React from "react";
 
+// Variants for text blocks (heading, paragraphs, socials)
+const textVariants = {
+  hidden: (isMobile: boolean) => ({
+    opacity: 0,
+    x: isMobile ? 0 : -50,
+    y: isMobile ? -50 : 0,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" as const },
+  },
+};
 
 export default function Resources() {
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Helper to get initials from name
   const getInitials = (name: string) => name.split(' ').map(n => n[0]).join('').toUpperCase();
+
   return (
     <div className="colour-box-secondary py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-5xl font-semibold tracking-tight text-pretty font-heading text-gray-900 sm:text-6xl">Resources</h2>
-          <p className="mt-2 text-lg sm:text-xl text-gray-600 font-text">Curated resources built over time by students individually or collectively to help you learn, build, and grow.</p>
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+            custom={isMobile}
+            variants={textVariants}
+            className="text-5xl font-semibold tracking-tight text-pretty font-heading text-gray-900 sm:text-6xl"
+          >
+            Resources
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+            custom={isMobile}
+            variants={textVariants}
+            className="mt-2 text-lg sm:text-xl text-gray-600 font-text"
+          >
+            Curated resources built over time by students individually or collectively to help you learn, build, and grow.
+          </motion.p>
         </div>
 
         <Separator className="bg-gray-400 my-10 md:my-16" />
