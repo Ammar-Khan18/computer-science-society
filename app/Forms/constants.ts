@@ -12,7 +12,7 @@ export const forms: Form[] = [
     title: "MT Application Form",
     description: "This form is for the management team positions.",
     link: "https://forms.gle/WoPPxGfPCcMmyVMAA",
-    status: "Open",
+    status: "Closed",
   },
   {
     title: "EC Application Form",
@@ -21,5 +21,6 @@ export const forms: Form[] = [
     status: "Closed",
   }
 ];
+
 
 
