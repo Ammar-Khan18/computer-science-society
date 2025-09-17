@@ -45,7 +45,7 @@ const AnnouncementBar: React.FC = () => {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline size-2 fill-gray-900">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          MT/HT interviews at Auditorium Foyer (Main Campus), 1:00 PM - 5:00 PM, Wed 17<sup>th</sup>
+          All interviews have been conducted. Thank you for your participation!
         </p>
         <Link
           href="/Forms"
