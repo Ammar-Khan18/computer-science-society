@@ -44,7 +44,7 @@ const CodexBentoGrid: React.FC<DetailListProps> = ({ data }) => (
             What We Offer
         </motion.h1>
         
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 px-4 md:px-0 max-w-3xl mx-auto justify-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 px-4 md:px-0 max-w-3xl mx-auto justify-center mb-20">
             {data.map((item) => {
 
                 // Extract bg color from icon's className
