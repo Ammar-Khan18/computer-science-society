@@ -2,7 +2,7 @@ import React from 'react'
 
 const stats = [
   { id: 1, name: 'Active Members', value: '200+' },
-  { id: 2, name: 'Workshops & Study Groups', value: 'Ongoing' },
+  { id: 2, name: 'Tech Carnival', value: 'Ongoing' },
   { id: 3, name: 'Resources Created', value: '2+' }
 ]
 
